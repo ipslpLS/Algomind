@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', (event) => {
+		  document.querySelectorAll('pre code').forEach((block) => {
+			hljs.highlightElement(block);
+		  });
+		});
+	</script>
+
+	<script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
+	<script>
+		hljs.addPlugin(
+		new CopyButtonPlugin({
+			hook: (text, el) => {
+			let { replace, replacewith } = el.dataset;
+			if (replace && replacewith) {
+				return text.replace(replace, replacewith);
+			}
+			return text;
+			},
+			callback: (text, el) => {
+			 
+			console.log(text);
+			},
+		})
+		);
+		hljs.highlightAll();
+	</script>
+
+
+	
+	<link rel="stylesheet" href="/css/styles.css" integrity="" media="screen">
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false}
+            ]
+        });
+    });
+	</script>
+
+	<title>mere | Algomind</title>
+
+	<link rel="alternate" type="application/rss+xml" href="/tags/mere/index.xml" title="Algomind" />
+	</head>
+
+<body>
+
+<header>  
+    <nav>
+        <div class="flex text-2xl bg-[#f4f4f5] shadow-md">
+            <a class="flex-none rounded py-1.5 px-4 my-3 mx-2 bg-[#f4f4f5] text-[#52525b]" href="">
+            Algomind
+            </a>
+            
+            <a class="flex-none rounded py-1.5 px-4 my-3 mx-2 bg-[#f4f4f5] text-[#52525b] hover:bg-[#e4e4e7] hover:text-[#000000]" href="/articles">
+                Articles
+            </a>
+            
+            <a class="flex-none rounded py-1.5 px-4 my-3 mx-2 bg-[#f4f4f5] text-[#52525b] hover:bg-[#e4e4e7] hover:text-[#000000]" href="/about">
+                About
+            </a>
+            
+            <a class="flex-none rounded py-1.5 px-4 my-3 mx-2 bg-[#f4f4f5] text-[#52525b] hover:bg-[#e4e4e7] hover:text-[#000000]" href="/tags/">
+                Tags
+            </a>
+            
+        </div>
+    </nav>
+</header>
+
+<main class="content">
+
+<div class="px-24 py-8 mx-8 my-8 bg-[#fafafa] shadow-md">
+    <div class="max-w-3xl mx-auto px-12">
+        <div class="grid grid-cols-3 gap-3">
+            
+            <div class="mr-0.5 basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2">
+                <a href="/articles/primul-articol/">Primul articol</a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+</main>
+	
+<footer>
+	<div class="bg-[#f4f4f5]">
+		<p>&copy;2023 Algomind</p>
+	</div>
+</footer>
+
+</body>
+</html>
+  

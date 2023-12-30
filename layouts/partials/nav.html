@@ -1,0 +1,14 @@
+<header>  
+    <nav>
+        <div class="flex text-2xl bg-[#f4f4f5] shadow-md">
+            <a class="flex-none rounded py-1.5 px-4 my-3 mx-2 bg-[#f4f4f5] text-[#52525b]" href="{{ .Site.BaseURL }}">
+            {{ .Site.Title }}
+            </a>
+            {{ range.Site.Menus.main }}
+            <a class="flex-none rounded py-1.5 px-4 my-3 mx-2 bg-[#f4f4f5] text-[#52525b] hover:bg-[#e4e4e7] hover:text-[#000000]" href="{{ .URL }}">
+                {{ .Name }}
+            </a>
+            {{ end }}
+        </div>
+    </nav>
+</header>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>info on Algomind</title>
+    <link>/tags/info/</link>
+    <description>Recent content in info on Algomind</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ro</language>
+    <lastBuildDate>Wed, 23 Dec 2020 15:21:54 +0530</lastBuildDate>
+    <atom:link href="/tags/info/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Al doilea articol</title>
+      <link>/articles/al-doilea-articol/</link>
+      <pubDate>Wed, 23 Dec 2020 15:21:54 +0530</pubDate>
+      <guid>/articles/al-doilea-articol/</guid>
+      <description>Go to section&#xA;Hello Hello World Another section &amp;lt;&amp;ndash; it&amp;rsquo;s called &amp;lsquo;Another section&amp;rsquo; in this list but refers to &amp;lsquo;New section&amp;rsquo; Hello Hello World New section This is an inline math expression: (e^{i\pi} + 1 = 0)&#xA;$ e^{i\pi} + 1 = 0 $&#xA;$$e^{i\pi} + 1 = 0$$&#xA;$$ \begin{align*} L(p,w_i) &amp;amp;= \frac{1}{N}\sum_{i=1}^N \left(f_r(x_2\rightarrow x_1\rightarrow x_0)G(x_1\longleftrightarrow x_2)f_r(x_3\rightarrow x_2\rightarrow x_1)\right) \ &amp;amp;= \prod_{i=3}^{k-1} \left(\frac{f_r(x_{i+1}\rightarrow x_i\rightarrow x_{i-1})G(x_i\longleftrightarrow x_{i-1})}{p_a(x_{i-1})}\right) \frac{G(x_k\longleftrightarrow x_{k-1})L_e(x_k\rightarrow x_{k-1})}{p_a(x_{k-1})p_a(x_k)} \end{align*} $$</description>
+    </item>
+    <item>
+      <title>Al treilea articol</title>
+      <link>/articles/al-treilea-articol/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/articles/al-treilea-articol/</guid>
+      <description>C ceva simplu</description>
+    </item>
+    <item>
+      <title>Primul articol</title>
+      <link>/articles/primul-articol/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/articles/primul-articol/</guid>
+      <description>A ceva simplu</description>
+    </item>
+    <item>
+      <title>Test Articol</title>
+      <link>/articles/test-articol/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/articles/test-articol/</guid>
+      <description>Ceva continut</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>informatii on Algomind</title>
+    <link>/tags/informatii/</link>
+    <description>Recent content in informatii on Algomind</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ro</language>
+    <lastBuildDate>Sat, 23 Dec 2023 15:21:54 +0530</lastBuildDate>
+    <atom:link href="/tags/informatii/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Retrospectiva Anului 2023</title>
+      <link>/articles/al-patrulea-articol/</link>
+      <pubDate>Sat, 23 Dec 2023 15:21:54 +0530</pubDate>
+      <guid>/articles/al-patrulea-articol/</guid>
+      <description>#include &amp;lt;iostream&amp;gt; using namespace std; int main() { return 0; }&#x9;a&#xA;a.i&#xA;a.i.1&#xA;a.j&#xA;ceva&#xA;Un citat foarte motivational&#xA;ceva&#xA;Un titlu util Merge si alt paragraf&#xA;ceva pus sub evidenta&#xA;Dacă $⊕$ era $+$ Să ne gândim mai întâi cum rezolvam problema dacă suma xor era de fapt sumă normală. Mă refer la soluția cu sume parțiale. Păi, calculăm sumele parțiale ale vectorului dat, iar când am ajuns la o poziție $j$, ne uităm în stânga sa după o poziție $i$, astfel încât valoarea $ps[j]−ps[i]$ să fie maximă.</description>
+    </item>
+  </channel>
+</rss>
