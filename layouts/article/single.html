@@ -12,7 +12,20 @@
         <div class="articlecontainer">
             {{ .Content }}
         </div>
-
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+              var contentDiv = document.querySelector(' .articlecontainer ');
+              var headings = contentDiv.querySelectorAll('h1, h2, h3, h4, h5, h6');
+              
+              headings.forEach(function (heading) {
+                    var anchor = document.createElement('a');
+                    anchor.href = '#' + heading.id;
+                    anchor.innerText = '#';
+                    anchor.classList.add('header-link');
+                    heading.appendChild(anchor);
+              });
+            });
+          </script>
     </div>
 </div>
 

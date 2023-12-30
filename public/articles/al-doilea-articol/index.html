@@ -94,7 +94,8 @@
         </time>
 
         <div class="articlecontainer">
-            <p>Go to section</p>
+            <h1 id="ceva">Ceva</h1>
+<p>Go to section</p>
 <ul>
 <li><a href="#hello">Hello</a></li>
 <li><a href="#hello-world">Hello World</a></li>
@@ -329,7 +330,20 @@ with lazy continuation.</p>
 </div>
 
         </div>
-
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+              var contentDiv = document.querySelector(' .articlecontainer ');
+              var headings = contentDiv.querySelectorAll('h1, h2, h3, h4, h5, h6');
+              
+              headings.forEach(function (heading) {
+                    var anchor = document.createElement('a');
+                    anchor.href = '#' + heading.id;
+                    anchor.innerText = '#';
+                    anchor.classList.add('header-link');
+                    heading.appendChild(anchor);
+              });
+            });
+          </script>
     </div>
 </div>
 
