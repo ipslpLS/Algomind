@@ -43,6 +43,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 14
+      - name: Install npx
+        run: npm install -g npx --force
+      - name: Install PostCSS and CLI
+        run: npm install -g postcss postcss-cli
       - name: Checkout
         uses: actions/checkout@v4
         with:
