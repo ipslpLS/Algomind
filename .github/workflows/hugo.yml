@@ -66,7 +66,7 @@ jobs:
       - name: Install PostCSS dependencies
         run: npm install tailwindcss postcss autoprefixer
       - name: Build CSS with PostCSS
-        run: npx postcss css/styles.css -o public/css/styles.css
+        run: npx postcss assets/css/styles.css -o public/css/styles.css
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
