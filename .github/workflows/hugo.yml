@@ -44,7 +44,7 @@ jobs:
         with:
           node-version: 14
       - name: Install npx
-        run: npm install -g npx
+        run: npm install -g npx --force
       - name: Checkout
         uses: actions/checkout@v4
         with:
