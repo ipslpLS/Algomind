@@ -43,10 +43,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 14
-      - name: Install npx
-        run: npm install -g npx --force
-      - name: Install PostCSS and CLI
-        run: npm install -g postcss postcss-cli
       - name: Checkout
         uses: actions/checkout@v4
         with:
@@ -55,7 +51,9 @@ jobs:
         id: pages
         uses: actions/configure-pages@v4
       - name: Install Node.js dependencies
-        run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
+        run: npm install
+      - name: Install npx
+        run: npm install -g npx --force
       - name: Build with Hugo
         env:
           # For maximum backward compatibility with Hugo modules
@@ -65,6 +63,10 @@ jobs:
           npx hugo \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
+      - name: Install PostCSS dependencies
+        run: npm install tailwindcss postcss autoprefixer
+      - name: Build CSS with PostCSS
+        run: npx postcss css/styles.css -o public/css/styles.css
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
