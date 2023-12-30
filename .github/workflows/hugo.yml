@@ -44,7 +44,7 @@ jobs:
         with:
           node-version: 14
       - name: Install npx
-        run: npm install -g npx --force
+        run: npm install -g npx
       - name: Checkout
         uses: actions/checkout@v4
         with:
@@ -60,7 +60,7 @@ jobs:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
         run: |
-          hugo \
+          npx hugo \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
       - name: Upload artifact
