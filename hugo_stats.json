@@ -57,6 +57,7 @@
       "bg-gradient-to-r",
       "box-decoration-slice",
       "content",
+      "customstyle",
       "flex",
       "flex-none",
       "font-bold",
@@ -133,7 +134,7 @@
       "reorganizarea-sepi-și-proiectele-desfășurate-în-2023",
       "rezultatele-elevilor-români-la-concursurile-internaționale-de-informatică-din-2023",
       "tables",
-      "text-with-special-styling-customstyle",
+      "text-with-special-styling",
       "un-titlu-util"
     ]
   }

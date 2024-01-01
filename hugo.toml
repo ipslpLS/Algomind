@@ -27,7 +27,7 @@ enableResourceBundling = true
         use = false  # Disable prettify extension for code highlighting
   [markup.goldmark.parser]
     autoHeadingID = true
-    attribute = false
+    attribute = true
   [markup.goldmark.renderer]
     hardWraps = false
     unsafe = false
