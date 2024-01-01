@@ -3,6 +3,9 @@ languageCode = "ro"
 title = "Algomind"
 enableResourceBundling = true
 
+[security]
+  enableInlineShortcodes = true
+
 [build]
   writeStats = true
   [build.assets]
@@ -19,8 +22,12 @@ enableResourceBundling = true
     linkify = true
     strikethrough = true
     table = true
+    KaTeX = true
+    [markup.goldmark.extensions.prettify]
+        use = false  # Disable prettify extension for code highlighting
   [markup.goldmark.parser]
     autoHeadingID = true
+    attribute = false
   [markup.goldmark.renderer]
     hardWraps = false
     unsafe = false
@@ -40,10 +47,10 @@ enableResourceBundling = true
     identifier = "about"
     name = "About"
     url = "/about"
-    weight = 20
+    weight = 30
 
   [[menu.main]]
     identifier = "tags"
     name = "Tags"
-    weight = 30
+    weight = 20
     url = "/tags/"

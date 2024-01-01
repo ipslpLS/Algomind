@@ -5,6 +5,61 @@ tags: ["info", "two pointers", "dinamica"]
 date: "2020-12-23T15:21:54+05:30"
 ---
 
+## Text with special styling {.customstyle}
+
+
+{{< hint title="Hint 1" >}}
+
+  The hint's content
+
+> With lots of elements
+
+  And math
+
+  $ e^{i \pi } = -1 $
+
+  ```
+  ceva
+  alt ceva
+  ```
+
+{{< /hint >}}
+
+```
+linie de cod 1
+linie de cod 2
+linie de cod 3
+cu ceva in interior selectat
+linie de cod 4
+```
+
+```
+linie de cod 1
+linie de cod 2
+linie de cod 3
+cu ceva in interior selectat
+linie de cod 4
+```
+
+```
+linie de cod 1
+linie de cod 2
+linie de cod 3
+cu ceva in interior selectat
+linie de cod 4
+```
+
+```
+#include <iostream>
+using namespace std;
+int main()
+{
+    cout << "Hello word!";
+    return 0;
+}
+```
+
+
 # Ceva
 
 Go to section

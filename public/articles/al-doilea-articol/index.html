@@ -5,13 +5,16 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+	
+	<link rel="stylesheet" href="/css/styles.css" integrity="" media="screen">
+	
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 	<script>
 		document.addEventListener('DOMContentLoaded', (event) => {
-		  document.querySelectorAll('pre code').forEach((block) => {
-			hljs.highlightElement(block);
-		  });
+			document.querySelectorAll('pre code').forEach((block) => {
+				hljs.highlightElement(block);
+			});
 		});
 	</script>
 
@@ -32,12 +35,8 @@
 			},
 		})
 		);
-		hljs.highlightAll();
 	</script>
 
-
-	
-	<link rel="stylesheet" href="/css/styles.css" integrity="" media="screen">
 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
 	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
@@ -70,12 +69,12 @@
                 Articles
             </a>
             
-            <a class="flex-none rounded py-1.5 px-4 my-3 mx-2 bg-[#f4f4f5] text-[#52525b] hover:bg-[#e4e4e7] hover:text-[#000000]" href="/about">
-                About
-            </a>
-            
             <a class="flex-none rounded py-1.5 px-4 my-3 mx-2 bg-[#f4f4f5] text-[#52525b] hover:bg-[#e4e4e7] hover:text-[#000000]" href="/tags/">
                 Tags
+            </a>
+            
+            <a class="flex-none rounded py-1.5 px-4 my-3 mx-2 bg-[#f4f4f5] text-[#52525b] hover:bg-[#e4e4e7] hover:text-[#000000]" href="/about">
+                About
             </a>
             
         </div>
@@ -94,7 +93,45 @@
         </time>
 
         <div class="articlecontainer">
-            <h1 id="ceva">Ceva</h1>
+            <h2 id="text-with-special-styling-customstyle">Text with special styling {.customstyle}</h2>
+<details class="bg-[#f0f0f0] p-3 rounded-md">
+        <summary> Hint 1 </summary>
+        <div>
+            <p>The hint&rsquo;s content</p>
+<blockquote>
+<p>With lots of elements</p>
+</blockquote>
+<p>And math</p>
+<p>$ e^{i \pi } = -1 $</p>
+<pre tabindex="0"><code>ceva
+alt ceva
+</code></pre>
+        </div>
+    </div>
+</details>
+<pre tabindex="0"><code>linie de cod 1
+linie de cod 2
+linie de cod 3
+cu ceva in interior selectat
+linie de cod 4
+</code></pre><pre tabindex="0"><code>linie de cod 1
+linie de cod 2
+linie de cod 3
+cu ceva in interior selectat
+linie de cod 4
+</code></pre><pre tabindex="0"><code>linie de cod 1
+linie de cod 2
+linie de cod 3
+cu ceva in interior selectat
+linie de cod 4
+</code></pre><pre tabindex="0"><code>#include &lt;iostream&gt;
+using namespace std;
+int main()
+{
+    cout &lt;&lt; &#34;Hello word!&#34;;
+    return 0;
+}
+</code></pre><h1 id="ceva">Ceva</h1>
 <p>Go to section</p>
 <ul>
 <li><a href="#hello">Hello</a></li>
@@ -368,7 +405,7 @@ with lazy continuation.</p>
 			<a href="https://kilonova.ro/">Kilonova</a>
 		</p>
 		<br>
-		<p>&copy;2023 Algomind</p>
+		<p>&copy;2024 Algomind</p>
 	</div>
 </footer>
 

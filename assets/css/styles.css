@@ -40,7 +40,6 @@
         /* } */
         code {
             border-radius: 8px;
-            background:#f0f0f0;
             @apply px-2;
             @apply my-0.5;
         }
@@ -49,7 +48,6 @@
             padding-left: 1rem;
             @apply py-2;
             border-radius: 8px;
-            background-color: #eff0ff;
           }
         .header-link {
           padding-left: 0.5rem;
@@ -68,10 +66,19 @@
           color:blue;
           animation: tranzitielink 0.1s;
           opacity:1;
-          }
+        }
+        .customstyle {
+          color: red;
+        }
+        .HINT {
+          color: green;
+        }
+        .HINTTEXT{
+          color: burlywood;
+        }
       }
       
-      
+
 .hljs-copy-wrapper {
     position: relative;
     overflow: hidden;
