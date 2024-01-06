@@ -260,11 +260,6 @@
   }
 
   .hljs-copy-wrapper, pre  {
-    border-radius: 0.45rem;
-    padding: 0.5rem;
-    background-color: #333333;
-  }
-  p code {
     border-radius: 0.30rem;
     padding: 0.25rem;
     background-color: #333333;
