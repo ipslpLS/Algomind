@@ -38,11 +38,6 @@
             list-style-position: inside;
         }
         /* } */
-        code {
-            border-radius: 8px;
-            @apply px-2;
-            @apply my-0.5;
-        }
         blockquote {
             border-left: 5px solid #1d92ff;
             padding-left: 1rem;
