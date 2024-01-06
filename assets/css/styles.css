@@ -261,7 +261,7 @@
 
   .hljs-copy-wrapper, pre  {
     border-radius: 0.30rem;
-    padding: 0.25rem;
+    padding: 0.5rem;
     background-color: #333333;
     color: white;
     @apply my-4;
