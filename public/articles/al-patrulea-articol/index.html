@@ -93,13 +93,14 @@
         </time>
 
         <div class="articlecontainer">
-            <pre tabindex="0"><code>#include &lt;iostream&gt;
+            <pre><code>#include &lt;iostream&gt;
 using namespace std;
 int main()
 {
 	return 0;
 }	
-</code></pre><blockquote>
+</code></pre>
+<blockquote>
 <p>a</p>
 <blockquote>
 <p>a.i</p>
@@ -131,18 +132,18 @@ int main()
 </blockquote>
 <p><code>ceva</code></p>
 <p><code>c++</code></p>
-<pre tabindex="0"><code>#include &lt;bits/stdc++.h&gt;
+<pre><code>#include &lt;bits/stdc++.h&gt;
 
 using namespace std;
 
 float score = 0;
 
 void result(const char* msg, float pts) {
-    //&#34;{score}&#34; to stdout
-    //&#34;{message}&#34; to stderr
+    //&quot;{score}&quot; to stdout
+    //&quot;{message}&quot; to stderr
     // score is a float between 0 and 1
-	printf(&#34;%f&#34;, pts);
-    fprintf(stderr, &#34;%s&#34;, msg);
+	printf(&quot;%f&quot;, pts);
+    fprintf(stderr, &quot;%s&quot;, msg);
 	exit(0);
 }
 
@@ -165,30 +166,32 @@ int main(int argc, char* argv[]) {
     if(task == 1){
         int ansok, ansout;
         ok &gt;&gt; ansok;
-        Assert(!!(out &gt;&gt; ansout), &#34;translate:wrong&#34;); // try to read contestant&#39;s answer
-        Assert(ansout == ansok, &#34;translate:wrong&#34;); // check if values match
+        Assert(!!(out &gt;&gt; ansout), &quot;translate:wrong&quot;); // try to read contestant's answer
+        Assert(ansout == ansok, &quot;translate:wrong&quot;); // check if values match
         score += 1;
-		Success(score, &#34;translate:success&#34;);
+		Success(score, &quot;translate:success&quot;);
     }
     else {
         int nrok, nrout;
         // not giving partial points if the first part of the answer is wrong, even if the second one might be right
-        Assert(!!(out &gt;&gt; nrout), &#34;Wrong answer. Wrong format for number&#34;);
+        Assert(!!(out &gt;&gt; nrout), &quot;Wrong answer. Wrong format for number&quot;);
         ok &gt;&gt; nrok;
-        Assert(nrout == nrok, &#34;Wrong answer. Incorrect number&#34;);
+        Assert(nrout == nrok, &quot;Wrong answer. Incorrect number&quot;);
         score += 0.5;
-        string message = &#34;Correct number. &#34;;
+        string message = &quot;Correct number. &quot;;
         double valok, valout;
         ok &gt;&gt; valok;
         // giving partial points even if the second part of the answer is wrong
         if(!!(out &gt;&gt; valout) &amp;&amp; abs(valok - valout) &lt;= 1e-5)
-            score += 0.5, message += &#34;Correct value&#34;;
+            score += 0.5, message += &quot;Correct value&quot;;
         else
-            message += &#34;Wrong value&#34;;
+            message += &quot;Wrong value&quot;;
         Success(score, message);
     }
 }
-</code></pre><p>Dat fiind că nu a fost nicio asemenea retrospectivă scrisă în 2022, am decis să reînvii această tradiție, dar mutând-o pe kilonova.</p>
+
+</code></pre>
+<p>Dat fiind că nu a fost nicio asemenea retrospectivă scrisă în 2022, am decis să reînvii această tradiție, dar mutând-o pe kilonova.</p>
 <p>2023 a adus pentru informatica românească unele dintre cele mai semnificative proiecte și schimbări în bine, schimbări ce își vor aduce efectul pozitiv de-a lungul următorilor ani. Printre altele, voi enumera coagularea comunității în jurul proiectelor Kilonova și RoAlgo, reorganizarea structurii SEPI, atingerea unui nou nivel în ceea ce privește eforturile comunității de a crea și învia diverse concursuri de informatică dar și multe alte proiecte care au avut loc, toate având scopul de a produce o schimbare de jos în sus cu scopul îmbunătățirii generale a nivelului de pregătire a concurenților și nu numai. Totuși, așa cum aceste proiecte au adus îmbunătățiri simțitoare, există și multe provocări la orizont, iar următorii ani trebuie să continue aceste schimbări apărute în acest an și nu numai.</p>
 <h1 id="coagularea-comunității-în-jurul-proiectelor-kilonova-și-roalgo">Coagularea comunității în jurul proiectelor Kilonova și RoAlgo</h1>
 <p>Se poate spune cu certitudine că popularizarea Kilonova și apariția RoAlgo reprezintă două dintre cele mai importante schimbări apărute în 2023. Comunitatea RoAlgo, ajunsă la peste 1800 de membri, împreună cu echipa Kilonova au pus la cale câteva proiecte esențiale pentru a ajuta deopotrivă elevii, profesorii, studenți și alți pasionați de informatică, printre acestea putem enumera următoarele:</p>

@@ -13,7 +13,7 @@
       <link>/articles/al-doilea-articol/</link>
       <pubDate>Wed, 23 Dec 2020 15:21:54 +0530</pubDate>
       <guid>/articles/al-doilea-articol/</guid>
-      <description>Text with special styling Hint 1 The hint&amp;rsquo;s content&#xA;With lots of elements&#xA;And math&#xA;$ e^{i \pi } = -1 $&#xA;ceva alt ceva linie de cod 1 linie de cod 2 linie de cod 3 cu ceva in interior selectat linie de cod 4 linie de cod 1 linie de cod 2 linie de cod 3 cu ceva in interior selectat linie de cod 4 linie de cod 1 linie de cod 2 linie de cod 3 cu ceva in interior selectat linie de cod 4 #include &amp;lt;iostream&amp;gt; using namespace std; int main() { cout &amp;lt;&amp;lt; &amp;#34;Hello word!</description>
+      <description>Text with special styling Hint 1 The hint&amp;rsquo;s content&#xA;With lots of elements&#xA;And math&#xA;$ e^{i \pi } = -1 $&#xA;ceva alt ceva linie de cod 1 linie de cod 2 linie de cod 3 cu ceva in interior selectat linie de cod 4 linie de cod 1 linie de cod 2 linie de cod 3 cu ceva in interior selectat linie de cod 4 linie de cod 1 linie de cod 2 linie de cod 3 cu ceva in interior selectat linie de cod 4 #include &amp;lt;iostream&amp;gt; using namespace std; int main() { cout &amp;lt;&amp;lt; &amp;quot;Hello word!</description>
     </item>
   </channel>
 </rss>
