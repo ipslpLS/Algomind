@@ -838,8 +838,8 @@ video {
   .hljs-copy-button {
     position: absolute;
     transform: translateX(calc(100% + 1.125em));
-    top: 0.5em;
-    right: 0.5em;
+    top: 0.25em;
+    right: 0.25em;
     width: 2rem;
     height: 2rem;
     text-indent: -9999px; /* Hide the inner text */
@@ -903,13 +903,16 @@ video {
   }
 
   .hljs-copy-wrapper, pre  {
-    border-radius: 0.45rem;
+    border-radius: 0.30rem;
     padding: 0.5rem;
     background-color: #333333;
+    color: white;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
-  p code {
+  code:not(pre.hljs-copy-wrapper code) {
     border-radius: 0.30rem;
-    padding: 0.25rem;
+    padding: 0.20rem;
     background-color: #333333;
     color: white;
   }
