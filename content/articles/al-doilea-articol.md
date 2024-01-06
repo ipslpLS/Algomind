@@ -7,7 +7,6 @@ date: "2020-12-23T15:21:54+05:30"
 
 ## Text with special styling {.customstyle}
 
-
 {{< hint title="Hint 1" >}}
 
   The hint's content
@@ -58,7 +57,6 @@ int main()
     return 0;
 }
 ```
-
 
 # Ceva
 
