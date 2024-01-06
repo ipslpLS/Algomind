@@ -264,4 +264,5 @@
     padding: 0.25rem;
     background-color: #333333;
     color: white;
+    @apply my-4;
   }
