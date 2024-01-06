@@ -20,7 +20,7 @@
       <link>/articles/al-doilea-articol/</link>
       <pubDate>Wed, 23 Dec 2020 15:21:54 +0530</pubDate>
       <guid>/articles/al-doilea-articol/</guid>
-      <description>Text with special styling Hint 1 The hint&amp;rsquo;s content&#xA;With lots of elements&#xA;And math&#xA;$ e^{i \pi } = -1 $&#xA;ceva alt ceva linie de cod 1 linie de cod 2 linie de cod 3 cu ceva in interior selectat linie de cod 4 linie de cod 1 linie de cod 2 linie de cod 3 cu ceva in interior selectat linie de cod 4 linie de cod 1 linie de cod 2 linie de cod 3 cu ceva in interior selectat linie de cod 4 #include &amp;lt;iostream&amp;gt; using namespace std; int main() { cout &amp;lt;&amp;lt; &amp;quot;Hello word!</description>
+      <description>$\displaystyle \sum_{i=1}^{n} \frac{a^{b+c}}{d^e-f_i} \le \sqrt{2}$&#xA;Text with special styling Hint 1 The hint&amp;rsquo;s content&#xA;With lots of elements&#xA;And math&#xA;$ e^{i \pi } = -1 $&#xA;And MORE math&#xA;[ \begin{aligned} &amp;amp; \int \mu(u, v) , du , dv \ &amp;amp; \iint \mu(u, v, w) , du , dv , dw \ &amp;amp; \iiint \mu(t, u, v, w) , dt , du , dv , dw \ &amp;amp; \text{ceva} \end{aligned} ]</description>
     </item>
     <item>
       <title>Al treilea articol</title>

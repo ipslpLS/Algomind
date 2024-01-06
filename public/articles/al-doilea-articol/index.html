@@ -46,8 +46,11 @@
         renderMathInElement(document.body, {
             delimiters: [
                 {left: "$$", right: "$$", display: true},
-                {left: "$", right: "$", display: false}
-            ]
+                {left: "$", right: "$", display: false},
+				{left: '\(', right: '\)', display: false},
+              	{left: '\[', right: '\]', display: true}
+            ],
+			strict: false
         });
     });
 	</script>
@@ -93,9 +96,10 @@
         </time>
 
         <div class="articlecontainer">
-            <h2 class="customstyle" id="text-with-special-styling">Text with special styling</h2>
+            <p>$\displaystyle \sum_{i=1}^{n} \frac{a^{b+c}}{d^e-f_i} \le \sqrt{2}$</p>
+<h2 class="customstyle" id="text-with-special-styling">Text with special styling</h2>
 <details class="bg-[#f0f0f0] p-3 rounded-md">
-        <summary> Hint 1 </summary>
+    <summary> Hint 1 </summary>
         <div>
             <p>The hint&rsquo;s content</p>
 <blockquote>
@@ -103,12 +107,20 @@
 </blockquote>
 <p>And math</p>
 <p>$ e^{i \pi } = -1 $</p>
+<p><strong>And MORE math</strong></p>
+<p>[
+\begin{aligned}
+&amp; \int \mu(u, v) , du , dv \
+&amp; \iint \mu(u, v, w) , du , dv , dw \
+&amp; \iiint \mu(t, u, v, w) , dt , du , dv , dw \
+&amp; \text{ceva}
+\end{aligned}
+]</p>
 <pre><code>ceva
 alt ceva
 </code></pre>
 
         </div>
-    </div>
 </details>
 <pre><code>linie de cod 1
 linie de cod 2
@@ -128,7 +140,7 @@ linie de cod 3
 cu ceva in interior selectat
 linie de cod 4
 </code></pre>
-<pre><code>#include &lt;iostream&gt;
+<pre><code class="language-cpp">#include &lt;iostream&gt;
 using namespace std;
 int main()
 {

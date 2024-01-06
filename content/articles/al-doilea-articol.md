@@ -5,6 +5,8 @@ tags: ["info", "two pointers", "dinamica"]
 date: "2020-12-23T15:21:54+05:30"
 ---
 
+$\displaystyle \sum_{i=1}^{n} \frac{a^{b+c}}{d^e-f_i} \le \sqrt{2}$
+
 ## Text with special styling {.customstyle}
 
 {{< hint title="Hint 1" >}}
@@ -16,6 +18,24 @@ date: "2020-12-23T15:21:54+05:30"
   And math
 
   $ e^{i \pi } = -1 $
+
+  **And MORE math**
+
+\[
+\begin{aligned}
+    & \int \mu(u, v) \, du \, dv\\\
+    & \iint \mu(u, v, w) \, du \, dv \, dw\\\
+    & \iiint \mu(t, u, v, w) \, dt \, du \, dv \, dw\\\
+    & \text{ceva}
+\end{aligned}
+\]
+
+$$
+\begin{aligned}
+&(n-1)(n-1)\\\
+&=n^2-2n+1
+\end{aligned}
+$$
 
   ```
   ceva
@@ -48,7 +68,7 @@ cu ceva in interior selectat
 linie de cod 4
 ```
 
-```
+```cpp
 #include <iostream>
 using namespace std;
 int main()
