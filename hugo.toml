@@ -13,27 +13,20 @@ enableResourceBundling = true
       sources = ["assets/css/styles.css"]
 
 [markup]
-  defaultMarkdownHandler = "goldmark"
-
-[markup.goldmark]
-  [markup.goldmark.extensions]
-    definitionList = true
-    footnote = true
-    linkify = true
-    strikethrough = true
-    table = true
-    KaTeX = true
-    [markup.goldmark.extensions.prettify]
-        use = false  # Disable prettify extension for code highlighting
-  [markup.goldmark.parser]
-    autoHeadingID = true
-    attribute = true
-  [markup.goldmark.renderer]
-    hardWraps = false
-    unsafe = false
-    xhtml = false
-    [markup.goldmark.renderer.highlight]
-      codeFences = false
+  [markup.highlight]
+    anchorLineNos = true
+    codeFences = false
+    guessSyntax = false
+    hl_Lines = ''
+    hl_inline = false
+    lineAnchors = ''
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = false
+    noClasses = false
+    noHl = false
+    style = 'github-dark'
+    tabWidth = 4
   
 
 [menu]
