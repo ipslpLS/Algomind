@@ -605,6 +605,9 @@ video {
 .grid {
   display: grid;
 }
+.h-20 {
+  height: 5rem;
+}
 .max-w-3xl {
   max-width: 48rem;
 }
@@ -929,6 +932,10 @@ video {
   .md\:mx-8 {
     margin-left: 2rem;
     margin-right: 2rem;
+  }
+
+  .md\:h-40 {
+    height: 10rem;
   }
 
   .md\:px-6 {

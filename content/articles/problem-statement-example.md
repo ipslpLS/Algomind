@@ -3,6 +3,9 @@ title: "Problem Statement Example"
 type: "article"
 tags: ["probleme", "enunt", "2024"]
 date: "2024-01-01T15:21:54+05:30"
+description: "Rezumat la **Problem Statement Example**"
+images:
+    - "problem-statement-example-image-prew.jpg"
 ---
 
 Ionel are de rezolvat o nouă problemă. El trebuie să construiască un șir de N numere naturale. Numerele din șir pot avea ca divizori primi doar numere prime de o cifră. După construirea șirului, Ionel a constatat că există subsecvențe în șir pentru care produsul elementelor este cubul unui număr natural.
