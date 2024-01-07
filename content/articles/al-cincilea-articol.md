@@ -5,6 +5,8 @@ tags: ["info", "two pointers", "dinamica"]
 date: "2020-12-23T15:21:54+05:30"
 ---
 
+Ceva adaugat in plus dupa prima restabilire
+
 $\displaystyle \sum_{i=1}^{n} \frac{a^{b+c}}{d^e-f_i} \le \sqrt{2}$
 
 ## Text with special styling {.customstyle}
