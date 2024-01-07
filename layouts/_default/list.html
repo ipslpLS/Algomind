@@ -14,7 +14,7 @@
 	</time>
     {{ with .Params.images }}
       {{ range . }}
-        <img class="h-20 md:h-40" src="/images/{{ . }}" alt="Article Image">
+        <img class="h-20 md:h-40" src="content/images/{{ . }}" alt="Article Image">
       {{ end }}
     {{ end }}
     {{ partial "tags.html" . }}
