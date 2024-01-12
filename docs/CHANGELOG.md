@@ -1,0 +1,4 @@
+- 0.1.0:
+    - Updated styling for markdown syntax
+    - Added spoiler and details custom containers, line code highlight
+    - Tweaked code syntax highlight

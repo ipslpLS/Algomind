@@ -1,0 +1,5 @@
+{{ $nametag := .Get "nametag" }}
+{{ $content := .Inner }}
+<div class="highlightText" id='{{ $nametag }}'>
+    {{ $content | markdownify | safeHTML }}
+</div>

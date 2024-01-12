@@ -1,9 +1,200 @@
 ---
 title: "Al cinci-lea articol"
 type: "article"
-tags: ["info", "two pointers", "dinamica"]
+tags: ["info", "two pointers", "dinamica", "2020", "test"]
 date: "2020-12-23T15:21:54+05:30"
 ---
+
+[Google](https://google.com)
+
+List of check-boxes
+  - [x] lapte
+  - [x] oua
+      - [x] mere
+      - [ ] banane
+  - [ ] branza
+
+<pre><code>#include< iostream>
+using namespace std;
+int main()
+{
+  return 0;
+}</code></pre>
+
+```cpp
+#include<iostream>
+using namespace std;
+int main()
+{
+  return 0;
+}
+```
+
+```cpp
+#include<iostream>
+using namespace std;
+int main()
+{
+  return 0;
+}
+```
+
+{{< textpointer nametag="code-unu-unu" color="rgb(0, 255, 0)" >}}
+```c++
+#include < iostream >
+using namespace std;
+int main()
+{
+  return 0;
+}
+```
+{{< /textpointer >}}
+
+
+# ceva 2
+
+{{< textpointer nametag="code-doi-doi" color="rgb(0, 255, 0)" >}}
+```c++
+#include<iostream>
+using namespace std;
+int main()
+{
+  return 0;
+}
+```
+{{< /textpointer >}}
+
+
+{{< textpointer-link nametag="code-unu-unu" lines="2,3,5" text="Idee" >}}
+
+
+{{< textpointer-link nametag="code-doi-doi" lines="1,4" text="Idee 2.1">}}
+
+
+{{< textpointer-link nametag="code-doi-doi" lines="2,5" text="Idee 2.2">}}
+
+
+$\sum_{i=1}^{n}$ $\frac{a^{b+c}}{d^e-f_i}$ $\le \sqrt{2}$
+
+$\sum_{i=1}^{n} \frac{a^{b+c}}{d^e-f_i} \le \sqrt{2}$
+
+# Test code and math styling and button part highlight
+
+```c++
+ceva idei
+```
+
+## ceva text 3️⃣
+
+------
+
+{{< textpointer nametag="cod-test-test" color="rgb(0, 255, 0)" >}}
+paragrafe 
+
+> Idei
+
+$$
+\begin{align*}
+L(p,w_i) &= \frac{1}{N}\sum_{i=1}^N \left(f_r(x_2\rightarrow x_1\rightarrow x_0)G(x_1\longleftrightarrow x_2)f_r(x_3\rightarrow x_2\rightarrow x_1)\right) \\
+&= \prod_{i=3}^{k-1} \left(\frac{f_r(x_{i+1}\rightarrow x_i\rightarrow x_{i-1})G(x_i\longleftrightarrow x_{i-1})}{p_a(x_{i-1})}\right) \frac{G(x_k\longleftrightarrow x_{k-1})L_e(x_k\rightarrow x_{k-1})}{p_a(x_{k-1})p_a(x_k)}
+\end{align*}
+$$
+
+> Alte idei
+
+$
+\displaystyle \sum_{i=1}^{n} \frac{a^{b+c}}{d^e-f_i} \le \sqrt{2}
+$
+
+$
+\displaystyle \sum_{i=1}^{n}
+$
+
+
+$
+\displaystyle \sum_{i=1}^{n} 
+$
+
+$
+\frac{a^{b+c}}{d^e-f_i} \le \sqrt{2}
+$
+
+```c++
+Ceva util in c++
+#include <iostream>
+```
+{{< /textpointer >}}
+
+{{< textpointer-link nametag="cod-test-test" text="ceva" >}}
+
+
+{{< textpointer nametag="text-selector" color="rgb(0, 255, 0)" >}}
+ Ceva util
+ $ e^{i \pi } = -1 $.
+```c++
+#include <iostream>
+using namespace std;
+int main()
+{
+  return 0;
+}
+```
+{{< /textpointer >}}
+Dar care continua si este pe acelasi rand
+
+{{< textpointer-link nametag="text-selector" text="Ceva" >}}
+
+{{< textpointer nametag="text-selector-doi" color="rgb(217, 55, 43)" >}}
+ Ceva doi util
+ $ e^{ii \pi } = -1 $.
+{{< /textpointer >}}
+
+{{< textpointer-link nametag="text-selector-doi" text="Ceva2">}}
+
+# Ceva de test
+
+{{< textpointer nametag="text-selector-sase" >}}
+  This is raw HTML content.
+{{< /textpointer >}}
+
+{{< textpointer nametag="text-selector-sapte" >}}
+  This is Markdown content.
+  - List item 1
+  - List item 2
+{{< /textpointer >}}
+
+# Sau grupat:
+
+{{< textpointer nametag="text-selector-zece" color="rgb(217, 55, 43)" >}}
+Ceva doi util
+
+$ e^{ii \pi } = -1 $.
+
+$ e^{ii \pi } = -1 $.
+{{< /textpointer >}}
+
+{{< textpointer nametag="text-selector-zecezece" color="rgb(217, 55, 43)" >}}
+Ceva doi util
+Poate ceva text
+
+$ e^{ii \pi } = -1 $.
+
+$ e^{ii \pi } = -1 $.
+{{< /textpointer >}}
+
+{{< textpointer nametag="text-selector-zecezecezece" color="rgb(217, 55, 43)" >}}
+Ceva doi util
+
+$ e^{ii \pi } = -1 $.
+
+$ e^{ii \pi } = -1 $.
+{{< /textpointer >}}
+
+{{< textpointer-link nametag="text-selector-zece" text="Ceva">}}
+{{< textpointer-link nametag="text-selector-zecezece" text="Ceva2">}}
+{{< textpointer-link nametag="text-selector-zecezecezece" text="Ceva3">}}
+
+
 
 Ceva adaugat in plus dupa prima restabilire
 
@@ -11,7 +202,7 @@ $\displaystyle \sum_{i=1}^{n} \frac{a^{b+c}}{d^e-f_i} \le \sqrt{2}$
 
 ## Text with special styling {.customstyle}
 
-{{< hint title="Hint 1" >}}
+{{< hint title="Hint 2" >}}
 
   The hint's content
 
@@ -39,10 +230,10 @@ $$
 \end{aligned}
 $$
 
-  ```
-  ceva
-  alt ceva
-  ```
+```c++
+ceva
+alt ceva
+```
 
 {{< /hint >}}
 

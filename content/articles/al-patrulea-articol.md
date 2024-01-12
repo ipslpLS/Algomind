@@ -40,8 +40,8 @@ int main()
 `ceva`
 
 `c++`
-
-```
+{{< textpointer nametag="code-doi-doi" color="rgb(0, 255, 0)" >}}
+```cpp
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -99,8 +99,10 @@ int main(int argc, char* argv[]) {
         Success(score, message);
     }
 }
-
 ```
+{{</ textpointer >}}
+
+{{< textpointer-link nametag="code-doi-doi" lines="12,20,30" text="Ceva">}}
 
 Dat fiind că nu a fost nicio asemenea retrospectivă scrisă în 2022, am decis să reînvii această tradiție, dar mutând-o pe kilonova.
 

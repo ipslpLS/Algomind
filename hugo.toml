@@ -28,6 +28,8 @@ enableResourceBundling = true
     style = 'github-dark'
     tabWidth = 4
   
+[markup.goldmark.renderer]
+  unsafe = true
 
 [menu]
   [[menu.main]]

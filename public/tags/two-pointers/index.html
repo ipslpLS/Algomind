@@ -10,12 +10,14 @@
 	
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+	<script src="//cdn.jsdelivr.net/gh/TRSasasusu/highlightjs-highlight-lines.js@1.1.5/highlightjs-highlight-lines.min.js"></script>
 	<script>
 		document.addEventListener('DOMContentLoaded', (event) => {
 			document.querySelectorAll('pre code').forEach((block) => {
 				hljs.highlightElement(block);
 			});
 		});
+		hljs.initHighlightLinesOnLoad([]);
 	</script>
 
 	<script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
@@ -52,6 +54,20 @@
         });
     });
 	</script>
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+		  var button = document.querySelector('.toggle-button');
+		  var element = document.getElementById('dropdown-menu');
+	  
+		  button.addEventListener('click', function() {
+			if (element.style.display === 'none' || element.style.display === '') {
+			  element.style.display = 'flex';
+			} else {
+			  element.style.display = 'none';
+			}
+		  });
+		});
+	</script>
 
 	<title>two pointers | Algomind</title>
 
@@ -62,20 +78,43 @@
 
 <header>  
     <nav>
-        <div class="flex text-2xl bg-[#f4f4f5] shadow-md">
-            <a class="flex-none rounded py-1.5 px-4 my-3 mx-2 bg-[#f4f4f5] text-[#52525b]" href="">
-            Algomind
+        <div class="flex items-center flex-wrap text-2xl bg-[#f4f4f5] shadow-md">
+            <a class="nav-link rounded py-1.5 px-4 my-3 mx-2 bg-[#f4f4f5] text-[#52525b]" href="">
+                Algomind
             </a>
+            <div class="nav-links flex">
+                
+                <a class="nav-link rounded py-1.5 px-4 my-3 ml-2 bg-[#f4f4f5] text-[#52525b] hover:bg-[#e4e4e7] hover:text-[#000000]" href="/articles">
+                    Articles
+                </a>
+                
+                <a class="nav-link rounded py-1.5 px-4 my-3 ml-2 bg-[#f4f4f5] text-[#52525b] hover:bg-[#e4e4e7] hover:text-[#000000]" href="/tags/">
+                    Tags
+                </a>
+                
+                <a class="nav-link rounded py-1.5 px-4 my-3 ml-2 bg-[#f4f4f5] text-[#52525b] hover:bg-[#e4e4e7] hover:text-[#000000]" href="/about">
+                    About
+                </a>
+                
+            </div>
+            <svg class="svg-icon flex-shrink-0 toggle-button mr-4 ml-auto bg-[#f4f4f5] text-[#52525b] hover:bg-[#e4e4e7] hover:text-[#000000]" viewBox="0 0 20 20">
+                <path fill="none" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314
+                    c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743
+                    s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314
+                    c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path>
+            </svg>
+        </div>
+        <div id="dropdown-menu" class="flex flex-wrap bg-[#f4f4f5] shadow-md">
             
-            <a class="flex-none rounded py-1.5 px-4 my-3 mx-2 bg-[#f4f4f5] text-[#52525b] hover:bg-[#e4e4e7] hover:text-[#000000]" href="/articles">
+            <a class="nav-link rounded py-1.5 px-4 my-3 ml-2 bg-[#f4f4f5] text-[#52525b] hover:bg-[#e4e4e7] hover:text-[#000000]" href="/articles">
                 Articles
             </a>
             
-            <a class="flex-none rounded py-1.5 px-4 my-3 mx-2 bg-[#f4f4f5] text-[#52525b] hover:bg-[#e4e4e7] hover:text-[#000000]" href="/tags/">
+            <a class="nav-link rounded py-1.5 px-4 my-3 ml-2 bg-[#f4f4f5] text-[#52525b] hover:bg-[#e4e4e7] hover:text-[#000000]" href="/tags/">
                 Tags
             </a>
             
-            <a class="flex-none rounded py-1.5 px-4 my-3 mx-2 bg-[#f4f4f5] text-[#52525b] hover:bg-[#e4e4e7] hover:text-[#000000]" href="/about">
+            <a class="nav-link rounded py-1.5 px-4 my-3 ml-2 bg-[#f4f4f5] text-[#52525b] hover:bg-[#e4e4e7] hover:text-[#000000]" href="/about">
                 About
             </a>
             
@@ -83,21 +122,15 @@
     </nav>
 </header>
 
-<main class="content">
+<main>
 
-<div class="px-24 py-8 mx-8 my-8 bg-[#fafafa] shadow-md">
-    <div class="max-w-3xl mx-auto px-12">
-        <div class="grid grid-cols-3 gap-3">
-            
-            <div class="mr-0.5 basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2">
-                <a href="/articles/al-cincilea-articol/">Al cinci-lea articol</a>
-            </div>
-            
-            <div class="mr-0.5 basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2">
-                <a href="/articles/al-doilea-articol/">Al doilea articol</a>
-            </div>
-            
-        </div>
+<div class="px-0 py-8 mx-2 md:mx-8 my-8 bg-[#fafafa] shadow-md">
+    <div class="max-w-3xl mx-auto px-0">
+        
+            <a class="whitespace-nowrap ml-2 basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2" href="/articles/al-cincilea-articol/">Al cinci-lea articol</a>
+        
+            <a class="whitespace-nowrap ml-2 basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2" href="/articles/al-doilea-articol/">Al doilea articol</a>
+        
     </div>
 </div>
 

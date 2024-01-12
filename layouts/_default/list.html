@@ -2,23 +2,29 @@
 
 <h1>{{ .Title }}</h1>
 
-{{ .Content }}
-
-{{ range.Data.Pages }}
-<article>
-  <h3>
-    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-  </h3>
-	<time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
-		{{ .Date.Format "2/1/2006" }}
-	</time>
+<div class="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
+  {{ range.Data.Pages }}
+  <article class="px-0 py-8 mx-2 md:mx-8 my-8 bg-[#fafafa] shadow-md">
+    <h3>
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </h3>
+    <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+      {{ .Date.Format "2/1/2006" }}
+    </time>
     {{ with .Params.images }}
-      {{ range . }}
-      <img class="h-20 md:h-40" src="{{ relURL (printf "images/%s" .) }}" alt="Article Image">
-      {{ end }}
+    {{ range . }}
+    <img class="h-20 md:h-40" src="{{ relURL (printf "images/%s" .) }}" alt="Article Image">
     {{ end }}
-    {{ partial "tags.html" . }}
-</article>
-{{ end }}
-
+    {{ end }}
+    <div class="px-0 py-8 mx-2 md:mx-8 my-8 bg-[#fafafa] shadow-md">
+      <div class="max-w-3xl mx-auto px-0">
+          {{ range .Params.tags }}
+              <a class="ml-2 basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2" href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}/">#{{ . }}</a>
+          {{ end }}
+      </div>
+    </div>
+  </article>
+  {{ end }}
+</div>
+  
 {{ partial "footer.html" . }}

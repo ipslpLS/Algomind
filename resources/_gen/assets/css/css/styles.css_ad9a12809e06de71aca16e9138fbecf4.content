@@ -439,27 +439,71 @@ video {
             padding-top: 0.5rem;
             padding-bottom: 0.5rem;
             border-radius: 8px;
-          }
+        }
         .header-link {
           padding-left: 0.5rem;
-          color:blue;
-          opacity:0;
-          }
-        @keyframes tranzitielink {
-          0% { opacity: 0; }
-          25% { opacity: 0.25; }
-          50% { opacity: 0.50; }
-          75% { opacity: 0.75; }
-          100% { opacity: 1; }
+          color:rgba(39, 39, 39, 0.5);
+          opacity:0.5;
+          transition: opacity 0.2s, color 0.2s;
         }
         .header-link:hover {
           padding-left: 0.5rem;
           color:blue;
-          animation: tranzitielink 0.1s;
           opacity:1;
         }
         .customstyle {
           color: red;
+        }
+        .highlightText{
+
+        }
+
+        .highlight-line {
+          display: inline;
+        }
+
+        .highlighted-text-test * code,
+        .highlighted-text-test * p,
+        .highlighted-text-test * blockquote,
+        .highlighted-text-test * h1,
+        .highlighted-text-test * h2,
+        .highlighted-text-test * h3,
+        .highlighted-text-test * h4,
+        .highlighted-text-test * h5,
+        .highlighted-text-test * h6 {
+          background-color: rgb(255,255,204, 0.6);
+        }
+
+        .highlighted-text-test .katex .base {
+          color: rgb(131, 101, 101);
+          background-color: rgb(255,255,204, 0.6);
+        }
+
+        ul:has(> li > input[type="checkbox"]) {
+          list-style-type: none;
+          padding-left: 16px;
+        }
+
+        .articlecontainer a:not(.header-link, .highlightButton, nav-link) {
+          color:rgb(80, 80, 218);
+          -webkit-text-decoration: underline rgba(80, 80, 218, 0);
+                  text-decoration: underline rgba(80, 80, 218, 0);
+          transition: -webkit-text-decoration 0.3s;
+          transition: text-decoration 0.3s;
+          transition: text-decoration 0.3s, -webkit-text-decoration 0.3s;
+        }
+
+        .articlecontainer a:not(.header-link, .highlightButton, nav-link):hover {
+          -webkit-text-decoration: underline rgb(80, 80, 218);
+                  text-decoration: underline rgb(80, 80, 218);
+        }
+
+        .highlightButton a {
+          text-decoration: none;
+          border-radius: 0.2rem;
+          padding: 0.25rem;
+          background-color: #ada8a8;
+          color: white;
         }
 
 *, ::before, ::after {
@@ -565,10 +609,6 @@ video {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
-.mx-8 {
-  margin-left: 2rem;
-  margin-right: 2rem;
-}
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -581,17 +621,14 @@ video {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
-.mr-0 {
-  margin-right: 0px;
+.ml-2 {
+  margin-left: 0.5rem;
 }
-.mr-0\.5 {
-  margin-right: 0.125rem;
+.ml-auto {
+  margin-left: auto;
 }
-.mr-1 {
-  margin-right: 0.25rem;
-}
-.mr-1\.5 {
-  margin-right: 0.375rem;
+.mr-4 {
+  margin-right: 1rem;
 }
 .block {
   display: block;
@@ -611,17 +648,26 @@ video {
 .max-w-3xl {
   max-width: 48rem;
 }
-.flex-none {
-  flex: none;
+.flex-shrink-0 {
+  flex-shrink: 0;
 }
 .resize {
   resize: both;
 }
-.grid-cols-3 {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
 }
-.gap-3 {
-  gap: 0.75rem;
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.items-center {
+  align-items: center;
+}
+.gap-2 {
+  gap: 0.5rem;
+}
+.whitespace-nowrap {
+  white-space: nowrap;
 }
 .rounded {
   border-radius: 0.25rem;
@@ -659,17 +705,13 @@ video {
 .p-3 {
   padding: 0.75rem;
 }
-.px-12 {
-  padding-left: 3rem;
-  padding-right: 3rem;
+.px-0 {
+  padding-left: 0px;
+  padding-right: 0px;
 }
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-}
-.px-24 {
-  padding-left: 6rem;
-  padding-right: 6rem;
 }
 .px-4 {
   padding-left: 1rem;
@@ -710,14 +752,52 @@ video {
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
+.transition {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
 @import 'tailwindcss/typography';
 
 /* Your custom styles go here */
-      
 
+  .svg-icon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .svg-icon path,
+  .svg-icon polygon,
+  .svg-icon rect {
+    fill: #000000;
+  }
+  .svg-icon circle {
+    stroke: #000000;
+    stroke-width: 1;
+  }
+
+  .toggle-button {
+    display: none;
+  }
+
+  #dropdown-menu {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+    .toggle-button {
+      display: block;
+    }
+  }
 
   .hljs {
     color: #c9d1d9;
+    white-space: pre-wrap;
   }
 
   .hljs-doctag,
@@ -832,7 +912,7 @@ video {
 
   .hljs-copy-wrapper {
     position: relative;
-    overflow: hidden;
+    overflow-x: hidden;
   }
   .hljs-copy-wrapper:hover .hljs-copy-button,
   .hljs-copy-button:focus {
@@ -938,12 +1018,20 @@ video {
     height: 10rem;
   }
 
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .md\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
   @media (min-width: 1024px) {
+
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 
   .lg\:px-1 {
     padding-left: 0.25rem;
