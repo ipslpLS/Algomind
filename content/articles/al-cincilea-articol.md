@@ -5,6 +5,49 @@ tags: ["info", "two pointers", "dinamica", "2020", "test"]
 date: "2020-12-23T15:21:54+05:30"
 ---
 
+{{< tooltip text="Ceva explicatii sau note" >}}
+Dă un hover pe tooltip
+{{< /tooltip >}}
+
+{{< tooltip text="Ceva explicatii sau note sau mai mult text. Da da dadadadadada" >}}
+Dă un hover pe ?
+{{< /tooltip >}}
+
+{{< tooltip text="Ceva explicatii sau note sau mai mult text. Da da dadadadadada" >}}
+Dă un hover pe tooltip
+{{< /tooltip >}}
+
+
+{{< tooltip text="Ceva explicatii sau note sau mai mult text. Da da dadadadadada" >}}
+
+$ \sum_{i=1}^{n}$ $\frac{a^{b+c}}{d^e-f_i}$ $\le \sqrt{2} $
+
+{{< /tooltip >}}
+
+$$
+\begin{align*}
+L(p,w_i) &= \frac{1}{N}\sum_{i=1}^N \left(f_r(x_2\rightarrow x_1\rightarrow x_0)G(x_1\longleftrightarrow x_2)f_r(x_3\rightarrow x_2\rightarrow x_1)\right) \\
+&= \prod_{i=3}^{k-1} \left(\frac{f_r(x_{i+1}\rightarrow x_i\rightarrow x_{i-1})G(x_i\longleftrightarrow x_{i-1})}{p_a(x_{i-1})}\right) \frac{G(x_k\longleftrightarrow x_{k-1})L_e(x_k\rightarrow x_{k-1})}{p_a(x_{k-1})p_a(x_k)}
+\end{align*}
+$$
+Ceva
+
+$$
+\begin{equation*}
+\int_{-\infty}^{\infty} e^{-\frac{x^2}{2}} \left(1 + \frac{1}{\sqrt{2\pi}} \int_{0}^{x} e^{\frac{t^2}{2}} dt \right) dx = \sqrt{\frac{\pi}{2}}
+\end{equation*}
+$$
+
+Ceva 2
+
+# Test
+
+$$
+\begin{equation*}
+\int_{-\infty}^{\infty} e^{-\frac{x^2}{2}} \left(1 + \frac{1}{\sqrt{2\pi}} \int_{0}^{x} e^{\frac{t^2}{2}} dt \right) dx = \sqrt{\frac{\pi}{2}}
+\end{equation*}
+$$
+
 [Google](https://google.com)
 
 List of check-boxes
@@ -283,13 +326,15 @@ Go to section
 ### Hello World
 ## New section
 
-This is an inline math expression: \(e^{i\pi} + 1 = 0\)
+This is an inline math expression: $e^{i\pi} + 1 = 0$, that can be interupted by 
 
 $
 e^{i\pi} + 1 = 0
 $
 
-$$e^{i\pi} + 1 = 0$$
+$$
+e^{i\pi} + 1 = 0
+$$
 
 $$
 \begin{align*}
@@ -304,8 +349,12 @@ $
 \int_{-\infty}^{\infty} e^{-x^2} \, dx = \sqrt{\pi}
 $
 
-$$
+$
 \int_{-\infty}^{\infty} e^{-x^2} \, dx = \sqrt{\pi}
+$
+
+$$
+\int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}
 $$
 
 [ceva](#heading-with-link)

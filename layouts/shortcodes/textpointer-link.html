@@ -1,4 +1,4 @@
 {{ $nametag := .Get "nametag" }}
 {{ $lines := .Get "lines" }}
 {{ $text := .Get "text" }}
-<a href='#{{ $nametag }}' class='highlightButton' data-target='{{ $nametag }}' data-params='{{ $lines }}'>{{ $text }}</a>
+<a class='highlightButton' data-target='{{ $nametag }}' data-params='{{ $lines }}'>{{ $text }}</a>

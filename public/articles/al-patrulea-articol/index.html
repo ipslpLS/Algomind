@@ -96,7 +96,7 @@
                 </a>
                 
             </div>
-            <svg class="svg-icon flex-shrink-0 toggle-button mr-4 ml-auto bg-[#f4f4f5] text-[#52525b] hover:bg-[#e4e4e7] hover:text-[#000000]" viewBox="0 0 20 20">
+            <svg class="svg-icon rounded-lg p-2 flex-shrink-0 toggle-button mr-4 ml-auto bg-[#f4f4f5] text-[#52525b] hover:bg-[#e4e4e7] hover:text-[#000000]" viewBox="0 0 20 20">
                 <path fill="none" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314
                     c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743
                     s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314
@@ -238,7 +238,7 @@ int main(int argc, char* argv[]) {
 
 
 
-<a href='#code-doi-doi' class='highlightButton' data-target='code-doi-doi' data-params='12,20,30'>Ceva</a>
+<a class='highlightButton' data-target='code-doi-doi' data-params='12,20,30'>Ceva</a>
 <p>Dat fiind că nu a fost nicio asemenea retrospectivă scrisă în 2022, am decis să reînvii această tradiție, dar mutând-o pe kilonova.</p>
 <p>2023 a adus pentru informatica românească unele dintre cele mai semnificative proiecte și schimbări în bine, schimbări ce își vor aduce efectul pozitiv de-a lungul următorilor ani. Printre altele, voi enumera coagularea comunității în jurul proiectelor Kilonova și RoAlgo, reorganizarea structurii SEPI, atingerea unui nou nivel în ceea ce privește eforturile comunității de a crea și învia diverse concursuri de informatică dar și multe alte proiecte care au avut loc, toate având scopul de a produce o schimbare de jos în sus cu scopul îmbunătățirii generale a nivelului de pregătire a concurenților și nu numai. Totuși, așa cum aceste proiecte au adus îmbunătățiri simțitoare, există și multe provocări la orizont, iar următorii ani trebuie să continue aceste schimbări apărute în acest an și nu numai.</p>
 <h1 id="coagularea-comunității-în-jurul-proiectelor-kilonova-și-roalgo">Coagularea comunității în jurul proiectelor Kilonova și RoAlgo</h1>
@@ -383,7 +383,39 @@ int main(int argc, char* argv[]) {
 
         });
     });
-        </script>
+    
+
+    var customDiv = document.querySelector('articlecontainer');
+    var elementsWithClass = document.querySelectorAll('span .base');
+
+    elementsWithClass.forEach(function (element) {
+        console.log(element);
+      if (element !== customDiv && isOverflowing(element, customDiv)) {
+        element.classList.add('scrolled-katex');
+      }
+    });
+
+    function isOverflowing(element) {
+      var elementRect = element.getBoundingClientRect();
+      var parentRect = parent.getBoundingClientRect();
+
+        let curOverf = element.style.overflow; 
+                 
+        if ( !curOverf || curOverf === "visible" ) 
+        element.style.overflow = "hidden"; 
+    
+        let isOverflowing = element.clientWidth < element.scrollWidth || element.clientHeight < element.scrollHeight; 
+    
+        element.style.overflow = curOverf;
+
+      return (
+        elementRect.left > parentRect.left ||
+        elementRect.right < parentRect.right ||
+        elementRect.top > parentRect.top ||
+        elementRect.bottom < parentRect.bottom
+      );
+    }
+    </script>
         
             
         

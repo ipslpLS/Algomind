@@ -1,3 +1,6 @@
+- 0.1.1:
+    - Updated katex overflow and scroll properties
+    - Added tooltip with custom text and markdown compatibility
 - 0.1.0:
     - Updated styling for markdown syntax
     - Added spoiler and details custom containers, line code highlight

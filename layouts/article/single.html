@@ -136,7 +136,60 @@
 
         });
     });
-        </script>
+    /*
+    var customDiv = document.querySelector('articlecontainer');
+    var elementsWithClass = document.querySelectorAll('span .base');
+
+    elementsWithClass.forEach(function (element) {
+        console.log(element);
+      if (element !== customDiv && isOverflowing(element, customDiv)) {
+        element.classList.add('scrolled-katex');
+      }
+    });
+
+    function isOverflowing(element, parent) {
+      var elementRect = element.getBoundingClientRect();
+      var parentRect = parent.getBoundingClientRect();
+
+      return (
+        elementRect.left > parentRect.left ||
+        elementRect.right < parentRect.right ||
+        elementRect.top > parentRect.top ||
+        elementRect.bottom < parentRect.bottom
+      );
+    }
+    */
+    var customDiv = document.querySelector('articlecontainer');
+    var elementsWithClass = document.querySelectorAll('span .base');
+
+    elementsWithClass.forEach(function (element) {
+        console.log(element);
+      if (element !== customDiv && isOverflowing(element, customDiv)) {
+        element.classList.add('scrolled-katex');
+      }
+    });
+
+    function isOverflowing(element) {
+      var elementRect = element.getBoundingClientRect();
+      var parentRect = parent.getBoundingClientRect();
+
+        let curOverf = element.style.overflow; 
+                 
+        if ( !curOverf || curOverf === "visible" ) 
+        element.style.overflow = "hidden"; 
+    
+        let isOverflowing = element.clientWidth < element.scrollWidth || element.clientHeight < element.scrollHeight; 
+    
+        element.style.overflow = curOverf;
+
+      return (
+        elementRect.left > parentRect.left ||
+        elementRect.right < parentRect.right ||
+        elementRect.top > parentRect.top ||
+        elementRect.bottom < parentRect.bottom
+      );
+    }
+    </script>
         
             
         

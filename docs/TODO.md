@@ -2,7 +2,7 @@
 
 [ ] Search bar
 [ ] Light and Dark theme
-[ ] Responsive design
+[x] Responsive design
 [ ] More componenet and web funtionality
 [ ] Impovement over article reading and information perception overall.
 

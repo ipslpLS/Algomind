@@ -72,23 +72,6 @@
           display: inline;
         }
 
-        .highlighted-text-test * code,
-        .highlighted-text-test * p,
-        .highlighted-text-test * blockquote,
-        .highlighted-text-test * h1,
-        .highlighted-text-test * h2,
-        .highlighted-text-test * h3,
-        .highlighted-text-test * h4,
-        .highlighted-text-test * h5,
-        .highlighted-text-test * h6 {
-          background-color: rgb(255,255,204, 0.6);
-        }
-
-        .highlighted-text-test .katex .base {
-          color: rgb(131, 101, 101);
-          background-color: rgb(255,255,204, 0.6);
-        }
-
         ul:has(> li > input[type="checkbox"]) {
           list-style-type: none;
           padding-left: 16px;
@@ -113,9 +96,63 @@
         }
       }
 
+  .katex-display {
+    overflow: auto hidden
+  }
+
+  /*Tooltip's styling*/
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+  }
+  
+  .tooltip .tooltiptext {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s, visibility 0.2s;
+    width: max(100%, 120px);
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .tooltip .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    top: 100%; /* At the bottom of the tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s, visibility 0.5s;
+  }
+
+  .tooltip:not(:hover) .tooltiptext {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  /*End of the tooltip's styling*/
+  
   .svg-icon {
-    width: 24px;
-    height: 24px;
+    width: 46px;
+    height: 46px;
   }
   
   .svg-icon path,
