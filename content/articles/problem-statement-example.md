@@ -51,10 +51,10 @@ Fișierul de ieșire `cub.out` va conține pe prima linie un număr natural repr
 Sunt $6$ subsecvențe în șir cu produsul elementelor egal cu o valoare care este cubul unui număr natural:
 
 $
-\mathbf{1)} \ \ 15,\ 3, \ 5, \ 15; \\
-\mathbf{2)} \ \ 7, \ 63, \ 21; \\
-\mathbf{3)} \ \ 125; \\
-\mathbf{4)} \ \ 15, \ 3, \ 5, \ 15, \ 7, \ 63, \ 21; \\
-\mathbf{5)} \ \ 7, \ 63, \ 21, \ 125; \\
+\mathbf{1)} \ \ 15,\ 3, \ 5, \ 15; \\\
+\mathbf{2)} \ \ 7, \ 63, \ 21; \\\
+\mathbf{3)} \ \ 125; \\\
+\mathbf{4)} \ \ 15, \ 3, \ 5, \ 15, \ 7, \ 63, \ 21; \\\
+\mathbf{5)} \ \ 7, \ 63, \ 21, \ 125; \\\
 \mathbf{6)} \ \ 15, \ 3, \ 5, \ 15, \ 7, \ 63, \ 21 \ 125;
 $

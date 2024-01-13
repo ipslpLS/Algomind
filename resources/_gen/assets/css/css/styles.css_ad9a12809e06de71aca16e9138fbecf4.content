@@ -759,7 +759,10 @@ video {
 /* Your custom styles go here */
 
   .katex-display {
-    overflow: auto hidden
+    padding-top: 1px;
+    padding-bottom: 1px;
+    overflow: auto hidden;
+    -webkit-mask: linear-gradient(90deg, #0000002e, #000000 5%, #000 95%, #0000);
   }
 
   /*Tooltip's styling*/
