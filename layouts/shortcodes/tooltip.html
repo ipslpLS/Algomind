@@ -1,4 +1,7 @@
-{{ $text := .Get "text" }}
-<div class="tooltip">{{ .Inner | markdownify | safeHTML }}
-    <span class="tooltiptext">{{ $text }}</span>
-  </div>
+{{ $mytext := .Get "text" | markdownify | safeHTML }}
+<span class="tooltip">
+  {{.Inner | markdownify | safeHTML}}
+  <span class="tooltiptext">
+    {{ $mytext }}
+  </span>
+</span>

@@ -5,26 +5,65 @@ tags: ["info", "two pointers", "dinamica", "2024", "test", "math", "greedy"]
 date: "2020-12-23T15:21:54+05:30"
 ---
 
+{{< tooltip text="# ceva doi" >}}
+This is the first paragraph.
+This is the second paragraph.
+{{< /tooltip >}}
+
+{{< tooltip text="# ceva doi" >}}
+This is the first paragraph.
+
+This is the second paragraph.
+{{< /tooltip >}}
+
+## Incercare de text mai mare
+
+Rezolvare: Este o problemă de
+{{< tooltip text="Vezi si [Combinari](https://ro.wikipedia.org/wiki/Combinatoric%C4%83)" >}}
+
+numarare
+
+{{< /tooltip >}}; dacă numerotăm treptele, observăm că pe treapta $N$ se poate ajunge de pe treapta $N-1$ (cu un pas de o treaptă) sau de pe treapta $N-2$ (cu un pas de două trepte), cazurile $N=1$ și $N=2$ fiind particulare. Atunci, numărul de variate de a urca $N$ trepte este egal cu numărul de variante de a urca $N-1$ trepte, plus numărul de variante de a urca $N-2$ trepte. Deducem deci următoarea **relație de recurență**, în care $T(n)$ reprezintă numărul de modalități de a urca o scară cu $n$ trepte:
+
+# Altceva
+
+Dat fiind că nu a fost nicio asemenea retrospectivă scrisă în 2022, am decis să reînvii această tradiție, dar mutând-o pe kilonova.
+
+2023 a adus pentru informatica românească unele dintre cele mai semnificative proiecte și schimbări în bine, schimbări ce își vor aduce efectul pozitiv de-a lungul următorilor ani. Printre altele, voi enumera coagularea comunității în jurul proiectelor Kilonova și RoAlgo, reorganizarea structurii SEPI, atingerea unui nou nivel în ceea ce privește eforturile comunității de a crea și învia diverse concursuri de informatică dar și multe alte proiecte care au avut loc, toate având scopul de a produce o schimbare de jos în sus cu scopul îmbunătățirii generale a nivelului de pregătire a concurenților și nu numai. Totuși, așa cum aceste proiecte au adus îmbunătățiri simțitoare, există și multe provocări la orizont, iar următorii ani trebuie să continue aceste schimbări apărute în acest an și nu numai.
+
 # Pagina de test pentru a vedea data avem nevoie de folderul public
 
-{{< tooltip text="Ceva explicatii sau note" >}}
-Dă un hover pe tooltip
-{{< /tooltip >}}
+În analiza matematică, suma tuturor numerelor naturale, $1 + 2 + 3 + 4 + \dotsb$ este o serie divergentă. A $n$-a sumă parțială a seriei este „numărul triunghiular”:
+$\sum_{k=1}^{n} k = \frac{n(n+1)}{2}$.
 
+Text idei speciale
+
+Text idei speciale
+
+Text idei speciale 2
+
+Some random text {{< tooltip text="Ceva explicatii sau note" >}}
+
+Dă un hover pe tooltip
+
+{{< /tooltip >}}
+text text
 {{< tooltip text="Ceva explicatii sau note sau mai mult text. Da da dadadadadada" >}}
+
 Dă un hover pe ?
-{{< /tooltip >}}
 
+{{< /tooltip >}}
 {{< tooltip text="Ceva explicatii sau note sau mai mult text. Da da dadadadadada" >}}
+
 Dă un hover pe tooltip
+
 {{< /tooltip >}}
-
-
 {{< tooltip text="Ceva explicatii sau note sau mai mult text. Da da dadadadadada" >}}
 
 $ \sum_{i=1}^{n}$ $\frac{a^{b+c}}{d^e-f_i}$ $\le \sqrt{2} $
 
 {{< /tooltip >}}
+Other text Other text 
 
 $$
 \begin{align*}
