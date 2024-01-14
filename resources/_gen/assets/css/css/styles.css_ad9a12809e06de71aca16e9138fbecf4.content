@@ -771,7 +771,7 @@ video {
   /*Tooltip's styling*/
   .tooltip {
     position: relative;
-    display: inline-block;
+    display: inline-flex;
     border-bottom: 1px dotted black;
   }
   
