@@ -107,10 +107,13 @@
   }
 
   /*Tooltip's styling*/
+  .tooltipcontenttext {
+    border-bottom: 1px dotted black;
+    display: inline-flex;
+  }
   .tooltip {
     position: relative;
-    display: inline-flex;
-    border-bottom: 1px dotted black;
+    display: inline;
   }
   
   .tooltip .tooltiptext {
