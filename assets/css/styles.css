@@ -6,6 +6,9 @@
 /* Your custom styles go here */
 @layer base {
     /* .articlecontainer { */
+        html {
+          scroll-behavior: smooth;
+        }
         h1 {
             @apply text-4xl; /* Example styles, adjust as needed */
             @apply my-3;
