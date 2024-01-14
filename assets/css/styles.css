@@ -109,11 +109,10 @@
   /*Tooltip's styling*/
   .tooltipcontenttext {
     border-bottom: 1px dotted black;
-    display: inline-flex;
+    display: inline;
   }
   .tooltip {
     position: relative;
-    display: inline;
   }
   
   .tooltip .tooltiptext {
