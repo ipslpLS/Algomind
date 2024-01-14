@@ -42,11 +42,18 @@ Text idei speciale
 
 Text idei speciale 2
 
-Some random text {{< tooltip text="Ceva explicatii sau note" >}} Dă un hover pe tooltip {{< /tooltip >}}
-text text {{< tooltip text="Ceva explicatii sau note sau mai mult text. Da da dadadadadada" >}} Dă un hover pe ? {{< /tooltip >}}
-{{< tooltip text="Ceva explicatii sau note sau mai mult text. Da da dadadadadada" >}} Dă un hover pe tooltip {{< /tooltip >}}
-{{< tooltip text="Ceva explicatii sau note sau mai mult text. Da da dadadadadada" >}} $ \sum_{i=1}^{n}$ $\frac{a^{b+c}}{d^e-f_i}$ $\le \sqrt{2} $ {{< /tooltip >}}
-Other text Other text
+
+{{< tooltip text="Ceva explicatii sau note" >}}Dă un hover pe tooltip{{< /tooltip >}}
+Idee
+
+
+
+Some random text {{< tooltip text="Ceva explicatii sau note" >}}Dă un hover pe tooltip{{< /tooltip >}}
+text text{{< tooltip text="Ceva explicatii sau note sau mai mult text. Da da dadadadadada" >}}Dă un hover pe ?{{< /tooltip >}}{{< tooltip text="Ceva explicatii sau note sau mai mult text. Da da dadadadadada" >}}Dă un hover pe tooltip{{< /tooltip >}}{{< tooltip text="Ceva explicatii sau note sau mai mult text. Da da dadadadadada" >}}$\sum_{i=1}^{n}\frac{a^{b+c}}{d^e-f_i}\le \sqrt{2}${{< /tooltip >}} Other text Other text
+
+
+
+Some random text Dă un hover pe tooltip text text Dă un hover pe ? Dă un hover pe tooltip $\sum_{i=1}^{n}\frac{a^{b+c}}{d^e-f_i}\le \sqrt{2}$ Other text Other text
 
 
 $$

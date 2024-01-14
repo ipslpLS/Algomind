@@ -1,7 +1,5 @@
 {{ $mytext := .Get "text" | markdownify | safeHTML }}
 <span class="tooltip">
-  {{.Inner | markdownify | safeHTML}}
-  <span class="tooltiptext">
-    {{ $mytext }}
-  </span>
+  {{.Inner | $.Page.RenderString (dict "display" "block") | markdownify | safeHTML }}
+  <span class="tooltiptext">{{ $mytext }}</span>
 </span>
