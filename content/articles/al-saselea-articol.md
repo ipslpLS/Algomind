@@ -42,28 +42,12 @@ Text idei speciale
 
 Text idei speciale 2
 
-Some random text {{< tooltip text="Ceva explicatii sau note" >}}
+Some random text {{< tooltip text="Ceva explicatii sau note" >}} Dă un hover pe tooltip {{< /tooltip >}}
+text text {{< tooltip text="Ceva explicatii sau note sau mai mult text. Da da dadadadadada" >}} Dă un hover pe ? {{< /tooltip >}}
+{{< tooltip text="Ceva explicatii sau note sau mai mult text. Da da dadadadadada" >}} Dă un hover pe tooltip {{< /tooltip >}}
+{{< tooltip text="Ceva explicatii sau note sau mai mult text. Da da dadadadadada" >}} $ \sum_{i=1}^{n}$ $\frac{a^{b+c}}{d^e-f_i}$ $\le \sqrt{2} $ {{< /tooltip >}}
+Other text Other text
 
-Dă un hover pe tooltip
-
-{{< /tooltip >}}
-text text
-{{< tooltip text="Ceva explicatii sau note sau mai mult text. Da da dadadadadada" >}}
-
-Dă un hover pe ?
-
-{{< /tooltip >}}
-{{< tooltip text="Ceva explicatii sau note sau mai mult text. Da da dadadadadada" >}}
-
-Dă un hover pe tooltip
-
-{{< /tooltip >}}
-{{< tooltip text="Ceva explicatii sau note sau mai mult text. Da da dadadadadada" >}}
-
-$ \sum_{i=1}^{n}$ $\frac{a^{b+c}}{d^e-f_i}$ $\le \sqrt{2} $
-
-{{< /tooltip >}}
-Other text Other text 
 
 $$
 \begin{align*}
