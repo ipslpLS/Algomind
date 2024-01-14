@@ -772,6 +772,8 @@ video {
   .tooltipcontenttext {
     border-bottom: 1px dotted black;
     display: inline;
+    background-color: rgba(255, 166, 0, 0);
+    transition: background-color 0.25s, border-bottom 0.25s;
   }
   .tooltip {
     position: relative;
@@ -811,6 +813,10 @@ video {
     opacity: 1;
     visibility: visible;
     transition: opacity 0.5s, visibility 0.5s;
+  }
+  .tooltip:hover .tooltipcontenttext {
+    background-color: rgba(255, 167, 0, 0.05);
+    border-bottom: 1px dotted rgb(255, 183, 0);
   }
 
   .tooltip:not(:hover) .tooltiptext {

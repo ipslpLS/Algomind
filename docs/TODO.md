@@ -4,7 +4,8 @@
 - [ ] Search bar
 - [ ] Light and Dark theme
 - [ ] More componenet and web funtionality
-- [ ] Impovement over article reading and information perception overall.
+- [ ] Impovement over article reading and information perception overall
+- [ ] Tooltip-container for math
 - [x] Responsive design
 
 UI and UX are under constant improvement of course.
