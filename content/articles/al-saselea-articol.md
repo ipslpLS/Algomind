@@ -49,7 +49,7 @@ Text idei speciale
 Text idei speciale 2
 
 
-{{< tooltip text="Ceva explicatii sau note" >}} Dă un hover pe tooltip {{< /tooltip >}} Idee
+{{< tooltip text="Ceva explicatii sau note" >}} Dă un hover pe tooltip  {{< /tooltip >}} Idee
 
 
 
