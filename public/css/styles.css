@@ -428,12 +428,19 @@ video {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
 }
+        p {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
         ul {
   list-style-type: disc;
             padding-left: 16px;
 }
         li {
             list-style-position: inside;
+        }
+        ol {
+          list-style-type: decimal;
         }
         /* } */
         blockquote {
@@ -445,7 +452,7 @@ video {
         }
         .header-link {
           padding-left: 0.5rem;
-          color:rgba(39, 39, 39, 0.5);
+          color:#888686;
           opacity:0.5;
           transition: opacity 0.2s, color 0.2s;
         }
@@ -484,7 +491,7 @@ video {
                   text-decoration: underline rgb(80, 80, 218);
         }
 
-        .highlightButton a {
+        .highlightButton {
           text-decoration: none;
           border-radius: 0.2rem;
           padding: 0.25rem;
@@ -761,6 +768,10 @@ video {
 
 /* Your custom styles go here */
 
+  p .katex {
+    font-size: 1.21rem;
+  }
+  
   .katex-display {
     padding-top: 1px;
     padding-bottom: 1px;
@@ -770,32 +781,39 @@ video {
 
   /*Tooltip's styling*/
   .tooltipcontenttext {
-    border-bottom: 1px dotted black;
-    display: inline;
     background-color: rgba(255, 166, 0, 0);
-    transition: background-color 0.25s, border-bottom 0.25s;
+    transition: background-color 0.25s;
+  }
+  .tooltipcontenttext:not(:has(.katex)) {
+    border-bottom: 1px dotted black;
+    transition: border-bottom 0.25s;
   }
   .tooltip {
     position: relative;
+    display: inline-block;
   }
   
   .tooltip .tooltiptext {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.2s, visibility 0.2s;
-    width: max(100%, 120px);
+    width: max-width;
     background-color: black;
     color: #fff;
     text-align: center;
     border-radius: 6px;
-    padding: 5px 0;
+    padding: 0.3rem 0.2rem;
     
     /* Position the tooltip */
     position: absolute;
     z-index: 1;
-    bottom: 120%;
+    bottom: 110%;
     left: 50%;
     transform: translateX(-50%);
+
+    .header-link {
+      color: #c5c5c5;
+    }
   }
   
   .tooltip .tooltiptext::after {
@@ -816,6 +834,8 @@ video {
   }
   .tooltip:hover .tooltipcontenttext {
     background-color: rgba(255, 167, 0, 0.05);
+  }
+  .tooltip:hover .tooltipcontenttext:not(:has(.katex)) {
     border-bottom: 1px dotted rgb(255, 183, 0);
   }
 

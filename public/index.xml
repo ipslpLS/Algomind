@@ -16,6 +16,13 @@
       <description>Ionel are de rezolvat o nouă problemă. El trebuie să construiască un șir de N numere naturale. Numerele din șir pot avea ca divizori primi doar numere prime de o cifră. După construirea șirului, Ionel a constatat că există subsecvențe în șir pentru care produsul elementelor este cubul unui număr natural.&#xA;Cerința Ionel vrea să determine numărul subsecvențelor din șirul construit care au produsul elementelor o valoare ce este cubul unui număr natural.</description>
     </item>
     <item>
+      <title>Algoritmi-geometrici</title>
+      <link>/articles/algoritmi-geometrici/</link>
+      <pubDate>Sat, 23 Dec 2023 15:21:54 +0530</pubDate>
+      <guid>/articles/algoritmi-geometrici/</guid>
+      <description>$$\mathnormal{ \it{\log(a \cdot b) = \log(a) + \log(b),} }$$ $$\mathnormal{ \log(b) }$$&#xA;$$\log(a \cdot b) = \log(a) + \log(b)$$&#xA;Solutia in $O(n)$ 1. Notiuni generale 1.1 Drepte Ecuația unei drepte în plan Forma generală a ecuației unei drepte d în sistemul de coordonate $xOy$ este următoarea:&#xA;$$ \begin{align} d: ax + by + c = 0 \end{align} $$&#xA;Orice punct $M(x,y)$ de pe dreapta d verifică ecuația $(1)$&#xA;Ecuaia unei drepte care trece prin dou puncte date $A(xA,yA)$ i $B(xB,yB)$ este urmtoarea:</description>
+    </item>
+    <item>
       <title>Retrospectiva Anului 2023</title>
       <link>/articles/al-patrulea-articol/</link>
       <pubDate>Sat, 23 Dec 2023 15:21:54 +0530</pubDate>
@@ -27,7 +34,7 @@
       <link>/articles/al-cincilea-articol/</link>
       <pubDate>Wed, 23 Dec 2020 15:21:54 +0530</pubDate>
       <guid>/articles/al-cincilea-articol/</guid>
-      <description>Dă un hover pe tooltip Ceva explicatii sau note Dă un hover pe ? Ceva explicatii sau note sau mai mult text. Da da dadadadadada Dă un hover pe tooltip Ceva explicatii sau note sau mai mult text. Da da dadadadadada $ \sum_{i=1}^{n}$ $\frac{a^{b+c}}{d^e-f_i}$ $\le \sqrt{2} $ Ceva explicatii sau note sau mai mult text. Da da dadadadadada $$ \begin{align*} L(p,w_i) &amp;amp;= \frac{1}{N}\sum_{i=1}^N \left(f_r(x_2\rightarrow x_1\rightarrow x_0)G(x_1\longleftrightarrow x_2)f_r(x_3\rightarrow x_2\rightarrow x_1)\right) \ &amp;amp;= \prod_{i=3}^{k-1} \left(\frac{f_r(x_{i+1}\rightarrow x_i\rightarrow x_{i-1})G(x_i\longleftrightarrow x_{i-1})}{p_a(x_{i-1})}\right) \frac{G(x_k\longleftrightarrow x_{k-1})L_e(x_k\rightarrow x_{k-1})}{p_a(x_{k-1})p_a(x_k)} \end{align*} $$ Ceva</description>
+      <description>Ceva explicatii sau note Dă un hover pe tooltip Ceva explicatii sau note sau mai mult text. Da da dadadadadada Dă un hover pe ? Ceva explicatii sau note sau mai mult text. Da da dadadadadada Dă un hover pe tooltip Ceva explicatii sau note sau mai mult text. Da da dadadadadada $ \sum_{i=1}^{n}$ $\frac{a^{b+c}}{d^e-f_i}$ $\le \sqrt{2} $ $$ \begin{align*} L(p,w_i) &amp;amp;= \frac{1}{N}\sum_{i=1}^N \left(f_r(x_2\rightarrow x_1\rightarrow x_0)G(x_1\longleftrightarrow x_2)f_r(x_3\rightarrow x_2\rightarrow x_1)\right) \ &amp;amp;= \prod_{i=3}^{k-1} \left(\frac{f_r(x_{i+1}\rightarrow x_i\rightarrow x_{i-1})G(x_i\longleftrightarrow x_{i-1})}{p_a(x_{i-1})}\right) \frac{G(x_k\longleftrightarrow x_{k-1})L_e(x_k\rightarrow x_{k-1})}{p_a(x_{k-1})p_a(x_k)} \end{align*} $$ Ceva</description>
     </item>
     <item>
       <title>Al doilea articol</title>
@@ -41,7 +48,7 @@
       <link>/articles/al-saselea-articol/</link>
       <pubDate>Wed, 23 Dec 2020 15:21:54 +0530</pubDate>
       <guid>/articles/al-saselea-articol/</guid>
-      <description>This is the first paragraph haios . This is the second paragraph. This is the first paragraph. This is the second paragraph. haios AThis is the first paragraph. haios This is the second paragraph. This is the first paragraph. This is the second paragraph. This is the first paragraph. This is the second paragraph. This is the first paragraph. This is the second paragraph. This is the first paragraph. This is the second paragraph.</description>
+      <description>This is the first haios paragraph . This is the second paragraph. haios This is the first paragraph. This is the second paragraph. AThis is the haios first paragraph. This is the second paragraph. This is the first paragraph. This is the second paragraph. This is the first paragraph. This is the second paragraph. This is the first paragraph. This is the second paragraph. This is the first paragraph. This is the second paragraph.</description>
     </item>
     <item>
       <title>About</title>
