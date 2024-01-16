@@ -7,9 +7,8 @@ date: "2020-12-23T15:21:54+05:30"
 
 This is the first
 {{< tooltip text="haios" >}} paragraph {{< /tooltip >}}.
-This is the second paragraph. {{< tooltip text="haios" >}}This is the first paragraph. This is the second paragraph.{{< /tooltip >}} This is the
-{{< tooltip text="haios" >}}first paragraph.{{< /tooltip >}}
- This is the second paragraph. This is the first paragraph. This is the second paragraph. This is the first paragraph. This is the second paragraph. This is the first paragraph. This is the second paragraph. This is the first paragraph. This is the second paragraph. This is the first paragraph. This is the second paragraph. This is the first paragraph. This is the second paragraph. This is the first paragraph. This is the second paragraph.
+This is the second paragraph.  {{< tooltip text="haios" >}}This is the first paragraph. This is the second paragraph.{{< /tooltip >}}      This is the
+{{< tooltip text="haios" >}}first paragraph.{{< /tooltip >}}                        This is the second paragraph. This is the first paragraph. This is the second paragraph. This is the first paragraph. This is the second paragraph. This is the first paragraph. This is the second paragraph. This is the first paragraph. This is the second paragraph. This is the first paragraph. This is the second paragraph. This is the first paragraph. This is the second paragraph. This is the first paragraph. This is the second paragraph.
 
 
 
@@ -58,7 +57,7 @@ Text idei speciale 2
 
 
 Some random text {{< tooltip text="Ceva explicatii sau note" >}} Dă un hover pe tooltip {{< /tooltip >}} 
-text text {{< tooltip text="Ceva explicatii sau note sau mai mult text. Da da dadadadadada" >}} Dă un hover pe ? {{< /tooltip >}} {{< tooltip text="Ceva explicatii sau note sau mai mult text. Da da dadadadadada" >}} Dă un hover pe tooltip {{< /tooltip >}} {{< tooltip text="Ceva explicatii sau note sau mai mult text. Da da dadadadadada" >}} $\sum_{i=1}^{n}\frac{a^{b+c}}{d^e-f_i}\le \sqrt{2}${{< /tooltip >}} {{< tooltip text="Ceva explicatii sau note sau mai mult text. Da da dadadadadada" >}} $\sum_{i=1}^{n}\frac{a^{b+c}}{d^e-f_i}\le \sqrt{2}$ {{< /tooltip >}} Other text Other text
+text text {{< tooltip text="Ceva explicatii sau note sau mai mult text. Da da dadadadadada" >}} Dă un hover pe ? {{< /tooltip >}}       {{< tooltip text="Ceva explicatii sau note sau mai mult text. Da da dadadadadada" >}}Dă un hover pe tooltip {{< /tooltip >}}         {{< tooltip text="Ceva explicatii sau note sau mai mult text. Da da dadadadadada" >}} $\sum_{i=1}^{n}\frac{a^{b+c}}{d^e-f_i}\le \sqrt{2}${{< /tooltip >}}         {{< tooltip text="Ceva explicatii sau note sau mai mult text. Da da dadadadadada" >}} $\sum_{i=1}^{n}\frac{a^{b+c}}{d^e-f_i}\le \sqrt{2}$ {{< /tooltip >}}         Other text Other text
 
 
 
