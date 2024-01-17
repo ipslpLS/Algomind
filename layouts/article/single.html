@@ -190,6 +190,68 @@
       );
     }
     </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          var tooltips = document.querySelectorAll('.tooltip');
+          var activeTooltip = null;
+    
+          document.addEventListener('click', function (event) {
+            // Check if the clicked element has the "active-style" class
+            var clickedElement = event.target;
+    
+            // Reset active tooltip if clicking elsewhere
+            if (!clickedElement.matches('.tooltip')) {
+              if (activeTooltip) {
+                activeTooltip.classList.remove('active-style');
+                activeTooltip = null;
+              }
+              return;
+            }
+    
+            // Toggle the active style for the clicked tooltip
+            clickedElement.classList.toggle('active-style');
+    
+            // Remove the active style from the previous active tooltip
+            if (activeTooltip && activeTooltip !== clickedElement) {
+              activeTooltip.classList.remove('active-style');
+            }
+    
+            // Update the active tooltip
+            activeTooltip = clickedElement;
+          });
+        });
+      </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var tooltips = document.querySelectorAll('.tooltip');
+        var activeTooltip = null;
+
+        document.addEventListener('touchend', function (event) {
+        // Check if the clicked element has the "active-style" class
+        var clickedElement = event.target;
+
+        // Reset active tooltip if clicking elsewhere
+        if (!clickedElement.matches('.tooltip')) {
+            if (activeTooltip) {
+            activeTooltip.classList.remove('active-style');
+            activeTooltip = null;
+            }
+            return;
+        }
+
+        // Toggle the active style for the clicked tooltip
+        clickedElement.classList.toggle('active-style');
+
+        // Remove the active style from the previous active tooltip
+        if (activeTooltip && activeTooltip !== clickedElement) {
+            activeTooltip.classList.remove('active-style');
+        }
+
+        // Update the active tooltip
+        activeTooltip = clickedElement;
+        });
+    });
+    </script>
         <!--
             document.addEventListener('DOMContentLoaded', (event) => {
 			document.querySelectorAll('pre code').forEach((block) => {

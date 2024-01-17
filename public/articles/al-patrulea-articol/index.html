@@ -417,6 +417,68 @@ int main(int argc, char* argv[]) {
       );
     }
     </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          var tooltips = document.querySelectorAll('.tooltip');
+          var activeTooltip = null;
+    
+          document.addEventListener('click', function (event) {
+            
+            var clickedElement = event.target;
+    
+            
+            if (!clickedElement.matches('.tooltip')) {
+              if (activeTooltip) {
+                activeTooltip.classList.remove('active-style');
+                activeTooltip = null;
+              }
+              return;
+            }
+    
+            
+            clickedElement.classList.toggle('active-style');
+    
+            
+            if (activeTooltip && activeTooltip !== clickedElement) {
+              activeTooltip.classList.remove('active-style');
+            }
+    
+            
+            activeTooltip = clickedElement;
+          });
+        });
+      </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var tooltips = document.querySelectorAll('.tooltip');
+        var activeTooltip = null;
+
+        document.addEventListener('touchend', function (event) {
+        
+        var clickedElement = event.target;
+
+        
+        if (!clickedElement.matches('.tooltip')) {
+            if (activeTooltip) {
+            activeTooltip.classList.remove('active-style');
+            activeTooltip = null;
+            }
+            return;
+        }
+
+        
+        clickedElement.classList.toggle('active-style');
+
+        
+        if (activeTooltip && activeTooltip !== clickedElement) {
+            activeTooltip.classList.remove('active-style');
+        }
+
+        
+        activeTooltip = clickedElement;
+        });
+    });
+    </script>
         
     </div>
 </div>

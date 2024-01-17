@@ -173,8 +173,22 @@
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
   }
+
+  .tooltip:not(:hover) .tooltiptext {
+    opacity: 0;
+    visibility: hidden;
+  }
+  .tooltip:not(:has(.active-style)) .tooltiptext {
+    opacity: 0;
+    visibility: hidden;
+  }
   
   .tooltip:hover .tooltiptext {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s, visibility 0.5s;
+  }
+  .tooltip:has(.active-style) .tooltiptext {
     opacity: 1;
     visibility: visible;
     transition: opacity 0.5s, visibility 0.5s;
@@ -182,13 +196,14 @@
   .tooltip:hover .tooltipcontenttext {
     background-color: rgba(255, 167, 0, 0.05);
   }
+  .tooltip:has(.active-style) .tooltipcontenttext {
+    background-color: rgba(255, 167, 0, 0.05);
+  }
   .tooltip:hover .tooltipcontenttext:not(:has(.katex)) {
     border-bottom: 1px dotted rgb(255, 183, 0);
   }
-
-  .tooltip:not(:hover) .tooltiptext {
-    opacity: 0;
-    visibility: hidden;
+  .tooltip:has(.active-style) .tooltipcontenttext:not(:has(.katex)) {
+    border-bottom: 1px dotted rgb(255, 183, 0);
   }
 
   /*End of the tooltip's styling*/
