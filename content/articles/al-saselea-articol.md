@@ -15,7 +15,6 @@ This is the second paragraph.  {{< tooltip text="haios" >}}This is the first par
 
 
 {{< tooltip text="# ceva doi" >}}
-
 This is the first paragraph. This is the second paragraph. This is the first paragraph. This is the second paragraph. This is the first paragraph. This is the second paragraph. This is the first paragraph. This is the second paragraph. This is the first paragraph. This is the second paragraph. This is the first paragraph. This is the second paragraph. This is the first paragraph. This is the second paragraph. This is the first paragraph. This is the second paragraph. This is the first paragraph. This is the second paragraph. This is the first paragraph. This is the second paragraph.
 {{< /tooltip >}}
 

@@ -478,7 +478,7 @@ video {
         }
 
         .articlecontainer a:not(.header-link, .highlightButton, nav-link) {
-          color:rgb(80, 80, 218);
+          color:#0099ff;
           -webkit-text-decoration: underline rgba(80, 80, 218, 0);
                   text-decoration: underline rgba(80, 80, 218, 0);
           transition: -webkit-text-decoration 0.3s;
@@ -487,8 +487,8 @@ video {
         }
 
         .articlecontainer a:not(.header-link, .highlightButton, nav-link):hover {
-          -webkit-text-decoration: underline rgb(80, 80, 218);
-                  text-decoration: underline rgb(80, 80, 218);
+          -webkit-text-decoration: underline #0099ff;
+                  text-decoration: underline #0099ff;
         }
 
         .highlightButton {
@@ -780,24 +780,30 @@ video {
   }
 
   /*Tooltip's styling*/
+  .tooltip {
+    display: inline-block;
+    position: relative;
+  }
+
   .tooltipcontenttext {
     background-color: rgba(255, 166, 0, 0);
     transition: background-color 0.25s;
+    
   }
   .tooltipcontenttext:not(:has(.katex)) {
     border-bottom: 1px dotted black;
     transition: border-bottom 0.25s;
   }
-  .tooltip {
-    position: relative;
-    display: inline-block;
-  }
   
+  .tooltiptext {
+
+  }
+
   .tooltip .tooltiptext {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.2s, visibility 0.2s;
-    width: max-width;
+    max-width: 200px;
     background-color: black;
     color: #fff;
     text-align: center;
@@ -811,15 +817,15 @@ video {
     left: 50%;
     transform: translateX(-50%);
 
-    .header-link {
-      color: #c5c5c5;
-    }
+  }
+  .tooltip .tooltiptext .header-link {
+    color: #c5c5c5;
   }
   
   .tooltip .tooltiptext::after {
     content: " ";
     position: absolute;
-    top: 100%; /* At the bottom of the tooltip */
+    top: 100%;
     left: 50%;
     margin-left: -5px;
     border-width: 5px;
