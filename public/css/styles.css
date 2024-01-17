@@ -477,8 +477,8 @@ video {
           padding-left: 16px;
         }
 
-        .articlecontainer a:not(.header-link, .highlightButton, nav-link, .tooltip) {
-          color:blue;
+        .articlecontainer a:not(.header-link, .highlightButton, nav-link) {
+          color:#0099ff;
           -webkit-text-decoration: underline rgba(80, 80, 218, 0);
                   text-decoration: underline rgba(80, 80, 218, 0);
           transition: -webkit-text-decoration 0.3s;
@@ -486,19 +486,9 @@ video {
           transition: text-decoration 0.3s, -webkit-text-decoration 0.3s;
         }
 
-        .articlecontainer a:not(.header-link, .highlightButton, nav-link, .tooltip):hover {
-          -webkit-text-decoration: underline blue;
-                  text-decoration: underline blue;
-        }
-
-        .tooltip .tooltiptext a {
-          color:rgb(193, 193, 255);
-          -webkit-text-decoration: underline rgba(80, 80, 218, 0);
-                  text-decoration: underline rgba(80, 80, 218, 0);
-        }
-        .tooltip .tooltipxtext a:hover {
-          -webkit-text-decoration: underline rgb(193, 193, 255);
-                  text-decoration: underline rgb(193, 193, 255);
+        .articlecontainer a:not(.header-link, .highlightButton, nav-link):hover {
+          -webkit-text-decoration: underline #0099ff;
+                  text-decoration: underline #0099ff;
         }
 
         .highlightButton {
