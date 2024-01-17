@@ -133,7 +133,7 @@
   }
   
   .tooltiptext {
-
+  
   }
 
   .tooltip .tooltiptext {
@@ -148,6 +148,7 @@
     padding: 0.3rem 0.2rem;
     
     /* Position the tooltip */
+    margin-right: 0.3rem;
     position: absolute;
     z-index: 1;
     bottom: 110%;
@@ -164,7 +165,6 @@
     position: absolute;
     top: 100%;
     left: 50%;
-    margin-left:0.5rem;
     border-width: 5px;
     border-style: solid;
     border-color: black transparent transparent transparent;
