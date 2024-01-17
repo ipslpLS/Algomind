@@ -783,7 +783,6 @@ video {
   .tooltip {
     display: inline-block;
     position: relative;
-    margin-left:0.5rem;
   }
 
   .tooltipcontenttext {
@@ -828,7 +827,7 @@ video {
     position: absolute;
     top: 100%;
     left: 50%;
-    margin-left: -5px;
+    margin-left:0.5rem;
     border-width: 5px;
     border-style: solid;
     border-color: black transparent transparent transparent;
