@@ -3,6 +3,8 @@ title: "Al cinci-lea articol"
 type: "article"
 tags: ["info", "two pointers", "dinamica", "2020", "test"]
 date: "2020-12-23T15:21:54+05:30"
+images:
+    - "https://source.unsplash.com/white-and-black-lego-toy-B7N0IjiIJYo"
 ---
 
 {{< tooltip text="Ceva explicatii sau note" >}}

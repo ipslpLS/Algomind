@@ -2,6 +2,8 @@
 
 <h1>{{ .Title }}</h1>
 
+Lista de articole educationale
+
 <div class="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
   {{ range.Data.Pages }}
   <article class="px-0 py-8 mx-2 md:mx-8 my-8 bg-[#fafafa] shadow-md">
@@ -11,16 +13,22 @@
     <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
       {{ .Date.Format "2/1/2006" }}
     </time>
-    {{ with .Params.images }}
-    {{ range . }}
-    <img class="h-20 md:h-40" src="{{ relURL (printf "images/%s" .) }}" alt="Article Image">
-    {{ end }}
-    {{ end }}
-    <div class="px-0 py-8 mx-2 md:mx-8 my-8 bg-[#fafafa] shadow-md">
-      <div class="max-w-3xl mx-auto px-0">
-          {{ range .Params.tags }}
-              <a class="ml-2 basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2" href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}/">#{{ . }}</a>
-          {{ end }}
+    <div class="mx-2 my-2 md:mx-8 md:my-8 bg-[#fafafa]">
+      {{ range .Params.images }}
+      {{ if strings.HasPrefix . "http" }}
+      <!-- External image -->
+      <img class="object-cover rounded-t-md" src="{{ . }}" alt="External Image Description">
+      {{ else }}
+      <!-- Local image -->
+      <img class="object-cover rounded-t-md" src="{{ relURL (printf "images/%s" .) }}" alt="Local Image Description">
+      {{ end }}
+      {{ end }}
+      <div class="bg-white rounded-b-md shadow-md">
+        <div class="p-4 max-w-3xl space-x-0.5 space-y-1">
+            {{ range .Params.tags }}
+                <a class="rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}/">{{ . }}</a>
+            {{ end }}
+        </div>
       </div>
     </div>
   </article>
