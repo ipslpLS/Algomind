@@ -781,8 +781,9 @@ video {
 
   /*Tooltip's styling*/
   .tooltip {
-    display: inline;
+    display: inline-block;
     position: relative;
+    margin-left:0.5rem;
   }
 
   .tooltipcontenttext {
