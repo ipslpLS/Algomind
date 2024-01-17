@@ -118,7 +118,7 @@
 
   /*Tooltip's styling*/
   .tooltip {
-    display: inline;
+    display: inline-block;
     position: relative;
     margin-right: 0.3rem;
   }
