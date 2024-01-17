@@ -824,6 +824,7 @@ video {
   .tooltip {
     display: inline-block;
     position: relative;
+    margin-right: 0.3rem;
   }
 
   .tooltipcontenttext {
