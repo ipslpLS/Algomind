@@ -817,7 +817,6 @@ video {
     bottom: 110%;
     left: 50%;
     transform: translateX(-50%);
-
   }
   .tooltip .tooltiptext .header-link {
     color: #c5c5c5;

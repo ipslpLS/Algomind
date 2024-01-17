@@ -138,6 +138,7 @@
   }
 
   .tooltip .tooltiptext {
+    box-sizing: border-box;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.2s, visibility 0.2s;
@@ -153,8 +154,9 @@
     z-index: 1;
     bottom: 110%;
     left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
     transform: translateX(-50%);
-
   }
   .tooltip .tooltiptext .header-link {
     color: #c5c5c5;
