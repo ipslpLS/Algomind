@@ -170,6 +170,8 @@
     border-width: 5px;
     border-style: solid;
     border-color: black transparent transparent transparent;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
   }
   
   .tooltip:hover .tooltiptext {
