@@ -120,6 +120,7 @@
   .tooltip {
     display: inline-block;
     position: relative;
+    margin-right: 0.3rem;
   }
 
   .tooltipcontenttext {
@@ -148,7 +149,6 @@
     padding: 0.3rem 0.2rem;
     
     /* Position the tooltip */
-    margin-right: 0.3rem;
     position: absolute;
     z-index: 1;
     bottom: 110%;
