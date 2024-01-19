@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
           ? partialMatches.map(result => `
             <div class="SearchResultElement">
               <h2><a href="${result.item.url}">${result.item.title}</a></h2>
-              <p>Tags: ${result.item.tags.map(tag => `<a href="/tags/${tag}/">#${tag}</a>`).join(", ")}</p>
+              <p>Tags: ${result.item.tags.map(tag => `<a href="https://ipslpls.github.io/Algomind/tags/${tag}/">#${tag}</a>`).join(", ")}</p>
             </div>
           `).join("")
           : tagSearch
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 .map(post => `
                   <div class="SearchResultElement">
                     <h3><a href="${post.url}">${post.title}</a></h3>
-                    <p>Tags: ${post.tags.map(tag => `<a href="/tags/${tag}/">#${tag}</a>`).join(", ")}</p>
+                    <p>Tags: ${post.tags.map(tag => `<a href="https://ipslpls.github.io/Algomind/tags/${tag}/">#${tag}</a>`).join(", ")}</p>
                   </div>
                 `).join("")
             : "";
