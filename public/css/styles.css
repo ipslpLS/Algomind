@@ -826,6 +826,8 @@ video {
     background-color: #fafafa;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-top: 0.25rem;
     border-radius: 0.7rem;
   }
   p .katex {
