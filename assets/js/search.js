@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const searchInput = document.getElementById("search-input");
     const searchResults = document.getElementById("search-results");
   
-    fetch("/Algomind/content/data/search.json")
+    fetch("/Algomind/blob/main/content/data/search.json")
       .then(response => {
         if (!response.ok) {
           throw new Error(`Network response was not ok: ${response.status}`);
