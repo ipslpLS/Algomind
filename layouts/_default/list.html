@@ -4,11 +4,18 @@
 
 Lista de articole educationale
 
+<div>
+  <form id="search-form" class="flex justify-center">
+    <input class="border-2 border-stone-500 rounded-lg p-2" type="text" id="search-input" placeholder="Search tags or titles...">
+  </form>
+</div>
+<div id="search-results"></div>
+
 <div class="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
   {{ range.Data.Pages }}
   <article class="px-0 py-8 mx-2 md:mx-8 my-8 bg-[#fafafa] shadow-md">
     <h3>
-      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      <a class="article-title"href="{{ .RelPermalink }}">{{ .Title }}</a>
     </h3>
     <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
       {{ .Date.Format "2/1/2006" }}
@@ -26,7 +33,7 @@ Lista de articole educationale
       <div class="bg-white rounded-b-md shadow-md">
         <div class="p-4 max-w-3xl space-x-0.5 space-y-1">
             {{ range .Params.tags }}
-                <a class="rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}/">{{ . }}</a>
+                <a class="article-tag rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}/">{{ . }}</a>
             {{ end }}
         </div>
       </div>

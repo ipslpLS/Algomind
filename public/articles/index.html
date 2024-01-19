@@ -9,6 +9,9 @@
 	
 	<link rel="stylesheet" href="/css/styles.css" integrity="" media="screen">
 	
+	<script src="https://cdn.jsdelivr.net/npm/fuse.js"></script>
+	
+	<script src="/js/search.min.95e14f958c705e89900bb32e151d031777560cb7cf792cfb6f62e84761978b58.js" integrity="sha256-leFPlYxwXomQC7MuFR0DF3dWDLfPeSz7b2LoR2GXi1g="></script>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 	<script src="//cdn.jsdelivr.net/gh/TRSasasusu/highlightjs-highlight-lines.js@1.1.5/highlightjs-highlight-lines.min.js"></script>
@@ -129,11 +132,18 @@
 
 Lista de articole educationale
 
+<div>
+  <form id="search-form" class="flex justify-center">
+    <input class="border-2 border-stone-500 rounded-lg p-2" type="text" id="search-input" placeholder="Search tags or titles...">
+  </form>
+</div>
+<div id="search-results"></div>
+
 <div class="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
   
   <article class="px-0 py-8 mx-2 md:mx-8 my-8 bg-[#fafafa] shadow-md">
     <h3>
-      <a href="/articles/problem-statement-example/">Problem Statement Example</a>
+      <a class="article-title"href="/articles/problem-statement-example/">Problem Statement Example</a>
     </h3>
     <time datetime="2024-01-01T15:21:54&#43;05:30">
       1/1/2024
@@ -148,11 +158,11 @@ Lista de articole educationale
       <div class="bg-white rounded-b-md shadow-md">
         <div class="p-4 max-w-3xl space-x-0.5 space-y-1">
             
-                <a class="rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/probleme/">probleme</a>
+                <a class="article-tag rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/probleme/">probleme</a>
             
-                <a class="rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/enunt/">enunt</a>
+                <a class="article-tag rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/enunt/">enunt</a>
             
-                <a class="rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/2024/">2024</a>
+                <a class="article-tag rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/2024/">2024</a>
             
         </div>
       </div>
@@ -161,7 +171,7 @@ Lista de articole educationale
   
   <article class="px-0 py-8 mx-2 md:mx-8 my-8 bg-[#fafafa] shadow-md">
     <h3>
-      <a href="/articles/algoritmi-geometrici/">Algoritmi-geometrici</a>
+      <a class="article-title"href="/articles/algoritmi-geometrici/">Algoritmi-geometrici</a>
     </h3>
     <time datetime="2023-12-23T15:21:54&#43;05:30">
       23/12/2023
@@ -171,9 +181,11 @@ Lista de articole educationale
       <div class="bg-white rounded-b-md shadow-md">
         <div class="p-4 max-w-3xl space-x-0.5 space-y-1">
             
-                <a class="rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/geometrie/">geometrie</a>
+                <a class="article-tag rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/geometrie/">geometrie</a>
             
-                <a class="rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/programare-competitionala/">programare competitionala</a>
+                <a class="article-tag rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/programare-competitionala/">programare competitionala</a>
+            
+                <a class="article-tag rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/ceva/">ceva</a>
             
         </div>
       </div>
@@ -182,7 +194,7 @@ Lista de articole educationale
   
   <article class="px-0 py-8 mx-2 md:mx-8 my-8 bg-[#fafafa] shadow-md">
     <h3>
-      <a href="/articles/al-patrulea-articol/">Retrospectiva Anului 2023</a>
+      <a class="article-title"href="/articles/al-patrulea-articol/">Retrospectiva Anului 2023</a>
     </h3>
     <time datetime="2023-12-23T15:21:54&#43;05:30">
       23/12/2023
@@ -197,11 +209,11 @@ Lista de articole educationale
       <div class="bg-white rounded-b-md shadow-md">
         <div class="p-4 max-w-3xl space-x-0.5 space-y-1">
             
-                <a class="rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/informatii/">informatii</a>
+                <a class="article-tag rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/informatii/">informatii</a>
             
-                <a class="rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/anunturi/">anunturi</a>
+                <a class="article-tag rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/anunturi/">anunturi</a>
             
-                <a class="rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/2023/">2023</a>
+                <a class="article-tag rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/2023/">2023</a>
             
         </div>
       </div>
@@ -210,7 +222,7 @@ Lista de articole educationale
   
   <article class="px-0 py-8 mx-2 md:mx-8 my-8 bg-[#fafafa] shadow-md">
     <h3>
-      <a href="/articles/al-cincilea-articol/">Al cinci-lea articol</a>
+      <a class="article-title"href="/articles/al-cincilea-articol/">Al cinci-lea articol</a>
     </h3>
     <time datetime="2020-12-23T15:21:54&#43;05:30">
       23/12/2020
@@ -225,15 +237,15 @@ Lista de articole educationale
       <div class="bg-white rounded-b-md shadow-md">
         <div class="p-4 max-w-3xl space-x-0.5 space-y-1">
             
-                <a class="rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/info/">info</a>
+                <a class="article-tag rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/info/">info</a>
             
-                <a class="rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/two-pointers/">two pointers</a>
+                <a class="article-tag rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/two-pointers/">two pointers</a>
             
-                <a class="rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/dinamica/">dinamica</a>
+                <a class="article-tag rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/dinamica/">dinamica</a>
             
-                <a class="rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/2020/">2020</a>
+                <a class="article-tag rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/2020/">2020</a>
             
-                <a class="rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/test/">test</a>
+                <a class="article-tag rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/test/">test</a>
             
         </div>
       </div>
@@ -242,7 +254,7 @@ Lista de articole educationale
   
   <article class="px-0 py-8 mx-2 md:mx-8 my-8 bg-[#fafafa] shadow-md">
     <h3>
-      <a href="/articles/al-doilea-articol/">Al doilea articol</a>
+      <a class="article-title"href="/articles/al-doilea-articol/">Al doilea articol</a>
     </h3>
     <time datetime="2020-12-23T15:21:54&#43;05:30">
       23/12/2020
@@ -252,11 +264,11 @@ Lista de articole educationale
       <div class="bg-white rounded-b-md shadow-md">
         <div class="p-4 max-w-3xl space-x-0.5 space-y-1">
             
-                <a class="rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/info/">info</a>
+                <a class="article-tag rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/info/">info</a>
             
-                <a class="rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/two-pointers/">two pointers</a>
+                <a class="article-tag rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/two-pointers/">two pointers</a>
             
-                <a class="rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/dinamica/">dinamica</a>
+                <a class="article-tag rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/dinamica/">dinamica</a>
             
         </div>
       </div>
@@ -265,7 +277,7 @@ Lista de articole educationale
   
   <article class="px-0 py-8 mx-2 md:mx-8 my-8 bg-[#fafafa] shadow-md">
     <h3>
-      <a href="/articles/al-saselea-articol/">Al saselea-lea articol</a>
+      <a class="article-title"href="/articles/al-saselea-articol/">Al saselea-lea articol</a>
     </h3>
     <time datetime="2020-12-23T15:21:54&#43;05:30">
       23/12/2020
@@ -275,19 +287,19 @@ Lista de articole educationale
       <div class="bg-white rounded-b-md shadow-md">
         <div class="p-4 max-w-3xl space-x-0.5 space-y-1">
             
-                <a class="rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/info/">info</a>
+                <a class="article-tag rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/info/">info</a>
             
-                <a class="rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/two-pointers/">two pointers</a>
+                <a class="article-tag rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/two-pointers/">two pointers</a>
             
-                <a class="rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/dinamica/">dinamica</a>
+                <a class="article-tag rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/dinamica/">dinamica</a>
             
-                <a class="rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/2024/">2024</a>
+                <a class="article-tag rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/2024/">2024</a>
             
-                <a class="rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/test/">test</a>
+                <a class="article-tag rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/test/">test</a>
             
-                <a class="rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/math/">math</a>
+                <a class="article-tag rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/math/">math</a>
             
-                <a class="rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/greedy/">greedy</a>
+                <a class="article-tag rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/greedy/">greedy</a>
             
         </div>
       </div>
@@ -296,7 +308,7 @@ Lista de articole educationale
   
   <article class="px-0 py-8 mx-2 md:mx-8 my-8 bg-[#fafafa] shadow-md">
     <h3>
-      <a href="/articles/al-treilea-articol/">Al treilea articol</a>
+      <a class="article-title"href="/articles/al-treilea-articol/">Al treilea articol</a>
     </h3>
     <time datetime="0001-01-01T00:00:00Z">
       1/1/0001
@@ -306,9 +318,9 @@ Lista de articole educationale
       <div class="bg-white rounded-b-md shadow-md">
         <div class="p-4 max-w-3xl space-x-0.5 space-y-1">
             
-                <a class="rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/info/">info</a>
+                <a class="article-tag rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/info/">info</a>
             
-                <a class="rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/dinamica/">dinamica</a>
+                <a class="article-tag rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/dinamica/">dinamica</a>
             
         </div>
       </div>
@@ -317,7 +329,7 @@ Lista de articole educationale
   
   <article class="px-0 py-8 mx-2 md:mx-8 my-8 bg-[#fafafa] shadow-md">
     <h3>
-      <a href="/articles/primul-articol/">Primul articol</a>
+      <a class="article-title"href="/articles/primul-articol/">Primul articol</a>
     </h3>
     <time datetime="0001-01-01T00:00:00Z">
       1/1/0001
@@ -327,11 +339,11 @@ Lista de articole educationale
       <div class="bg-white rounded-b-md shadow-md">
         <div class="p-4 max-w-3xl space-x-0.5 space-y-1">
             
-                <a class="rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/info/">info</a>
+                <a class="article-tag rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/info/">info</a>
             
-                <a class="rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/arbori/">arbori</a>
+                <a class="article-tag rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/arbori/">arbori</a>
             
-                <a class="rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/mere/">mere</a>
+                <a class="article-tag rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/mere/">mere</a>
             
         </div>
       </div>
@@ -340,7 +352,7 @@ Lista de articole educationale
   
   <article class="px-0 py-8 mx-2 md:mx-8 my-8 bg-[#fafafa] shadow-md">
     <h3>
-      <a href="/articles/test-articol/">Test Articol</a>
+      <a class="article-title"href="/articles/test-articol/">Test Articol</a>
     </h3>
     <time datetime="0001-01-01T00:00:00Z">
       1/1/0001
@@ -350,7 +362,7 @@ Lista de articole educationale
       <div class="bg-white rounded-b-md shadow-md">
         <div class="p-4 max-w-3xl space-x-0.5 space-y-1">
             
-                <a class="rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/info/">info</a>
+                <a class="article-tag rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="tags/info/">info</a>
             
         </div>
       </div>
@@ -362,7 +374,7 @@ Lista de articole educationale
 </main>
 	
 <footer>
-	<div class="bg-[#f4f4f5]">
+	<div class="bg-[#e4e4e7]">
 		<p>Made possible by team members from
 			<a href="https://roalgo.ro/">RoAlgo</a> and
 			<a href="https://kilonova.ro/">Kilonova</a>

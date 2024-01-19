@@ -1,0 +1,11 @@
+{
+    "posts": [
+      { "title": "al-doilea-articol", "tags": ["probleme", "enunt", "2024"], "url":"/articles/al-doilea-articol/" },
+      { "title": "al-cincilea-articol", "tags": ["geometrie", "programare competitionala", "ceva"], "url":"/articles/al-cincilea-articol/" },
+      { "title": "al-patrulea-articol", "tags": ["geometrie", "programare competitionala", "ceva"], "url":"articles/al-patrulea-articol/" },
+      { "title": "al-saselea-articol", "tags": ["geometrie", "programare competitionala", "ceva"], "url":"/articles/al-saselea-articol/" },
+      { "title": "al-treilea-articol", "tags": ["geometrie", "programare competitionala", "ceva"], "url":"/articles/al-treilea-articol/" },
+      { "title": "algoritmi-geometrici", "tags": ["geometrie", "programare competitionala", "ceva"], "url":"/articles/algoritmi-geometrici/" },
+      { "title": "primul-articol", "tags": ["geometrie", "programare competitionala", "ceva"], "url":"/articles/primul-articol/" }
+    ]
+}

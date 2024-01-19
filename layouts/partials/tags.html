@@ -1,7 +1,15 @@
-<div class="px-0 py-8 mx-2 md:mx-8 my-8 bg-[#fafafa] shadow-md">
-    <div class="max-w-3xl mx-auto px-0">
-        {{ range .Params.tags }}
-            <a class="ml-2 basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2" href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}/">#{{ . }}</a>
+{{ $tagData := getJSON "/content/data/tags-colors.json" }}
+{{ $defaultColor := "#3498db" }}
+
+{{ with $tagData }}
+    {{ range .tags }}
+        {{ $tagName := .name }}
+        {{ $tagColor := .color }}
+        {{ if in $.Page.Params.tags $tagName }}
+            <a style="background-color: {{ with $tagColor }}{{ . }}{{ else }}{{ $defaultColor }}{{ end }};" class="rounded-full inline-block text-white px-2 py-1" href="{{ $.Site.BaseURL }}tags/{{ $tagName | urlize }}/">#{{ $tagName }}</a>
         {{ end }}
-    </div>
-</div>
+    {{ end }}
+{{ else }}
+<!-- Handle the case where the JSON file is not correctly loaded -->
+    <p>Error loading tag data.</p>
+{{ end }}

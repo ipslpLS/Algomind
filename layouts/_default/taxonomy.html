@@ -3,12 +3,29 @@
 <h1>Taxonomy</h1>
 
 <div class="px-0 py-8 mx-2 md:mx-8 my-8 bg-[#fafafa] shadow-md">
-  <div class="max-w-3xl mx-auto px-0">
-    {{range $name, $taxonomy := .Site.Taxonomies.tags}} {{ $cnt := .Count }}
-      {{ with $.Site.GetPage (printf "/tags/%s" $name) }}
-        <a class="whitespace-nowrap basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2" href={{ .RelPermalink }} title="All pages with tag <i>{{$name}}</i>">{{$name}}: {{$cnt}}</a>
-      {{end}}
-    {{end}}
+  <div class="max-w-3xl mx-auto px-0 space-x-0.5 space-y-1">
+    {{ $tagData := getJSON "content/data/tags-colors.json" }}
+    {{ $defaultColor := "#3498db" }}
+
+    {{ with $tagData }}
+      {{ range $tag := .tags }}
+        {{ $tagName := $tag.name }}
+        {{ $tagColor := $tag.color | default $defaultColor }}
+        {{ $tagPath := printf "/tags/%s" $tagName | urlize }}
+        
+        {{ $tagPages := $.Site.GetPage $tagPath }}
+        
+        {{ if $tagPages }}
+          {{ $cnt := len $tagPages.Pages }}
+          <a style="background-color: {{ $tagColor }}" class="rounded-full inline-block ml-2 text-white px-2 py-1" href="{{ $.Site.BaseURL }}{{ $tagPath }}" title="All pages with tag <i>{{ $tagName }}</i>">{{ $tagName }}: {{ $cnt }}</a>
+        {{ else }}
+          <p>No pages found for tag: {{ $tagName }}</p>
+        {{ end }}
+      {{ end }}
+    {{ else }}
+      <!-- Handle the case where the JSON file is not correctly loaded -->
+      <a>Error loading tag data.</a>
+    {{ end }}
   </div>
 </div>
 

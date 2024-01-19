@@ -3,6 +3,7 @@
     "tags": [
       "a",
       "article",
+      "b",
       "blockquote",
       "body",
       "br",
@@ -15,6 +16,7 @@
       "dt",
       "em",
       "footer",
+      "form",
       "h1",
       "h2",
       "h3",
@@ -53,13 +55,18 @@
       "ul"
     ],
     "classes": [
+      "article-tag",
+      "article-title",
       "articlecontainer",
       "basic-1/2",
+      "bg-[#e4e4e7]",
       "bg-[#f0f0f0]",
       "bg-[#f4f4f5]",
       "bg-[#fafafa]",
       "bg-gradient-to-r",
       "bg-white",
+      "border-2",
+      "border-stone-500",
       "box-decoration-slice",
       "customstyle",
       "flex",
@@ -79,6 +86,7 @@
       "hover:text-[#000000]",
       "inline-block",
       "items-center",
+      "justify-center",
       "lg:grid-cols-3",
       "lg:px-1",
       "max-w-3xl",
@@ -123,8 +131,7 @@
       "toggle-button",
       "tooltip",
       "tooltipcontenttext",
-      "tooltiptext",
-      "whitespace-nowrap"
+      "tooltiptext"
     ],
     "ids": [
       "1-notiuni-generale",
@@ -191,6 +198,9 @@
       "restricții-și-precizări",
       "rezultatele-elevilor-români-la-concursurile-internaționale-de-informatică-din-2023",
       "sau-grupat",
+      "search-form",
+      "search-input",
+      "search-results",
       "solutia-in-on",
       "tables",
       "test",

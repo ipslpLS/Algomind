@@ -1,8 +1,8 @@
 ---
 title: "Algoritmi-geometrici"
 type: "article"
-tags: ["geometrie", "programare competitionala"]
 date: "2023-12-23T15:21:54+05:30"
+tags: ["geometrie", "programare competitionala", "ceva"]
 ---
 
 $$\mathnormal{ \it{\log(a \cdot b) = \log(a) + \log(b),} }$$

@@ -9,6 +9,9 @@
 	{{ $styles := resources.Get "css/styles.css" | resources.PostCSS }}
 	<link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
 	
+	<script src="https://cdn.jsdelivr.net/npm/fuse.js"></script>
+	{{ $searchJS := resources.Get "js/search.js" | minify | fingerprint }}
+	<script src="{{ $searchJS.Permalink }}" integrity="{{ $searchJS.Data.Integrity }}"></script>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 	<script src="//cdn.jsdelivr.net/gh/TRSasasusu/highlightjs-highlight-lines.js@1.1.5/highlightjs-highlight-lines.min.js"></script>

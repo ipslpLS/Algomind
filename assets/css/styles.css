@@ -76,7 +76,7 @@
         .highlightText{
 
         }
-
+        /*Line Highligh*/
         .highlight-line {
           display: inline;
         }
@@ -97,14 +97,24 @@
         }
 
         .highlightButton {
-          text-decoration: none;
-          border-radius: 0.2rem;
-          padding: 0.25rem;
-          background-color: #ada8a8;
-          color: white;
+          border-bottom: 2px dotted black;
+          transition: border-bottom 0.25s;
         }
+        .highlightButton:hover {
+          border-bottom: 2px dotted rgb(143, 205, 249);
+        }
+        /*End of Line Highligh*/
       }
 
+  .SearchResultElement {
+    margin: 2rem;
+    background-color: #fafafa;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-top: 0.25rem;
+    border-radius: 0.7rem;
+  }
   p .katex {
     font-size: 1.21rem;
   }
@@ -113,14 +123,18 @@
     padding-top: 1px;
     padding-bottom: 1px;
     overflow: auto hidden;
-    -webkit-mask: linear-gradient(90deg, #0000002e, #000000 5%, #000 95%, #0000);
+    -webkit-mask: linear-gradient(90deg, #0000002e, #000000 2%, #000 98%, #0000);
   }
 
   /*Tooltip's styling*/
   .tooltip {
+    display: inline;
+    position: relative;
+    /*
     display: inline-block;
     position: relative;
     margin-right: 0.3rem;
+    */
   }
 
   .tooltipcontenttext {
