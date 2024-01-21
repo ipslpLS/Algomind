@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", function() {
     // Define the search JSON path based on the environment
     const isLocal = window.location.hostname === "localhost"; // Change to your local hostname
     const searchJsonPath = isLocal
-        ? "/public/search-names.json"  // Local path
-        : "/Algomind/search-names.json";  // GitHub Pages path, replace "repository-name" with your repository name
+        ? "/data/search-names.json"  // Local path
+        : "https://ipslpls.github.io/Algomind/search-names.json";  // GitHub Pages path, replace "repository-name" with your repository name
 
     fetch(searchJsonPath)
         .then(response => {
