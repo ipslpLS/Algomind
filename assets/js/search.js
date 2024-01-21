@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const searchInput = document.getElementById("search-input");
     const searchResults = document.getElementById("search-results");
   
-    fetch("/Algomind/data/search.json")
+    fetch("/data/search.json")
       .then(response => {
         if (!response.ok) {
           throw new Error(`Network response was not ok: ${response.status}`);
@@ -32,16 +32,18 @@ document.addEventListener("DOMContentLoaded", function() {
   
       function displayResults(results) {
         const searchTerm = searchInput.value.trim().toLowerCase();
-      
+  
         const partialMatches = results.filter(result => result.item.title.toLowerCase().includes(searchTerm));
-
+  
         const tagSearch = searchTerm.startsWith("#");
-      
+  
         searchResults.innerHTML = partialMatches.length > 0
           ? partialMatches.map(result => `
             <div class="SearchResultElement">
               <h2><a href="${result.item.url}">${result.item.title}</a></h2>
-              <p>Tags: ${result.item.tags.map(tag => `<a href="https://ipslpls.github.io/Algomind/tags/${tag}/">#${tag}</a>`).join(", ")}</p>
+              <p>Tags: ${result.item.tags.map(tag => `
+                <a href="/tags/${tag}/">#${tag.replace(/-/g, ' ')}</a>
+              `).join(", ")}</p>
             </div>
           `).join("")
           : tagSearch
@@ -50,10 +52,13 @@ document.addEventListener("DOMContentLoaded", function() {
                 .map(post => `
                   <div class="SearchResultElement">
                     <h3><a href="${post.url}">${post.title}</a></h3>
-                    <p>Tags: ${post.tags.map(tag => `<a href="https://ipslpls.github.io/Algomind/tags/${tag}/">#${tag}</a>`).join(", ")}</p>
+                    <p>Tags: ${post.tags.map(tag => `
+                      <a href="/tags/${tag}/">#${tag.replace(/-/g, ' ')}</a>
+                    `).join(", ")}</p>
                   </div>
                 `).join("")
             : "";
       }      
     }
-});
+  });
+  

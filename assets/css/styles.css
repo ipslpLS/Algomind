@@ -73,8 +73,8 @@
         .HINTTEXT{
           color: burlywood;
         }
-        .highlightText{
-
+        .highlightText, .highlightTextareStatic{
+          margin-top: 0.25rem;
         }
         /*Line Highligh*/
         .highlight-line {
@@ -104,6 +104,14 @@
           border-bottom: 2px dotted rgb(143, 205, 249);
         }
         /*End of Line Highligh*/
+        .highlightFileName {
+          margin-bottom: -0.1rem;
+          padding-left: 0.5rem;
+          color:white;
+          border-top-left-radius: 0.3rem;
+          border-top-right-radius: 0.3rem;
+          background-color: rgb(92, 92, 92);
+        }
       }
 
   .SearchResultElement {
@@ -444,7 +452,8 @@
     padding: 0.5rem;
     background-color: #333333;
     color: white;
-    @apply my-1;
+    margin-top: 0.1rem;
+    margin-bottom: 0.25rem;
   }
   code:not(pre.hljs-copy-wrapper code) {
     border-radius: 0.30rem;

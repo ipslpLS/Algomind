@@ -1,3 +1,6 @@
+- 0.1.2:
+    - Added code file name and custom highlight ( dynamic and static also )
+    - Basic Search from name and tags
 - 0.1.1:
     - Updated katex overflow and scroll properties
     - Added tooltip with custom text and markdown compatibility

@@ -117,8 +117,31 @@ int main()
 {{< textpointer-link nametag="code-doi-doi" lines="1,4" text="Idee 2.1">}}
 
 
-{{< textpointer-link nametag="code-doi-doi" lines="2,5" text="Idee 2.2">}}
+{{< textpointer-link nametag="code-doi-doi" lines="2-5" text="Idee 2.2">}}
 
+{{< textpointer-link nametag="code-doi-doi" lines="1-2,4-5" text="Idee 2.3 pe intervale">}}
+
+{{< textpointerstatic nametag="code-osuta" lines="5" color="rgb(0, 255, 0)" >}}
+```c++
+#include <iostream>
+using namespace std;
+int main()
+{
+  return 0;
+}
+```
+{{< /textpointerstatic >}}
+
+{{< textpointerstatic nametag="code-osuta" lines="1-2" color="rgb(0, 255, 0)" filename="files > main.cpp" >}}
+```c++
+#include <iostream>
+using namespace std;
+int main()
+{
+  return 0;
+}
+```
+{{< /textpointerstatic >}}
 
 $\sum_{i=1}^{n}$ $\frac{a^{b+c}}{d^e-f_i}$ $\le \sqrt{2}$
 

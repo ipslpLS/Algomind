@@ -1,0 +1,8 @@
+{{ $nametag := .Get "nametag" }}
+{{ $content := .Inner }}
+{{ $lines := .Get "lines" }}
+{{ $filename := .Get "filename" }}
+<div class="highlightTextareStatic" id='{{ $nametag }}' data-params='{{ $lines }}'>
+    <div class="highlightFileName">{{ $filename }}</div>
+    {{ $content | markdownify | safeHTML }}
+</div>

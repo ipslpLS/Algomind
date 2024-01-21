@@ -56,109 +56,64 @@
         </script>
 
         <script>
-            document.addEventListener("DOMContentLoaded", function () {
-            const highlightButtons = document.querySelectorAll(".highlightButton");
+    document.addEventListener("DOMContentLoaded", function () {
+    const highlightButtons = document.querySelectorAll(".highlightButton");
 
-            highlightButtons.forEach(function (button) {
-                button.addEventListener("mouseover", function () {
-                    const targetTextId = button.getAttribute("data-target");
-                    const targetText = document.getElementById(targetTextId);
-                    var paramsValue = button.getAttribute('data-params').trim();
+    highlightButtons.forEach(function (button) {
+        button.addEventListener("mouseover", function () {
+            const targetTextId = button.getAttribute("data-target");
+            const targetText = document.getElementById(targetTextId);
+            const paramsValue = button.getAttribute('data-params').trim();
 
-                    var numbersArray = paramsValue.split(',').map(Number);
-
-                    numbersArray = numbersArray.map(function(num) {
-                        return parseInt(num, 10);
-                    });
-                    numbersArray.sort(function(a, b) {
-                        return a - b;
-                    });
-                    
-                    console.log(numbersArray);
-                    
-                    var highlightLineElements = targetText.getElementsByClassName('highlight-line');
-
-                    var newArray = Array.from({ length: highlightLineElements.length }, () => 0);
-
-                    for(var i = 0; i < numbersArray.length; i++ ) {
-                        var currentElement = highlightLineElements[ numbersArray[i] - 1 ];
-                        currentElement.style.setProperty('background-color', 'rgba(255, 255, 255, 0.2)');
-                        currentElement.style.setProperty('border-radius', '0.15rem');
-                        currentElement.style.transition = 'background-color 0.3s ease';
-                        newArray[ numbersArray[i] - 1 ] = 1;
-                    }
-
-                    for(var i = 0; i < newArray.length; i++ ) {
-                        if( newArray[ i ] == 0 ) {
-                            var currentElement = highlightLineElements[ i ];
-                            currentElement.style.setProperty('opacity', '0.25');
-                            currentElement.style.transition = 'opacity 0.3s ease';
-                        }
-                    }
-                    
-                    /* var highlightLineElements = targetText.getElementsByClassName('highlight-line');
-
-                    for (var i = 0; i < highlightLineElements.length; i++) {
-                        var currentElement = highlightLineElements[i];
-
-                        // Do something with each element, for example, log its text content
-                        currentElement.style.setProperty('background-color', 'rgb(255,255,204, 0.6)');
-                        console.log(currentElement.textContent, i);
-                    }
-                    if (targetText) {
-                        targetText.classList.add("highlighted-text-test");
-                    }
-                    */
+            const ranges = paramsValue.split(',').map(function (range) {
+                return range.split('-').map(function (value) {
+                    return parseInt(value, 10);
+                });
             });
 
-            button.addEventListener("mouseout", function () {
-                const targetTextId = button.getAttribute("data-target");
-                const targetText = document.getElementById(targetTextId);
-                
-                var highlightLineElements = targetText.getElementsByClassName('highlight-line');
-                
-                var newArray = Array.from({ length: highlightLineElements.length }, () => 0);
+            const highlightLineElements = targetText.querySelectorAll('.highlight-line');
 
-                for (var i = 0; i < highlightLineElements.length; i++) {
-                    var currentElement = highlightLineElements[i];
+            const newArray = Array.from({ length: highlightLineElements.length }, () => 0);
 
-                    // Do something with each element, for example, log its text content
-                    currentElement.style.setProperty('background-color', 'rgb(0,0,0, 0)');
-                    currentElement.style.setProperty('opacity', '1');
+            for (let i = 0; i < ranges.length; i++) {
+                const start = ranges[i][0];
+                const end = ranges[i].length > 1 ? ranges[i][1] : start;
+
+                for (let j = start - 1; j <= end - 1 && j < highlightLineElements.length; j++) {
+                    const currentElement = highlightLineElements[j];
+                    currentElement.style.transition = 'background-color 0.3s ease';
+                    currentElement.style.setProperty('background-color', 'rgba(255, 255, 255, 0.2)');
+                    currentElement.style.setProperty('border-radius', '0.15rem');
+                    currentElement.style.setProperty('display', 'block');
+                    newArray[j] = 1;
                 }
-                
-                /*
-                if (targetText) {
-                    targetText.classList.remove("highlighted-text-test");
-                }
-                */
-            });
+            }
 
+            for (let i = 0; i < newArray.length; i++) {
+                if (newArray[i] === 0) {
+                    const currentElement = highlightLineElements[i];
+                    currentElement.style.transition = 'opacity 0.3s ease';
+                    currentElement.style.setProperty('opacity', '0.25');
+                }
+            }
+        });
+
+        button.addEventListener("mouseout", function () {
+            const targetTextId = button.getAttribute("data-target");
+            const targetText = document.getElementById(targetTextId);
+
+            const highlightLineElements = targetText.querySelectorAll('.highlight-line');
+
+            for (let i = 0; i < highlightLineElements.length; i++) {
+                const currentElement = highlightLineElements[i];
+                currentElement.style.setProperty('background-color', 'rgb(0, 0, 0, 0)');
+                currentElement.style.setProperty('opacity', '1');
+            }
         });
     });
-    /*
-    var customDiv = document.querySelector('articlecontainer');
-    var elementsWithClass = document.querySelectorAll('span .base');
+});
 
-    elementsWithClass.forEach(function (element) {
-        console.log(element);
-      if (element !== customDiv && isOverflowing(element, customDiv)) {
-        element.classList.add('scrolled-katex');
-      }
-    });
-
-    function isOverflowing(element, parent) {
-      var elementRect = element.getBoundingClientRect();
-      var parentRect = parent.getBoundingClientRect();
-
-      return (
-        elementRect.left > parentRect.left ||
-        elementRect.right < parentRect.right ||
-        elementRect.top > parentRect.top ||
-        elementRect.bottom < parentRect.bottom
-      );
-    }
-    */
+    
     var customDiv = document.querySelector('articlecontainer');
     var elementsWithClass = document.querySelectorAll('span .base');
 
@@ -189,6 +144,7 @@
         elementRect.bottom < parentRect.bottom
       );
     }
+    
     </script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {

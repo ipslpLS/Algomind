@@ -11,17 +11,67 @@
 	
 	<script src="https://cdn.jsdelivr.net/npm/fuse.js"></script>
 	
-	<script src="/js/search.min.8cfa06762c86f2585d628f1a77470d2a4f87affbed3fb37809497b23d89a7052.js" integrity="sha256-jPoGdiyG8lhdYo8ad0cNKk&#43;Hr/vtP7N4CUl7I9iacFI="></script>
+	<script src="/js/search.min.e77bc5d9f63f83a4bdea2c6f7230aa82054f5abaf5be8f116a527acc1366a56c.js" integrity="sha256-53vF2fY/g6S96ixvcjCqggVPWrr1vo8RalJ6zBNmpWw="></script>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 	<script src="//cdn.jsdelivr.net/gh/TRSasasusu/highlightjs-highlight-lines.js@1.1.5/highlightjs-highlight-lines.min.js"></script>
 	<script>
 		document.addEventListener('DOMContentLoaded', (event) => {
+			 
 			document.querySelectorAll('pre code').forEach((block) => {
 				hljs.highlightElement(block);
 			});
+			 
+			hljs.initHighlightLinesOnLoad([]);
+			 
+			document.querySelectorAll('.highlightTextareStatic').forEach(function (codeDiv) {
+			const paramsValue = codeDiv.getAttribute('data-params');
+			if (!paramsValue) return;
+				
+			var DivFileName = codeDiv.querySelector('.highlightFileName');
+			const highlightLineElements = codeDiv.querySelectorAll('.highlight-line');
+			var highlightContainer = codeDiv.querySelector(".hljs-copy-wrapper");
+			
+			if (DivFileName && DivFileName.textContent.trim() !== "") { 
+				highlightContainer.style.setProperty('border-top-left-radius', '0');
+				highlightContainer.style.setProperty('border-top-right-radius', '0');
+			}
+
+			const ranges = paramsValue.split(',').map(function (range) {
+				return range.split('-').map(function (value) {
+					return parseInt(value, 10);
+				});
+			});
+	
+			
+	
+			const newArray = Array.from({ length: highlightLineElements.length }, () => 0);
+	
+			for (let i = 0; i < ranges.length; i++) {
+				const start = ranges[i][0];
+				const end = ranges[i].length > 1 ? ranges[i][1] : start;
+	
+				for (let j = start - 1; j <= end - 1 && j < highlightLineElements.length; j++) {
+					const currentElement = highlightLineElements[j];
+					if (currentElement) {
+						currentElement.style.setProperty('background-color', 'rgba(255, 255, 255, 0.2)');
+						currentElement.style.setProperty('border-radius', '0.15rem');
+						currentElement.style.setProperty('display', 'block');
+						newArray[j] = 1;
+					}
+				}
+			}
+	
+			for (let i = 0; i < newArray.length; i++) {
+				if (newArray[i] === 0) {
+					const currentElement = highlightLineElements[i];
+					if (currentElement) {
+						currentElement.style.setProperty('opacity', '1');
+					}
+				}
+			}
+			});
 		});
-		hljs.initHighlightLinesOnLoad([]);
 	</script>
 
 	<script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>

@@ -17,11 +17,61 @@
 	<script src="//cdn.jsdelivr.net/gh/TRSasasusu/highlightjs-highlight-lines.js@1.1.5/highlightjs-highlight-lines.min.js"></script>
 	<script>
 		document.addEventListener('DOMContentLoaded', (event) => {
+			/*Started the code html generic structure*/
 			document.querySelectorAll('pre code').forEach((block) => {
 				hljs.highlightElement(block);
 			});
+			/*Code line highlight*/
+			hljs.initHighlightLinesOnLoad([]);
+			/*Static line highlight*/
+			document.querySelectorAll('.highlightTextareStatic').forEach(function (codeDiv) {
+			const paramsValue = codeDiv.getAttribute('data-params');
+			if (!paramsValue) return;
+				
+			var DivFileName = codeDiv.querySelector('.highlightFileName');
+			const highlightLineElements = codeDiv.querySelectorAll('.highlight-line');
+			var highlightContainer = codeDiv.querySelector(".hljs-copy-wrapper");
+			
+			if (DivFileName && DivFileName.textContent.trim() !== "") { // Check if DivFileName exists
+				highlightContainer.style.setProperty('border-top-left-radius', '0');
+				highlightContainer.style.setProperty('border-top-right-radius', '0');
+			}
+
+			const ranges = paramsValue.split(',').map(function (range) {
+				return range.split('-').map(function (value) {
+					return parseInt(value, 10);
+				});
+			});
+	
+			//const highlightLineElements = codeDiv.querySelectorAll('.highlight-line');
+	
+			const newArray = Array.from({ length: highlightLineElements.length }, () => 0);
+	
+			for (let i = 0; i < ranges.length; i++) {
+				const start = ranges[i][0];
+				const end = ranges[i].length > 1 ? ranges[i][1] : start;
+	
+				for (let j = start - 1; j <= end - 1 && j < highlightLineElements.length; j++) {
+					const currentElement = highlightLineElements[j];
+					if (currentElement) {
+						currentElement.style.setProperty('background-color', 'rgba(255, 255, 255, 0.2)');
+						currentElement.style.setProperty('border-radius', '0.15rem');
+						currentElement.style.setProperty('display', 'block');
+						newArray[j] = 1;
+					}
+				}
+			}
+	
+			for (let i = 0; i < newArray.length; i++) {
+				if (newArray[i] === 0) {
+					const currentElement = highlightLineElements[i];
+					if (currentElement) {
+						currentElement.style.setProperty('opacity', '1');
+					}
+				}
+			}
+			});
 		});
-		hljs.initHighlightLinesOnLoad([]);
 	</script>
 
 	<script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
