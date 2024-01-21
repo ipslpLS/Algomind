@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const searchJsonPath = isLocal
         ? "/data/search-names.json" // Local path
-        : "https://ipslpls.github.io/Algomind/search-names.json"; // GitHub Pages path
+        : "https://ipslpls.github.io/Algomind/data/search-names.json"; // GitHub Pages path
 
     fetch(searchJsonPath)
         .then((response) => {
