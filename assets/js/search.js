@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         <div class="SearchResultElement">
                             <h3><a href="${post.url}">${post.title}</a></h3>
                             <p>Tags: ${post.tags.map(tag => `
-                                <a href="/tags/${tag}/">#${tag.replace(/-/g, ' ')}</a>
+                                <a href="/Algomind/tags/${tag}/">#${tag.replace(/-/g, ' ')}</a>
                             `).join(", ")}</p>
                         </div>
                     `).join("")
