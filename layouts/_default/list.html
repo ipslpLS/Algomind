@@ -21,7 +21,7 @@ Lista de articole educationale
       {{ .Date.Format "2/1/2006" }}
     </time>
     <div class="mx-2 my-2 md:mx-8 md:my-8 bg-[#fafafa]">
-      {{ range .Params.images }}
+      {{ range .Params.thumbnail_images }}
       {{ if strings.HasPrefix . "http" }}
       <!-- External image -->
       <img class="object-cover rounded-t-md" src="{{ . }}" alt="External Image Description">

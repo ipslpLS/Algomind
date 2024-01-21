@@ -10,6 +10,11 @@
         </time>
 
         <div class="articlecontainer">
+          {{ if .Params.article_front_image }}
+            {{ range .Params.article_front_image }}
+              <img class="object-cover rounded-t-md" src="{{ . }}" alt="Custom Image">
+            {{ end }}
+          {{ end }}
             {{ .Content }}
         </div>
         <script>
@@ -144,7 +149,50 @@
         elementRect.bottom < parentRect.bottom
       );
     }
-    
+
+    </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Add line numbers with a vertical line
+        var wrappers = document.querySelectorAll('.highlightwithline .hljs-copy-wrapper');
+
+        wrappers.forEach(function(wrapper) {
+          var lines = Array.from(wrapper.querySelectorAll('.highlight-line'));
+
+          // Get custom start index from the parent .highlightwithline div
+          var parentDiv = wrapper.closest('.highlightwithline');
+          var customStartIndex = parseInt(parentDiv.getAttribute('data-params'), 10) || 1;
+
+          lines.forEach(function(line, index) {
+            var lineNumber = document.createElement('span');
+            lineNumber.classList.add('line-number');
+            lineNumber.textContent = customStartIndex + index; // Use custom start index
+
+            line.insertBefore(lineNumber, line.firstChild);
+          });
+        });
+      });
+    </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          // Add a vertical line inside each .hljs-copy-wrapper
+          var wrappers = document.querySelectorAll('.highlightwithline .hljs-copy-wrapper');
+
+          wrappers.forEach(function(wrapper) {
+              var codeBlock = wrapper.querySelector('code');
+              console.log(codeBlock);
+              
+              var lineNumber = wrapper.querySelector('.line-number');
+              var lineNumberWidth = lineNumber ? lineNumber.offsetWidth : 0;
+
+              var verticalLine = document.createElement('div');
+              verticalLine.classList.add('vertical-line');
+              verticalLine.style.setProperty('height', 'calc(100% - 1rem)');
+              verticalLine.style.setProperty('left', lineNumberWidth+18 + 'px'); // Set left value based on line number width
+
+              wrapper.insertBefore(verticalLine, wrapper.firstChild);
+          });
+      });
     </script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {

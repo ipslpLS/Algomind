@@ -1,3 +1,10 @@
+- 0.1.3:
+    - Added:
+        - code line numbers
+        - Functional searchbar
+        - Support for front article images and thumbnail images
+    - Changed:
+        - Project structure: no longer large *public* files while cloning
 - 0.1.2:
     - Added code file name and custom highlight ( dynamic and static also )
     - Basic Search from name and tags

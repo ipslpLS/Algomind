@@ -1,0 +1,2 @@
+{{ $from := .Get "from" }}
+<div class='highlightwithline' data-params='{{ $from }}'>{{ .Inner | markdownify }}</div>

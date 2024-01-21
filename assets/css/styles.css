@@ -107,10 +107,21 @@
         .highlightFileName {
           margin-bottom: -0.1rem;
           padding-left: 0.5rem;
-          color:white;
+          color:rgb(221, 220, 220);
           border-top-left-radius: 0.3rem;
           border-top-right-radius: 0.3rem;
-          background-color: rgb(92, 92, 92);
+          background-color: rgb(71, 71, 71);
+        }
+        .line-number {
+          margin-right: 1rem;
+          margin-left: 0.25rem;
+          user-select: none;
+        }
+        .vertical-line {
+          border-left: 2px solid rgba(168, 168, 168, 0.383);
+          left: 1.75rem;
+          position: absolute;
+          z-index: 0;
         }
       }
 

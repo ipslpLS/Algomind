@@ -3,7 +3,7 @@ title: "Retrospectiva Anului 2023"
 type: "article"
 tags: ["informatii", "anunturi", "2023"]
 date: "2023-12-23T15:21:54+05:30"
-images:
+thumbnail_images:
     - "al-doilea-articol-image-prew.jpg"
 ---
 

@@ -3,7 +3,9 @@ title: "Al cinci-lea articol"
 type: "article"
 tags: ["info", "two pointers", "dinamica", "2020", "test"]
 date: "2020-12-23T15:21:54+05:30"
-images:
+article_front_image:
+    - "https://source.unsplash.com/white-and-black-lego-toy-B7N0IjiIJYo"
+thumbnail_images:
     - "https://source.unsplash.com/white-and-black-lego-toy-B7N0IjiIJYo"
 ---
 
@@ -122,7 +124,8 @@ int main()
 {{< textpointer-link nametag="code-doi-doi" lines="1-2,4-5" text="Idee 2.3 pe intervale">}}
 
 {{< textpointerstatic nametag="code-osuta" lines="5" color="rgb(0, 255, 0)" >}}
-```c++
+{{< code-line >}}
+```c++ { option = true }
 #include <iostream>
 using namespace std;
 int main()
@@ -130,9 +133,13 @@ int main()
   return 0;
 }
 ```
+{{< /code-line >}}
 {{< /textpointerstatic >}}
 
-{{< textpointerstatic nametag="code-osuta" lines="1-2" color="rgb(0, 255, 0)" filename="files > main.cpp" >}}
+{{< textpointer-link nametag="code-osuta" lines="1-2,4-5,6" text="Idee 3.1 pe intervale">}}
+
+{{< textpointerstatic nametag="code-osuta" lines="1-2" color="rgb(0, 255, 0)" filename="files/main.cpp" >}}
+{{< code-line from="24" >}}
 ```c++
 #include <iostream>
 using namespace std;
@@ -141,6 +148,20 @@ int main()
   return 0;
 }
 ```
+{{< /code-line >}}
+{{< /textpointerstatic >}}
+
+{{< textpointerstatic nametag="code-osuta-osuta" lines="1-2" color="rgb(0, 255, 0)" filename="files/main.cpp" >}}
+{{< code-line from="100" >}}
+```c++
+#include <iostream>
+using namespace std;
+int main()
+{
+  return 0;
+}
+```
+{{< /code-line >}}
 {{< /textpointerstatic >}}
 
 $\sum_{i=1}^{n}$ $\frac{a^{b+c}}{d^e-f_i}$ $\le \sqrt{2}$

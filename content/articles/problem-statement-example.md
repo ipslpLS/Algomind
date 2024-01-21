@@ -4,7 +4,7 @@ type: "article"
 tags: ["probleme", "enunt", "2024"]
 date: "2024-01-01T15:21:54+05:30"
 description: "Rezumat la **Problem Statement Example**"
-images:
+thumbnail_images:
     - "problem-statement-example-image-prew.jpg"
 ---
 
