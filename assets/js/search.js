@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
                           .map(
                               (post) => `
                                 <div class="SearchResultElement">
-                                    <h3><a href="${basePath}${post.url}">${post.title}</a></h3>
+                                    <h3><a href="${basePath}/articles/${post.url}">${post.title}</a></h3>
                                     <p>Tags: ${post.tags
                                         .map(
                                             (tag) => `
