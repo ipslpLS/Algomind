@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const searchInput = document.getElementById("search-input");
     const searchResults = document.getElementById("search-results");
   
-    fetch("/data/search.json")
+    fetch("/articles/search.json")
       .then(response => {
         if (!response.ok) {
           throw new Error(`Network response was not ok: ${response.status}`);
