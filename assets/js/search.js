@@ -3,9 +3,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const searchResults = document.getElementById("search-results");
 
     // Define the search JSON path based on the environment
-    const searchJsonPath = window.location.pathname.includes("/public/articles/")
-        ? "../search.json"  // Local path
-        : "/search.json";    // GitHub path
+    const searchJsonPath = window.location.pathname.includes("content/")
+        ? "../search-names.json"  // Local path
+        : "/search-names.json";    // GitHub path
 
     fetch(searchJsonPath)
         .then(response => {
