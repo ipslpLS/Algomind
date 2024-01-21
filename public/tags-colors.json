@@ -1,0 +1,94 @@
+{
+  "tags": [
+    {
+      "name": "2020",
+      "color": "#3498db",
+      "description": "Tag for the year 2020."
+    },
+    {
+      "name": "2023",
+      "color": "#e0c709",
+      "description": "Tag for the year 2023."
+    },
+    {
+      "name": "2024",
+      "color": "#69004d",
+      "description": "Tag for the year 2024."
+    },
+    {
+      "name": "anunturi",
+      "color": "#2ecc71",
+      "description": "Tag for announcements."
+    },
+    {
+      "name": "arbori",
+      "color": "#7da1f0",
+      "description": "Tag for tree-related problems."
+    },
+    {
+      "name": "dinamica",
+      "color": "#32a852",
+      "description": "Tag for dynamic programming problems."
+    },
+    {
+      "name": "enunt",
+      "color": "#f39c12",
+      "description": "Tag for problem statements."
+    },
+    {
+      "name": "geometrie",
+      "color": "#e74c3c",
+      "description": "Tag for geometry problems."
+    },
+    {
+      "name": "greedy",
+      "color": "#8e44ad",
+      "description": "Tag for greedy algorithm problems."
+    },
+    {
+      "name": "info",
+      "color": "#3498db",
+      "description": "Tag for informational content."
+    },
+    {
+      "name": "informatii",
+      "color": "#16a085",
+      "description": "Tag for additional information."
+    },
+    {
+      "name": "math",
+      "color": "#d35400",
+      "description": "Tag for mathematical problems."
+    },
+    {
+      "name": "mere",
+      "color": "#e0c709",
+      "description": "Tag for apple-related problems."
+    },
+    {
+      "name": "probleme",
+      "color": "#98cad6",
+      "description": "Tag for general problems."
+    },
+    {
+      "name": "programare competitionala",
+      "color": "#c0392b",
+      "description": "Tag for competitive programming."
+    },
+    {
+      "name": "test",
+      "color": "#2ecc71",
+      "description": "Tag for test-related content."
+    },
+    {
+      "name": "two pointers",
+      "color": "#7f8c8d",
+      "description": "Tag for problems solved using the two-pointers technique."
+    },
+    {
+      "name": "ceva",
+      "color": "#32a852",
+      "description": "Tag for testing."
+    }
+  ]
+}

@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+	
+	<link rel="stylesheet" href="/css/styles.css" integrity="" media="screen">
+	
+	<script src="https://cdn.jsdelivr.net/npm/fuse.js"></script>
+	
+	<script src="/js/search.min.8800f9310fe2724129d7b090dfb9986ece31ef4995e67834646a1bb5daa9cd6e.js" integrity="sha256-iAD5MQ/ickEp17CQ37mYbs4x70mV5ng0ZGobtdqpzW4="></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+	<script src="//cdn.jsdelivr.net/gh/TRSasasusu/highlightjs-highlight-lines.js@1.1.5/highlightjs-highlight-lines.min.js"></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', (event) => {
+			 
+			document.querySelectorAll('pre code').forEach((block) => {
+				hljs.highlightElement(block);
+			});
+			 
+			hljs.initHighlightLinesOnLoad([]);
+			 
+			document.querySelectorAll('.highlightTextareStatic').forEach(function (codeDiv) {
+			const paramsValue = codeDiv.getAttribute('data-params');
+			if (!paramsValue) return;
+				
+			var DivFileName = codeDiv.querySelector('.highlightFileName');
+			const highlightLineElements = codeDiv.querySelectorAll('.highlight-line');
+			var highlightContainer = codeDiv.querySelector(".hljs-copy-wrapper");
+			
+			if (DivFileName && DivFileName.textContent.trim() !== "") { 
+				highlightContainer.style.setProperty('border-top-left-radius', '0');
+				highlightContainer.style.setProperty('border-top-right-radius', '0');
+			}
+
+			const ranges = paramsValue.split(',').map(function (range) {
+				return range.split('-').map(function (value) {
+					return parseInt(value, 10);
+				});
+			});
+	
+			
+	
+			const newArray = Array.from({ length: highlightLineElements.length }, () => 0);
+	
+			for (let i = 0; i < ranges.length; i++) {
+				const start = ranges[i][0];
+				const end = ranges[i].length > 1 ? ranges[i][1] : start;
+	
+				for (let j = start - 1; j <= end - 1 && j < highlightLineElements.length; j++) {
+					const currentElement = highlightLineElements[j];
+					if (currentElement) {
+						currentElement.style.setProperty('background-color', 'rgba(255, 255, 255, 0.2)');
+						currentElement.style.setProperty('border-radius', '0.15rem');
+						currentElement.style.setProperty('display', 'block');
+						newArray[j] = 1;
+					}
+				}
+			}
+	
+			for (let i = 0; i < newArray.length; i++) {
+				if (newArray[i] === 0) {
+					const currentElement = highlightLineElements[i];
+					if (currentElement) {
+						currentElement.style.setProperty('opacity', '1');
+					}
+				}
+			}
+			});
+		});
+	</script>
+
+	<script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
+	<script>
+		hljs.addPlugin(
+		new CopyButtonPlugin({
+			hook: (text, el) => {
+			let { replace, replacewith } = el.dataset;
+			if (replace && replacewith) {
+				return text.replace(replace, replacewith);
+			}
+			return text;
+			},
+			callback: (text, el) => {
+			 
+			console.log(text);
+			},
+		})
+		);
+	</script>
+
+
+
+	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false}
+            ],
+			strict: false
+        });
+    });
+	</script>
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+		  var button = document.querySelector('.toggle-button');
+		  var element = document.getElementById('dropdown-menu');
+	  
+		  button.addEventListener('click', function() {
+			if (element.style.display === 'none' || element.style.display === '') {
+			  element.style.display = 'flex';
+			} else {
+			  element.style.display = 'none';
+			}
+		  });
+		});
+	</script>
+
+	<title>Al cinci-lea articol | Algomind</title>
+
+	</head>
+
+<body>
+
+<header>  
+    <nav>
+        <div class="flex items-center flex-wrap text-2xl bg-[#f4f4f5] shadow-md">
+            <a class="nav-link rounded py-1.5 px-4 my-3 mx-2 bg-[#f4f4f5] text-[#52525b]" href="">
+                Algomind
+            </a>
+            <div class="nav-links flex">
+                
+                <a class="nav-link rounded py-1.5 px-4 my-3 ml-2 bg-[#f4f4f5] text-[#52525b] hover:bg-[#e4e4e7] hover:text-[#000000]" href="/articles">
+                    Articles
+                </a>
+                
+                <a class="nav-link rounded py-1.5 px-4 my-3 ml-2 bg-[#f4f4f5] text-[#52525b] hover:bg-[#e4e4e7] hover:text-[#000000]" href="/tags/">
+                    Tags
+                </a>
+                
+                <a class="nav-link rounded py-1.5 px-4 my-3 ml-2 bg-[#f4f4f5] text-[#52525b] hover:bg-[#e4e4e7] hover:text-[#000000]" href="/about">
+                    About
+                </a>
+                
+            </div>
+            <svg class="svg-icon rounded-lg p-2 flex-shrink-0 toggle-button mr-4 ml-auto bg-[#f4f4f5] text-[#52525b] hover:bg-[#e4e4e7] hover:text-[#000000]" viewBox="0 0 20 20">
+                <path fill="none" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314
+                    c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743
+                    s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314
+                    c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path>
+            </svg>
+        </div>
+        <div id="dropdown-menu" class="flex flex-wrap bg-[#f4f4f5] shadow-md">
+            
+            <a class="nav-link rounded py-1.5 px-4 my-3 ml-2 bg-[#f4f4f5] text-[#52525b] hover:bg-[#e4e4e7] hover:text-[#000000]" href="/articles">
+                Articles
+            </a>
+            
+            <a class="nav-link rounded py-1.5 px-4 my-3 ml-2 bg-[#f4f4f5] text-[#52525b] hover:bg-[#e4e4e7] hover:text-[#000000]" href="/tags/">
+                Tags
+            </a>
+            
+            <a class="nav-link rounded py-1.5 px-4 my-3 ml-2 bg-[#f4f4f5] text-[#52525b] hover:bg-[#e4e4e7] hover:text-[#000000]" href="/about">
+                About
+            </a>
+            
+        </div>
+    </nav>
+</header>
+
+<main>
+
+<div class="py-8 mx-2 md:mx-8 my-8 bg-[#fafafa] shadow-md">
+    <div class="max-w-3xl mx-auto px-2 md:px-6 lg:px-1">
+        <h1 class="font-bold">Al cinci-lea articol</h1>
+        <time datetime="2020-12-23T15:21:54&#43;05:30">
+            <h5 class="my-8">
+                23/12/2020
+            </h5>
+        </time>
+
+        <div class="articlecontainer">
+            
+<span class="tooltip">
+  <span class="tooltipcontenttext">
+    Dă un hover pe tooltip
+    <span class="tooltiptext">Ceva explicatii sau note</span>
+  </span>
+</span>
+
+<span class="tooltip">
+  <span class="tooltipcontenttext">
+    Dă un hover pe ?
+    <span class="tooltiptext">Ceva explicatii sau note sau mai mult text. Da da dadadadadada</span>
+  </span>
+</span>
+
+<span class="tooltip">
+  <span class="tooltipcontenttext">
+    Dă un hover pe tooltip
+    <span class="tooltiptext">Ceva explicatii sau note sau mai mult text. Da da dadadadadada</span>
+  </span>
+</span>
+
+<span class="tooltip">
+  <span class="tooltipcontenttext">
+    $ \sum_{i=1}^{n}$ $\frac{a^{b+c}}{d^e-f_i}$ $\le \sqrt{2} $
+    <span class="tooltiptext">Ceva explicatii sau note sau mai mult text. Da da dadadadadada</span>
+  </span>
+</span>
+<p>$$
+\begin{align*}
+L(p,w_i) &amp;= \frac{1}{N}\sum_{i=1}^N \left(f_r(x_2\rightarrow x_1\rightarrow x_0)G(x_1\longleftrightarrow x_2)f_r(x_3\rightarrow x_2\rightarrow x_1)\right) \
+&amp;= \prod_{i=3}^{k-1} \left(\frac{f_r(x_{i+1}\rightarrow x_i\rightarrow x_{i-1})G(x_i\longleftrightarrow x_{i-1})}{p_a(x_{i-1})}\right) \frac{G(x_k\longleftrightarrow x_{k-1})L_e(x_k\rightarrow x_{k-1})}{p_a(x_{k-1})p_a(x_k)}
+\end{align*}
+$$</p>
+<p>Ceva</p>
+<p>$$
+\begin{equation*}
+\int_{-\infty}^{\infty} e^{-\frac{x^2}{2}} \left(1 + \frac{1}{\sqrt{2\pi}} \int_{0}^{x} e^{\frac{t^2}{2}} dt \right) dx = \sqrt{\frac{\pi}{2}}
+\end{equation*}
+$$</p>
+<p>Ceva 2</p>
+<h1 id="test">Test</h1>
+<p>$$
+\begin{equation*}
+\int_{-\infty}^{\infty} e^{-\frac{x^2}{2}} \left(1 + \frac{1}{\sqrt{2\pi}} \int_{0}^{x} e^{\frac{t^2}{2}} dt \right) dx = \sqrt{\frac{\pi}{2}}
+\end{equation*}
+$$</p>
+<p><a href="https://google.com">Google</a></p>
+<p>List of check-boxes</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> lapte</li>
+<li><input checked="" disabled="" type="checkbox"> oua
+<ul>
+<li><input checked="" disabled="" type="checkbox"> mere</li>
+<li><input disabled="" type="checkbox"> banane</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> branza</li>
+</ul>
+<pre><code>#include< iostream>
+using namespace std;
+int main()
+{
+  return 0;
+}</code></pre>
+<pre><code class="language-cpp">#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+  return 0;
+}
+</code></pre>
+<pre><code class="language-cpp">#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+  return 0;
+}
+</code></pre>
+
+
+<div class="highlightText" id='code-unu-unu'>
+    <pre><code class="language-c++">#include &lt; iostream &gt;
+using namespace std;
+int main()
+{
+  return 0;
+}
+</code></pre>
+
+</div>
+<h1 id="ceva-2">ceva 2</h1>
+
+
+<div class="highlightText" id='code-doi-doi'>
+    <pre><code class="language-c++">#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+  return 0;
+}
+</code></pre>
+
+</div>
+
+
+
+<a class='highlightButton' data-target='code-unu-unu' data-params='2,3,5'>Idee</a>
+
+
+
+<a class='highlightButton' data-target='code-doi-doi' data-params='1,4'>Idee 2.1</a>
+
+
+
+<a class='highlightButton' data-target='code-doi-doi' data-params='2-5'>Idee 2.2</a>
+
+
+
+<a class='highlightButton' data-target='code-doi-doi' data-params='1-2,4-5'>Idee 2.3 pe intervale</a>
+
+
+
+
+<div class="highlightTextareStatic" id='code-osuta' data-params='5'>
+    <div class="highlightFileName"></div>
+    <pre><code class="language-c++">#include &lt;iostream&gt;
+using namespace std;
+int main()
+{
+  return 0;
+}
+</code></pre>
+
+</div>
+
+
+
+
+<div class="highlightTextareStatic" id='code-osuta' data-params='1-2'>
+    <div class="highlightFileName">files &gt; main.cpp</div>
+    <pre><code class="language-c++">#include &lt;iostream&gt;
+using namespace std;
+int main()
+{
+  return 0;
+}
+</code></pre>
+
+</div>
+<p>$\sum_{i=1}^{n}$ $\frac{a^{b+c}}{d^e-f_i}$ $\le \sqrt{2}$</p>
+<p>$\sum_{i=1}^{n} \frac{a^{b+c}}{d^e-f_i} \le \sqrt{2}$</p>
+<h1 id="test-code-and-math-styling-and-button-part-highlight">Test code and math styling and button part highlight</h1>
+<pre><code class="language-c++">ceva idei
+</code></pre>
+<h2 id="ceva-text-3">ceva text 3️⃣</h2>
+<hr>
+
+
+<div class="highlightText" id='cod-test-test'>
+    <p>paragrafe</p>
+<blockquote>
+<p>Idei</p>
+</blockquote>
+<p>$$
+\begin{align*}
+L(p,w_i) &amp;= \frac{1}{N}\sum_{i=1}^N \left(f_r(x_2\rightarrow x_1\rightarrow x_0)G(x_1\longleftrightarrow x_2)f_r(x_3\rightarrow x_2\rightarrow x_1)\right) \
+&amp;= \prod_{i=3}^{k-1} \left(\frac{f_r(x_{i+1}\rightarrow x_i\rightarrow x_{i-1})G(x_i\longleftrightarrow x_{i-1})}{p_a(x_{i-1})}\right) \frac{G(x_k\longleftrightarrow x_{k-1})L_e(x_k\rightarrow x_{k-1})}{p_a(x_{k-1})p_a(x_k)}
+\end{align*}
+$$</p>
+<blockquote>
+<p>Alte idei</p>
+</blockquote>
+<p>$
+\displaystyle \sum_{i=1}^{n} \frac{a^{b+c}}{d^e-f_i} \le \sqrt{2}
+$</p>
+<p>$
+\displaystyle \sum_{i=1}^{n}
+$</p>
+<p>$
+\displaystyle \sum_{i=1}^{n}
+$</p>
+<p>$
+\frac{a^{b+c}}{d^e-f_i} \le \sqrt{2}
+$</p>
+<pre><code class="language-c++">Ceva util in c++
+#include &lt;iostream&gt;
+</code></pre>
+
+</div>
+
+
+
+<a class='highlightButton' data-target='cod-test-test' data-params=''>ceva</a>
+<p>
+
+<div class="highlightText" id='text-selector'>
+    <p>Ceva util
+$ e^{i \pi } = -1 $.</p>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+using namespace std;
+int main()
+{
+  return 0;
+}
+</code></pre>
+</div>
+Dar care continua si este pe acelasi rand</p>
+
+
+
+<a class='highlightButton' data-target='text-selector' data-params=''>Ceva</a>
+
+
+<div class="highlightText" id='text-selector-doi'>
+    Ceva doi util
+$ e^{ii \pi } = -1 $.
+</div>
+
+
+
+<a class='highlightButton' data-target='text-selector-doi' data-params=''>Ceva2</a>
+<h1 id="ceva-de-test">Ceva de test</h1>
+
+
+<div class="highlightText" id='text-selector-sase'>
+    This is raw HTML content.
+</div>
+
+
+<div class="highlightText" id='text-selector-sapte'>
+    <p>This is Markdown content.</p>
+<ul>
+<li>List item 1</li>
+<li>List item 2</li>
+</ul>
+</div>
+<h1 id="sau-grupat">Sau grupat:</h1>
+
+
+<div class="highlightText" id='text-selector-zece'>
+    <p>Ceva doi util</p>
+<p>$ e^{ii \pi } = -1 $.</p>
+<p>$ e^{ii \pi } = -1 $.</p>
+
+</div>
+
+
+<div class="highlightText" id='text-selector-zecezece'>
+    <p>Ceva doi util
+Poate ceva text</p>
+<p>$ e^{ii \pi } = -1 $.</p>
+<p>$ e^{ii \pi } = -1 $.</p>
+
+</div>
+
+
+<div class="highlightText" id='text-selector-zecezecezece'>
+    <p>Ceva doi util</p>
+<p>$ e^{ii \pi } = -1 $.</p>
+<p>$ e^{ii \pi } = -1 $.</p>
+
+</div>
+<p>
+
+
+<a class='highlightButton' data-target='text-selector-zece' data-params=''>Ceva</a>
+
+
+
+<a class='highlightButton' data-target='text-selector-zecezece' data-params=''>Ceva2</a>
+
+
+
+<a class='highlightButton' data-target='text-selector-zecezecezece' data-params=''>Ceva3</a></p>
+<p>Ceva adaugat in plus dupa prima restabilire</p>
+<p>$\displaystyle \sum_{i=1}^{n} \frac{a^{b+c}}{d^e-f_i} \le \sqrt{2}$</p>
+<h2 class="customstyle" id="text-with-special-styling">Text with special styling</h2>
+<details class="bg-[#f0f0f0] p-3 rounded-md">
+    <summary> Hint 2 </summary>
+    <p>The hint&rsquo;s content</p>
+<blockquote>
+<p>With lots of elements</p>
+</blockquote>
+<p>And math</p>
+<p>$ e^{i \pi } = -1 $</p>
+<p><strong>And MORE math</strong></p>
+<p>[
+\begin{aligned}
+&amp; \int \mu(u, v) , du , dv\\
+&amp; \iint \mu(u, v, w) , du , dv , dw\\
+&amp; \iiint \mu(t, u, v, w) , dt , du , dv , dw\\
+&amp; \text{ceva}
+\end{aligned}
+]</p>
+<p>$$
+\begin{aligned}
+&amp;(n-1)(n-1)\\
+&amp;=n^2-2n+1
+\end{aligned}
+$$</p>
+<pre><code class="language-c++">ceva
+alt ceva
+</code></pre>
+
+</details>
+<pre><code>linie de cod 1
+linie de cod 2
+linie de cod 3
+cu ceva in interior selectat
+linie de cod 4
+</code></pre>
+<pre><code>linie de cod 1
+linie de cod 2
+linie de cod 3
+cu ceva in interior selectat
+linie de cod 4
+</code></pre>
+<pre><code>linie de cod 1
+linie de cod 2
+linie de cod 3
+cu ceva in interior selectat
+linie de cod 4
+</code></pre>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+int main()
+{
+    cout &lt;&lt; &quot;Hello word!&quot;;
+    return 0;
+}
+</code></pre>
+<h1 id="ceva">Ceva</h1>
+<p>Go to section</p>
+<ul>
+<li><a href="#hello">Hello</a></li>
+<li><a href="#hello-world">Hello World</a></li>
+<li><a href="#new-section">Another section</a> &lt;&ndash; it&rsquo;s called &lsquo;Another section&rsquo; in this list but refers to &lsquo;New section&rsquo;</li>
+</ul>
+<h2 id="hello">Hello</h2>
+<h3 id="hello-world">Hello World</h3>
+<h2 id="new-section">New section</h2>
+<p>This is an inline math expression: $e^{i\pi} + 1 = 0$, that can be interupted by</p>
+<p>$
+e^{i\pi} + 1 = 0
+$</p>
+<p>$$
+e^{i\pi} + 1 = 0
+$$</p>
+<p>$$
+\begin{align*}
+L(p,w_i) &amp;= \frac{1}{N}\sum_{i=1}^N \left(f_r(x_2\rightarrow x_1\rightarrow x_0)G(x_1\longleftrightarrow x_2)f_r(x_3\rightarrow x_2\rightarrow x_1)\right) \
+&amp;= \prod_{i=3}^{k-1} \left(\frac{f_r(x_{i+1}\rightarrow x_i\rightarrow x_{i-1})G(x_i\longleftrightarrow x_{i-1})}{p_a(x_{i-1})}\right) \frac{G(x_k\longleftrightarrow x_{k-1})L_e(x_k\rightarrow x_{k-1})}{p_a(x_{k-1})p_a(x_k)}
+\end{align*}
+$$</p>
+<p>And here is a displayed math expression:</p>
+<p>$
+\int_{-\infty}^{\infty} e^{-x^2} , dx = \sqrt{\pi}
+$</p>
+<p>$
+\int_{-\infty}^{\infty} e^{-x^2} , dx = \sqrt{\pi}
+$</p>
+<p>$$
+\int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}
+$$</p>
+<p><a href="#heading-with-link">ceva</a></p>
+<h1 id="heading-with-link">Heading with Link</h1>
+<p><strong>Advertisement</strong></p>
+<ul>
+<li><strong><a href="https://nodeca.github.io/pica/demo/">pica</a></strong> - high quality and fast image
+resize in browser.</li>
+<li><strong><a href="https://github.com/nodeca/babelfish/">babelfish</a></strong> - developer friendly
+i18n with plurals support and easy syntax.</li>
+</ul>
+<p>You will like those projects!</p>
+<hr>
+<h1 id="h1-heading">h1 Heading</h1>
+<h2 id="h2-heading">h2 Heading</h2>
+<h3 id="h3-heading">h3 Heading</h3>
+<h4 id="h4-heading">h4 Heading</h4>
+<h5 id="h5-heading">h5 Heading</h5>
+<h6 id="h6-heading">h6 Heading</h6>
+<h2 id="horizontal-rules">Horizontal Rules</h2>
+<h2 id="emphasis">Emphasis</h2>
+<p><strong>This is bold text</strong></p>
+<p><strong>This is bold text</strong></p>
+<p><em>This is italic text</em></p>
+<p><em>This is italic text</em></p>
+<p><del>Strikethrough</del></p>
+<h2 id="blockquotes">Blockquotes</h2>
+<blockquote>
+<p>Blockquotes can also be nested&hellip;</p>
+<blockquote>
+<p>&hellip;by using additional greater-than signs right next to each other&hellip;</p>
+<blockquote>
+<p>&hellip;or with spaces between arrows.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="lists">Lists</h2>
+<p>Unordered</p>
+<ul>
+<li>Create a list by starting a line with <code>+</code>, <code>-</code>, or <code>*</code></li>
+<li>Sub-lists are made by indenting 2 spaces:
+<ul>
+<li>Marker character change forces new list start:
+<ul>
+<li>Ac tristique libero volutpat at</li>
+</ul>
+<ul>
+<li>Facilisis in pretium nisl aliquet</li>
+</ul>
+<ul>
+<li>Nulla volutpat aliquam velit</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Very easy!</li>
+</ul>
+<p>Ordered</p>
+<ol>
+<li>
+<p>Lorem ipsum dolor sit amet</p>
+</li>
+<li>
+<p>Consectetur adipiscing elit</p>
+</li>
+<li>
+<p>Integer molestie lorem at massa</p>
+</li>
+<li>
+<p>You can use sequential numbers&hellip;</p>
+</li>
+<li>
+<p>&hellip;or keep all the numbers as <code>1.</code></p>
+</li>
+</ol>
+<p>Start numbering with offset:</p>
+<ol start="57">
+<li>foo</li>
+<li>bar</li>
+</ol>
+<h2 id="code">Code</h2>
+<p>Inline <code>code</code></p>
+<p>Block code &ldquo;fences&rdquo;</p>
+<pre><code>Sample text here...
+</code></pre>
+<pre><code>#include &lt;iostream&gt;
+using namespace std;
+int main()
+{
+    cout &lt;&lt; &quot;Hello word!&quot;;
+    return 0;
+}
+</code></pre>
+<p>Syntax highlighting</p>
+<pre><code>var foo = function (bar) {
+  return bar++;
+};
+
+console.log(foo(5));
+</code></pre>
+<h2 id="tables">Tables</h2>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>data</td>
+<td>path to data files to supply the data that will be passed into templates.</td>
+</tr>
+<tr>
+<td>engine</td>
+<td>engine to be used for processing templates. Handlebars is the default.</td>
+</tr>
+<tr>
+<td>ext</td>
+<td>extension to be used for dest files.</td>
+</tr>
+</tbody>
+</table>
+<p>Right aligned columns</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">Option</th>
+<th style="text-align:right">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">data</td>
+<td style="text-align:right">path to data files to supply the data that will be passed into templates.</td>
+</tr>
+<tr>
+<td style="text-align:right">engine</td>
+<td style="text-align:right">engine to be used for processing templates. Handlebars is the default.</td>
+</tr>
+<tr>
+<td style="text-align:right">ext</td>
+<td style="text-align:right">extension to be used for dest files.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="links">Links</h2>
+<p><a href="http://dev.nodeca.com">link text</a></p>
+<p><a href="http://nodeca.github.io/pica/demo/" title="title text!">link with title</a></p>
+<p>Autoconverted link <a href="https://github.com/nodeca/pica">https://github.com/nodeca/pica</a> (enable linkify to see)</p>
+<h2 id="images">Images</h2>
+<p><img src="https://octodex.github.com/images/minion.png" alt="Minion">
+<img src="https://octodex.github.com/images/stormtroopocat.jpg" alt="Stormtroopocat" title="The Stormtroopocat"></p>
+<p>Like links, Images also have a footnote style syntax</p>
+<p><img src="https://octodex.github.com/images/dojocat.jpg" alt="Alt text" title="The Dojocat"></p>
+<p>With a reference later in the document defining the URL location:</p>
+<h2 id="plugins">Plugins</h2>
+<p>The killer feature of <code>markdown-it</code> is very effective support of
+<a href="https://www.npmjs.org/browse/keyword/markdown-it-plugin">syntax plugins</a>.</p>
+<p>see <a href="https://github.com/markdown-it/markdown-it-emoji#change-output">how to change output</a> with twemoji.</p>
+<h3 id="inshttpsgithubcommarkdown-itmarkdown-it-ins"><a href="https://github.com/markdown-it/markdown-it-ins">&lt;ins&gt;</a></h3>
+<p>++Inserted text++</p>
+<h3 id="markhttpsgithubcommarkdown-itmarkdown-it-mark"><a href="https://github.com/markdown-it/markdown-it-mark">&lt;mark&gt;</a></h3>
+<p>==Marked text==</p>
+<h3 id="footnoteshttpsgithubcommarkdown-itmarkdown-it-footnote"><a href="https://github.com/markdown-it/markdown-it-footnote">Footnotes</a></h3>
+<p>Footnote 1 link<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>.</p>
+<p>Footnote 2 link<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>.</p>
+<p>Inline footnote ^[Text of inline footnote] definition.</p>
+<p>Duplicated footnote reference<sup id="fnref1:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>.</p>
+<h3 id="definition-listshttpsgithubcommarkdown-itmarkdown-it-deflist"><a href="https://github.com/markdown-it/markdown-it-deflist">Definition lists</a></h3>
+<dl>
+<dt>Term 1</dt>
+<dd>
+<p>Definition 1
+with lazy continuation.</p>
+</dd>
+<dt>Term 2 with <em>inline markup</em></dt>
+<dd>
+<p>Definition 2</p>
+<pre><code>{ some code, part of Definition 2 }
+</code></pre>
+<p>Third paragraph of definition 2.</p>
+</dd>
+</dl>
+<p><em>Compact style:</em></p>
+<p>Term 1
+~ Definition 1</p>
+<p>Term 2
+~ Definition 2a
+~ Definition 2b</p>
+<p>Fiecare om (ceva)</p>
+<h3 id="abbreviationshttpsgithubcommarkdown-itmarkdown-it-abbr"><a href="https://github.com/markdown-it/markdown-it-abbr">Abbreviations</a></h3>
+<p>This is HTML abbreviation example.</p>
+<p>It converts &ldquo;HTML&rdquo;, but keep intact partial entries like &ldquo;xxxHTMLyyy&rdquo; and so on.</p>
+<p>*[HTML]: Hyper Text Markup Language</p>
+<h3 id="custom-containershttpsgithubcommarkdown-itmarkdown-it-container"><a href="https://github.com/markdown-it/markdown-it-container">Custom containers</a></h3>
+<p>::: warning
+<em>here be dragons</em>
+:::</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Footnote <strong>can have markup</strong></p>
+<p>and multiple paragraphs.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>Footnote text.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+              var contentDiv = document.querySelector(' .articlecontainer ');
+              var headings = contentDiv.querySelectorAll('h1, h2, h3, h4, h5, h6');
+              
+              headings.forEach(function (heading) {
+                    var anchor = document.createElement('a');
+                    anchor.href = '#' + heading.id;
+                    anchor.innerText = '#';
+                    anchor.classList.add('header-link');
+                    heading.appendChild(anchor);
+              });
+            });
+        </script>
+        <script>
+            
+
+        </script>
+
+        <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const highlightButtons = document.querySelectorAll(".highlightButton");
+
+    highlightButtons.forEach(function (button) {
+        button.addEventListener("mouseover", function () {
+            const targetTextId = button.getAttribute("data-target");
+            const targetText = document.getElementById(targetTextId);
+            const paramsValue = button.getAttribute('data-params').trim();
+
+            const ranges = paramsValue.split(',').map(function (range) {
+                return range.split('-').map(function (value) {
+                    return parseInt(value, 10);
+                });
+            });
+
+            const highlightLineElements = targetText.querySelectorAll('.highlight-line');
+
+            const newArray = Array.from({ length: highlightLineElements.length }, () => 0);
+
+            for (let i = 0; i < ranges.length; i++) {
+                const start = ranges[i][0];
+                const end = ranges[i].length > 1 ? ranges[i][1] : start;
+
+                for (let j = start - 1; j <= end - 1 && j < highlightLineElements.length; j++) {
+                    const currentElement = highlightLineElements[j];
+                    currentElement.style.transition = 'background-color 0.3s ease';
+                    currentElement.style.setProperty('background-color', 'rgba(255, 255, 255, 0.2)');
+                    currentElement.style.setProperty('border-radius', '0.15rem');
+                    currentElement.style.setProperty('display', 'block');
+                    newArray[j] = 1;
+                }
+            }
+
+            for (let i = 0; i < newArray.length; i++) {
+                if (newArray[i] === 0) {
+                    const currentElement = highlightLineElements[i];
+                    currentElement.style.transition = 'opacity 0.3s ease';
+                    currentElement.style.setProperty('opacity', '0.25');
+                }
+            }
+        });
+
+        button.addEventListener("mouseout", function () {
+            const targetTextId = button.getAttribute("data-target");
+            const targetText = document.getElementById(targetTextId);
+
+            const highlightLineElements = targetText.querySelectorAll('.highlight-line');
+
+            for (let i = 0; i < highlightLineElements.length; i++) {
+                const currentElement = highlightLineElements[i];
+                currentElement.style.setProperty('background-color', 'rgb(0, 0, 0, 0)');
+                currentElement.style.setProperty('opacity', '1');
+            }
+        });
+    });
+});
+
+    
+    var customDiv = document.querySelector('articlecontainer');
+    var elementsWithClass = document.querySelectorAll('span .base');
+
+    elementsWithClass.forEach(function (element) {
+        console.log(element);
+      if (element !== customDiv && isOverflowing(element, customDiv)) {
+        element.classList.add('scrolled-katex');
+      }
+    });
+
+    function isOverflowing(element) {
+      var elementRect = element.getBoundingClientRect();
+      var parentRect = parent.getBoundingClientRect();
+
+        let curOverf = element.style.overflow; 
+                 
+        if ( !curOverf || curOverf === "visible" ) 
+        element.style.overflow = "hidden"; 
+    
+        let isOverflowing = element.clientWidth < element.scrollWidth || element.clientHeight < element.scrollHeight; 
+    
+        element.style.overflow = curOverf;
+
+      return (
+        elementRect.left > parentRect.left ||
+        elementRect.right < parentRect.right ||
+        elementRect.top > parentRect.top ||
+        elementRect.bottom < parentRect.bottom
+      );
+    }
+    
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          var tooltips = document.querySelectorAll('.tooltip');
+          var activeTooltip = null;
+    
+          document.addEventListener('click', function (event) {
+            
+            var clickedElement = event.target;
+    
+            
+            if (!clickedElement.matches('.tooltip')) {
+              if (activeTooltip) {
+                activeTooltip.classList.remove('active-style');
+                activeTooltip = null;
+              }
+              return;
+            }
+    
+            
+            clickedElement.classList.toggle('active-style');
+    
+            
+            if (activeTooltip && activeTooltip !== clickedElement) {
+              activeTooltip.classList.remove('active-style');
+            }
+    
+            
+            activeTooltip = clickedElement;
+          });
+        });
+      </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var tooltips = document.querySelectorAll('.tooltip');
+        var activeTooltip = null;
+
+        document.addEventListener('touchend', function (event) {
+        
+        var clickedElement = event.target;
+
+        
+        if (!clickedElement.matches('.tooltip')) {
+            if (activeTooltip) {
+            activeTooltip.classList.remove('active-style');
+            activeTooltip = null;
+            }
+            return;
+        }
+
+        
+        clickedElement.classList.toggle('active-style');
+
+        
+        if (activeTooltip && activeTooltip !== clickedElement) {
+            activeTooltip.classList.remove('active-style');
+        }
+
+        
+        activeTooltip = clickedElement;
+        });
+    });
+    </script>
+        
+    </div>
+</div>
+<div class="px-0 py-8 mx-2 md:mx-8 my-8 bg-[#fafafa] shadow-md">
+  <div class="max-w-3xl mx-auto px-0 space-x-0.5 space-y-1">
+    
+
+
+
+    
+        
+        
+        
+            <a style="background-color: #3498db;" class="rounded-full inline-block text-white px-2 py-1" href="tags/2020/">#2020</a>
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+            <a style="background-color: #32a852;" class="rounded-full inline-block text-white px-2 py-1" href="tags/dinamica/">#dinamica</a>
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+            <a style="background-color: #3498db;" class="rounded-full inline-block text-white px-2 py-1" href="tags/info/">#info</a>
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+            <a style="background-color: #2ecc71;" class="rounded-full inline-block text-white px-2 py-1" href="tags/test/">#test</a>
+        
+    
+        
+        
+        
+            <a style="background-color: #7f8c8d;" class="rounded-full inline-block text-white px-2 py-1" href="tags/two-pointers/">#two pointers</a>
+        
+    
+        
+        
+        
+    
+
+  </div>
+</div>
+
+</main>
+	
+<footer>
+	<div class="bg-[#e4e4e7]">
+		<p>Made possible by team members from
+			<a href="https://roalgo.ro/">RoAlgo</a> and
+			<a href="https://kilonova.ro/">Kilonova</a>
+		</p>
+		<br>
+		<p>&copy;2024 Algomind</p>
+	</div>
+</footer>
+
+</body>
+</html>
