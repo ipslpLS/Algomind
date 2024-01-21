@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
                           .map(
                               (result) => `
                                 <div class="SearchResultElement">
-                                    <h2><a href="${basePath}${result.item.url}">${result.item.title}</a></h2>
+                                    <h2><a href="${basePath}/articles/${result.item.url}">${result.item.title}</a></h2>
                                     <p>Tags: ${result.item.tags
                                         .map(
                                             (tag) => `
