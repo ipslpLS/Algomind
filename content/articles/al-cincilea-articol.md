@@ -123,7 +123,7 @@ int main()
 
 {{< textpointer-link nametag="code-doi-doi" lines="1-2,4-5" text="Idee 2.3 pe intervale">}}
 
-{{< textpointerstatic nametag="code-osuta" lines="5" color="rgb(0, 255, 0)" >}}
+{{< textpointerstatic nametag="code-osuta" lines="3,6" color="rgb(0, 255, 0)" >}}
 {{< code-line >}}
 ```c++ { option = true }
 #include <iostream>
@@ -138,7 +138,7 @@ int main()
 
 {{< textpointer-link nametag="code-osuta" lines="1-2,4-5,6" text="Idee 3.1 pe intervale">}}
 
-{{< textpointerstatic nametag="code-osuta" lines="1-2" color="rgb(0, 255, 0)" filename="files/main.cpp" >}}
+{{< textpointerstatic nametag="code-osuta" lines="1-2" color="rgb(0, 255, 0)" filename="project/files/main.cpp" >}}
 {{< code-line from="24" >}}
 ```c++
 #include <iostream>
@@ -151,7 +151,7 @@ int main()
 {{< /code-line >}}
 {{< /textpointerstatic >}}
 
-{{< textpointerstatic nametag="code-osuta-osuta" lines="1-2" color="rgb(0, 255, 0)" filename="files/main.cpp" >}}
+{{< textpointerstatic nametag="code-osuta-osuta" lines="3-5" color="rgb(0, 255, 0)" filename="files/main.cpp" >}}
 {{< code-line from="100" >}}
 ```c++
 #include <iostream>
@@ -163,6 +163,8 @@ int main()
 ```
 {{< /code-line >}}
 {{< /textpointerstatic >}}
+
+{{< textpointer-link nametag="code-osuta-osuta" lines="1-2,6" text="Idee 3.2 pe intervale">}}
 
 $\sum_{i=1}^{n}$ $\frac{a^{b+c}}{d^e-f_i}$ $\le \sqrt{2}$
 

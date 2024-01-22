@@ -106,16 +106,18 @@
         /*End of Line Highligh*/
         .highlightFileName {
           margin-bottom: -0.1rem;
-          padding-left: 0.5rem;
+          padding-left: 1rem;
           color:rgb(221, 220, 220);
           border-top-left-radius: 0.3rem;
           border-top-right-radius: 0.3rem;
           background-color: rgb(71, 71, 71);
+          font-size: 0.8rem;
         }
         .line-number {
           margin-right: 1rem;
           margin-left: 0.25rem;
           user-select: none;
+          font-size: 0.8rem;
         }
         .vertical-line {
           border-left: 2px solid rgba(168, 168, 168, 0.383);

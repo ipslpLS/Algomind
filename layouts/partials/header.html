@@ -35,6 +35,12 @@
 			if (DivFileName && DivFileName.textContent.trim() !== "") { // Check if DivFileName exists
 				highlightContainer.style.setProperty('border-top-left-radius', '0');
 				highlightContainer.style.setProperty('border-top-right-radius', '0');
+				DivFileName.style.setProperty('padding-top', '0.5rem');
+				DivFileName.style.setProperty('padding-bottom', '0.5rem');
+				/*
+				padding-top: 0.5rem;
+				padding-bottom: 0.5rem;
+				*/
 			}
 
 			const ranges = paramsValue.split(',').map(function (range) {
@@ -55,7 +61,7 @@
 					const currentElement = highlightLineElements[j];
 					if (currentElement) {
 						currentElement.style.setProperty('background-color', 'rgba(255, 255, 255, 0.2)');
-						currentElement.style.setProperty('border-radius', '0.15rem');
+						//currentElement.style.setProperty('border-radius', '0.15rem');
 						currentElement.style.setProperty('display', 'block');
 						newArray[j] = 1;
 					}
