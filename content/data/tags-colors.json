@@ -89,6 +89,21 @@
       "name": "ceva",
       "color": "#32a852",
       "description": "Tag for testing."
+    },
+    {
+      "name": "programare dinamică",
+      "color": "#2a62bd",
+      "description": "Tag for programare dinamică."
+    },
+    {
+      "name": "divide et impera",
+      "color": "#32a852",
+      "description": "Tag for divide et impera."
+    },
+    {
+      "name": "algoritmică",
+      "color": "#7f8c8d",
+      "description": "Tag for algoritmică."
     }
   ]
 }

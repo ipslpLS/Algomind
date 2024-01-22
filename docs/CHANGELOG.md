@@ -1,3 +1,6 @@
+- 0.1.4:
+    - Changed:
+        - Tweaked tags diacritics rendering
 - 0.1.3:
     - Added:
         - code line numbers

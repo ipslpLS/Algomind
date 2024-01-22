@@ -9,6 +9,8 @@ thumbnail_images:
     - "https://source.unsplash.com/white-and-black-lego-toy-B7N0IjiIJYo"
 ---
 
+`ceva`
+
 {{< tooltip text="Ceva explicatii sau note" >}}
 Dă un hover pe tooltip
 {{< /tooltip >}}
@@ -20,6 +22,12 @@ Dă un hover pe ?
 {{< tooltip text="Ceva explicatii sau note sau mai mult text. Da da dadadadadada" >}}
 Dă un hover pe tooltip
 {{< /tooltip >}}
+
+{{< tooltip text="Ceva explicatii sau note sau mai mult text. Da da dadadadadada" >}}
+Dă un hover pe tooltip
+{{< /tooltip >}}
+
+2 {{< tooltip text="2" >}}Dă{{< /tooltip >}} un hover pe tooltip Dă un hover pe tooltip Dă un hover pe tooltip Dă un hover pe tooltip Dă un hover pe tooltip Dă un hover pe tooltip Dă un hover pe tooltip Dă un hover pe tooltip Dă un hover pe tooltip
 
 
 {{< tooltip text="Ceva explicatii sau note sau mai mult text. Da da dadadadadada" >}}

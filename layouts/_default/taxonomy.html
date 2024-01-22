@@ -13,14 +13,11 @@
         {{ $tagColor := $tag.color | default $defaultColor }}
         {{ $tagPath := printf "/tags/%s" $tagName | urlize }}
         
-        {{ $tagPages := $.Site.GetPage $tagPath }}
+        {{ $tagPages := where $.Site.RegularPages "Params.tags" "intersect" (slice $tagName) }}
         
-        {{ if $tagPages }}
-          {{ $cnt := len $tagPages.Pages }}
-          <a style="background-color: {{ $tagColor }}" class="rounded-full inline-block ml-2 text-white px-2 py-1" href="{{ $.Site.BaseURL }}{{ $tagPath }}" title="All pages with tag <i>{{ $tagName }}</i>">{{ $tagName }}: {{ $cnt }}</a>
-        {{ else }}
-          <p>No pages found for tag: {{ $tagName }}</p>
-        {{ end }}
+        {{ $cnt := len $tagPages }}
+        
+        <a style="background-color: {{ $tagColor }}" class="rounded-full inline-block ml-2 text-white px-2 py-1" href="{{ $.Site.BaseURL }}{{ $tagPath }}" title="All pages with tag <i>{{ $tagName }}</i>">{{ $tagName }}: {{ $cnt }}</a>
       {{ end }}
     {{ else }}
       <!-- Handle the case where the JSON file is not correctly loaded -->
@@ -28,5 +25,40 @@
     {{ end }}
   </div>
 </div>
+
+<!-- Some code that helped me to debug something -->
+<!--
+  {{ $tagData := getJSON "/content/data/tags-colors.json" }}
+  {{ $defaultColor := "#3498db" }}
+  
+  {{ range $tagData.tags }}
+    {{ $tagName := .name }}
+    {{ $tagColor := .color | default $defaultColor }}
+    {{ $tagCounter := 0 }}
+  
+    <h2>{{ $tagName }}</h2>
+  
+    {{ range where $.Site.RegularPages "Params.tags" "intersect" (slice $tagName) }}
+      {{ $tagCounter = add $tagCounter 1 }}
+      {{ $cleanedTag := .Title | urlize | safeURL }}
+      <a style="background-color: {{ $tagColor }};" class="rounded-full inline-block text-white px-2 py-1" href="{{ "/" | relLangURL }}tags/{{ $cleanedTag }}/">
+        #{{ .Title }}
+      </a>
+    {{ end }}
+  
+    <p>Number of articles with this tag: {{ $tagCounter }}</p>
+  {{ end }}
+  
+  {{ range .Pages }}
+    <p>Original Tag Name: {{ .Page.Title }}</p>
+    <p>URLized Tag Name: {{ .Page.Title | urlize }}</p>
+    <p>Final Tag Name: {{ .Page.Title | urlize | replaceRE "[^a-zA-Z0-9]+" "" }}</p>
+  
+    <a href="{{ "/" | relLangURL }}tags/{{ .Page.Title | urlize | replaceRE "[^a-zA-Z0-9]+" "" }}/">
+      {{ .Page.Title }}
+    </a>
+  {{ end }}
+-->
+
 
 {{ partial "footer.html" . }}
