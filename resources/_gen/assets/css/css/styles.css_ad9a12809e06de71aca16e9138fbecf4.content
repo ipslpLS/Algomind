@@ -755,6 +755,9 @@ video {
 .max-h-80 {
   max-height: 20rem;
 }
+.min-h-\[80vh\] {
+  min-height: 80vh;
+}
 .w-1\/5 {
   width: 20%;
 }
@@ -1007,6 +1010,29 @@ video {
     --codebmc: hsla(0,0%,100%,.1);
     /*#9ac1f4
     */
+  }
+
+  .container {
+      max-width: 98%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 1.5rem;
+      min-height: 100vh;
+  }
+  @media (min-width: 576px) {
+      .container {
+          max-width: 97%;
+      }
+  }
+  @media (min-width: 768px) {
+      .container {
+          max-width: 96%;
+      }
+  }
+  @media (min-width: 992px) {
+      .container {
+          max-width: 95%;
+      }
   }
 
   /*Start of Tables' style */

@@ -189,6 +189,26 @@
     */
   }
 
+  .container {
+      max-width: 98%;
+      @apply mx-auto min-h-screen mt-6;
+  }
+  @media (min-width: 576px) {
+      .container {
+          max-width: 97%;
+      }
+  }
+  @media (min-width: 768px) {
+      .container {
+          max-width: 96%;
+      }
+  }
+  @media (min-width: 992px) {
+      .container {
+          max-width: 95%;
+      }
+  }
+
   /*Start of Tables' style */
   table :is(td, th) {
     border: 1px solid var(--ptc);
