@@ -1,8 +1,8 @@
 {{ partial "header.html" . }}
 
-<h1>Taxonomy</h1>
+<h1 class="px-2 py-2">Taxonomy</h1>
 
-<div class="px-0 py-8 mx-2 md:mx-8 my-8 bg-[#fafafa] shadow-md">
+<div class="px-0 py-8 mx-2 md:mx-8 my-8 bg-[color:var(--nbc)] shadow-md">
   <div class="max-w-3xl mx-auto px-0 space-x-0.5 space-y-1">
     {{ $tagData := getJSON "content/data/tags-colors.json" }}
     {{ $defaultColor := "#3498db" }}

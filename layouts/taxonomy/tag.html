@@ -1,33 +1,69 @@
 {{ partial "header.html" . }}
 
-<h1>Articles with the tag <b>{{ .Title }}</b></h1>
+<h1 class="px-2 py-2">Articles with the tag <b>{{ .Title }}</b></h1>
 
 <div class="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
     {{ range .Data.Pages }}
-      <article class="px-0 py-8 mx-2 md:mx-8 my-8 bg-[#fafafa] shadow-md">
-        <h3>
+    <!--
+      <article class="px-0 py-8 mx-2 md:mx-8 my-8 bg-[color:var(--nbc)] shadow-md">
+        <h3 class="pl-2 md:pl-4">
           <a href="{{ .RelPermalink }}">{{ .Title }}</a>
         </h3>
-        <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+        <time class="pl-2 md:pl-4" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
           {{ .Date.Format "2/1/2006" }}
         </time>
-        <div class="mx-2 my-2 md:mx-8 md:my-8 bg-[#fafafa]">
+        <div class="mx-2 my-2 md:mx-4 md:my-4 bg-[color:var(--nbc)]">
           {{ range .Params.images }}
             {{ if strings.HasPrefix . "http" }}
-              <!-- External image -->
+              --> <!-- External image --> <!--
               <img class="object-cover rounded-t-md" src="{{ . }}" alt="External Image Description">
             {{ else }}
-              <!-- Local image -->
+              --> <!-- Local image --> <!--
               <img class="object-cover rounded-t-md" src="{{ relURL (printf "images/%s" .) }}" alt="Local Image Description">
             {{ end }}
           {{ end }}
-          <div class="bg-white rounded-b-md shadow-md">
+          <div class="bg-[color:var(--nbc)] rounded-b-md shadow-md">
             <div class="p-4 max-w-3xl space-x-0.5 space-y-1">
                 {{ partial "tags.html" . }}
             </div>
           </div>
         </div>
       </article>
+      -->
+
+      <article class="px-0 mx-2 md:mx-3 my-3">
+        <div class="article-card mx-2 my-2 md:mx-4 md:my-4 rounded-b-md">
+          {{ range .Params.thumbnail_images }}
+          {{ if strings.HasPrefix . "http" }}
+          
+          <img class="object-cover rounded-t-md" src="{{ . }}" alt="External Image Description">
+          {{ else }}
+          
+          <img class="object-cover rounded-t-md" src="{{ relURL (printf "images/%s" .) }}" alt="Local Image Description">
+          {{ end }}
+          {{ end }}
+          <div class="z-0 bg-[color:var(--nbc)] rounded-b-md">
+              <h3 class="p-4 md:p-3" >
+                <a class="article-title"href="{{ .RelPermalink }}">{{ .Title }}</a>
+              </h3>
+              {{ if not .IsNode }}
+              <time class="pl-2 md:pl-4" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+                {{ .Date.Format "2/1/2006" }}
+              </time>
+              {{ end }}
+          </div>
+          {{ if not .IsNode }}
+          <div class="bg-[color:var(--nbc)] rounded-b-md shadow-md">
+            <div class="p-4 max-w-3xl space-x-0.5 space-y-1">
+                {{ range .Params.tags }}
+                    <a class="article-tag rounded-full inline-block basic-1/2 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 py-1" href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}/">{{ . }}</a>
+                {{ end }}
+            </div>
+          </div>
+          {{ end }}
+        </div>
+      </article>
+
     {{ end }}
   </div>
 

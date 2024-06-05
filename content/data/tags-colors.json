@@ -71,7 +71,7 @@
       "description": "Tag for general problems."
     },
     {
-      "name": "programare competitionala",
+      "name": "programare competițională",
       "color": "#c0392b",
       "description": "Tag for competitive programming."
     },
@@ -104,6 +104,16 @@
       "name": "algoritmică",
       "color": "#7f8c8d",
       "description": "Tag for algoritmică."
+    },
+    {
+      "name": "introducere",
+      "color": "#7f8c8d",
+      "description": "Tag for introducere."
+    },
+    {
+      "name": "atcoder",
+      "color": "#7f8c8d",
+      "description": "Tag for atcoder problems."
     }
   ]
 }

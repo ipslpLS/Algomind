@@ -4,17 +4,42 @@
 	
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="og:author" content="{{ range $index, $author := .Params.author }}{{ if $index }}, {{ end }}{{ $author }}{{ end }}"/>
+	<meta name="og:description" content="{{ .Params.description }}"/>
+	{{ with .Params.tags }}
+		<meta name="og:keywords" content="{{ range $index, $tag := . }}{{ if $index }}, {{ end }}{{ $tag }}{{ end }}">
+	{{ end }}
+
+	<meta property="og:image" content="URL_of_your_image">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="Article thumbnail image">
+	{{ with .Params.thumbnail_images }}
+		<meta name="twitter:image" content="{{ . }}">
+	{{ end }}
 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
 	{{ $styles := resources.Get "css/styles.css" | resources.PostCSS }}
 	<link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
+	<!-- New styles -->
+	{{ $styless := resources.Get "css/scrollbuttonstyles.css" | resources.PostCSS }}
+	<link rel="stylesheet" href="{{ $styless.Permalink }}" integrity="{{ $styless.Data.Integrity }}" media="screen">
+	<!-- New styles for tooltip themes -->
+	{{ $stylesss := resources.Get "css/tooltipthemescombined.css" | resources.PostCSS }}
+	<link rel="stylesheet" href="{{ $stylesss.Permalink }}" integrity="{{ $stylesss.Data.Integrity }}" media="screen">
 	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 	<script src="https://cdn.jsdelivr.net/npm/fuse.js"></script>
-	{{ $searchJS := resources.Get "/js/search.js" | minify | fingerprint }}
-	<script src="{{ $searchJS.Permalink }}" integrity="{{ $searchJS.Data.Integrity }}"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 	<script src="//cdn.jsdelivr.net/gh/TRSasasusu/highlightjs-highlight-lines.js@1.1.5/highlightjs-highlight-lines.min.js"></script>
+	
+	{{ $themetoggleJS := resources.Get "/js/theme-switch.js" | minify | fingerprint }}
+	<script src="{{ $themetoggleJS.Permalink }}" integrity="{{ $themetoggleJS.Data.Integrity }}"></script>
+
 	<script>
 		document.addEventListener('DOMContentLoaded', (event) => {
 			/*Started the code html generic structure*/
@@ -30,7 +55,7 @@
 				
 			var DivFileName = codeDiv.querySelector('.highlightFileName');
 			const highlightLineElements = codeDiv.querySelectorAll('.highlight-line');
-			var highlightContainer = codeDiv.querySelector(".hljs-copy-wrapper");
+			var highlightContainer = codeDiv.querySelector(".hljs-scroll-wrapper");
 			
 			if (DivFileName && DivFileName.textContent.trim() !== "") { // Check if DivFileName exists
 				highlightContainer.style.setProperty('border-top-left-radius', '0');
@@ -80,10 +105,118 @@
 		});
 	</script>
 
-	<script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
+	<!-- <script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script> -->
 	<script>
+		/*
 		hljs.addPlugin(
 		new CopyButtonPlugin({
+			hook: (text, el) => {
+			let { replace, replacewith } = el.dataset;
+			if (replace && replacewith) {
+				return text.replace(replace, replacewith);
+			}
+			return text;
+			},
+			callback: (text, el) => {
+			
+			console.log(text);
+			},
+		})
+		);
+		*/
+	
+		///custom code for 
+		class ScrollButtonPlugin {
+		constructor(options = {}) {
+			self.hook = options.hook;
+			self.callback = options.callback;
+			self.lang = options.lang || document.documentElement.lang || "en";
+		}
+		"after:highlightElement"({ el, text }) {
+			let twobutton = Object.assign(document.createElement("button"), {
+				innerHTML: "Align",
+				className: "twohljs-scroll-button",
+			});
+			let button = Object.assign(document.createElement("button"), {
+				innerHTML: locales[lang]?.[0] || "Copy",
+				className: "hljs-scroll-button",
+			});
+			twobutton.dataset.copied = false;
+			button.dataset.copied = false;
+			el.parentElement.classList.add("hljs-scroll-wrapper");
+			el.parentElement.appendChild(twobutton);
+			el.parentElement.appendChild(button);
+			el.parentElement.style.setProperty(
+				"--hljs-theme-background",
+				window.getComputedStyle(el).backgroundColor
+			);
+			twobutton.onclick = function () {
+				const parent = twobutton.parentNode;
+				const codeElements = parent.querySelectorAll('.hljs');
+
+				codeElements.forEach(codeElement => {
+					const computedStyle = window.getComputedStyle(codeElement);
+					const whiteSpace = computedStyle.getPropertyValue('white-space');
+					
+					if (whiteSpace === 'pre-wrap') {
+						codeElement.style.whiteSpace = '';
+						twobutton.style.backgroundImage = 'url(\'data:image/svg+xml;utf-8,<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M16 10H3M20 6H3M20 14H3M16 18H3" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="white"/> </svg>\')';
+					}
+					else
+					{
+						codeElement.style.whiteSpace = 'pre-wrap';
+						twobutton.style.backgroundImage = 'url(\'data:image/svg+xml;utf-8,<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M21 10H3M21 18H3M21 6H3M21 14H3" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="white"/> </svg>\')';
+					}
+				});
+			};
+			button.onclick = function () {
+				if (!navigator.clipboard) return;
+				let newText = text;
+				if (hook && typeof hook === "function") {
+					newText = hook(text, el) || text;
+				}
+				navigator.clipboard
+					.writeText(newText)
+					.then(function () {
+						button.innerHTML = locales[lang]?.[1] || "Copied!";
+						button.dataset.copied = true;
+						let alert = Object.assign(document.createElement("div"), {
+							role: "status",
+							className: "hljs-scroll-alert",
+							innerHTML: locales[lang]?.[2] || "Copied to clipboard",
+						});
+						el.parentElement.appendChild(alert);
+						setTimeout(() => {
+							button.innerHTML = locales[lang]?.[0] || "Copy";
+							button.dataset.copied = false;
+							el.parentElement.removeChild(alert);
+							alert = null;
+						}, 2e3);
+					})
+					.then(function () {
+						if (typeof callback === "function")
+							return callback(newText, el);
+					});
+			};
+		}
+	}
+	if (typeof module != "undefined") {
+		module.exports = ScrollButtonPlugin;
+	}
+	const locales = {
+		en: ["Copy", "Copied!", "Copied to clipboard"],
+		es: ["Copiar", "¡Copiado!", "Copiado al portapapeles"],
+		fr: ["Copier", "Copié !", "Copié dans le presse-papier"],
+		de: ["Kopieren", "Kopiert!", "In die Zwischenablage kopiert"],
+		ja: ["コピー", "コピーしました！", "クリップボードにコピーしました"],
+		ko: ["복사", "복사됨!", "클립보드에 복사됨"],
+		ru: ["Копировать", "Скопировано!", "Скопировано в буфер обмена"],
+		zh: ["复制", "已复制!", "已复制到剪贴板"],
+		"zh-tw": ["複製", "已複製!", "已複製到剪貼簿"],
+	};
+
+	hljs.addPlugin(
+		new ScrollButtonPlugin({
 			hook: (text, el) => {
 			let { replace, replacewith } = el.dataset;
 			if (replace && replacewith) {
@@ -119,15 +252,17 @@
 		  var button = document.querySelector('.toggle-button');
 		  var element = document.getElementById('dropdown-menu');
 	  
-		  button.addEventListener('click', function() {
-			if (element.style.display === 'none' || element.style.display === '') {
-			  element.style.display = 'flex';
-			} else {
-			  element.style.display = 'none';
-			}
-		  });
+			button.addEventListener('click', function() {
+				element.classList.toggle('active');
+			});
 		});
 	</script>
+	
+	<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+	
+	<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+	<script src="https://unpkg.com/tippy.js@6.3.7/dist/tippy-bundle.umd.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tippy.js/6.3.2/animations/shift-away.min.css"/>
 
 	<title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
 
@@ -136,8 +271,7 @@
 	{{ end -}}
 </head>
 
-<body>
+<body class="bg-[color:var(--dbc)]">
 
 {{ partial "nav.html" . }}
 
-<main>

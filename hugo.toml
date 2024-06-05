@@ -27,6 +27,10 @@ enableResourceBundling = true
     noHl = false
     style = 'github-dark'
     tabWidth = 4
+  [markup.tableOfContents]
+    endLevel = 3
+    ordered = false
+    startLevel = 1
   
 [markup.goldmark.renderer]
   unsafe = true

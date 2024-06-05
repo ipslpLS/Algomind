@@ -1,0 +1,54 @@
+<div class="code-tabs">
+    {{ .Inner }}
+</div>
+
+<script>
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      const tabsContainers = document.querySelectorAll('.code-tabs');
+
+      tabsContainers.forEach(container => {
+          const tabs = container.querySelectorAll('.tabs li');
+          const panes = container.querySelectorAll('.tab-pane');
+
+          tabs.forEach(tab => {
+              tab.addEventListener('click', function() {
+                  const tabId = tab.getAttribute('data-tab');
+                  console.log(tabId);
+                  var newActivePane = document.getElementById(tabId);
+                  console.log(newActivePane);
+
+                  // Hide all tab panes except the one associated with the clicked tab
+                  panes.forEach(pane => {
+                      if (pane.dataset.tab !== tabId) {
+                          pane.style.display = 'none';
+                      }
+                  });
+
+                  // Show the corresponding tab pane
+                  if (newActivePane) {
+                      newActivePane.style.display = 'block';
+                  }
+
+                  // Activate the clicked tab
+                  tabs.forEach(t => {
+                      t.classList.remove('is-active');
+                  });
+                  tab.classList.add('is-active');
+              });
+          });
+
+          // Automatically activate the first tab and its pane
+          if (tabs.length > 0 && panes.length > 0) {
+              tabs[0].classList.add('is-active');
+              panes[0].style.display = 'block';
+          }
+      });
+  });
+  
+
+
+
+
+  
+</script>

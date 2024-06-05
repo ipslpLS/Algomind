@@ -1,7 +1,9 @@
 {{ $mytext := .Get "text" | markdownify | safeHTML }}
 <span class="tooltip">
-  <span class="tooltipcontenttext">
-    {{.Inner | markdownify | safeHTML }}
-    <span class="tooltiptext">{{ $mytext }}</span>
+  <span class="tooltipcontenttext" data-params='{{ $mytext }}'>
+    {{ .Inner | markdownify | safeHTML }}
+    <script>
+      console.log( '{{ $mytext }}' );
+    </script>
   </span>
 </span>

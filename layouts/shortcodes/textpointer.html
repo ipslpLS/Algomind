@@ -1,5 +1,9 @@
 {{ $nametag := .Get "nametag" }}
 {{ $content := .Inner }}
+{{ $filename := .Get "filename" }}
 <div class="highlightText" id='{{ $nametag }}'>
-    {{ $content | markdownify | safeHTML }}
+    {{ if isset .Params "filename" }}
+        <div class="highlightFileName">{{ $filename }}</div>
+    {{ end }}
+    {{ $content | markdownify }}
 </div>

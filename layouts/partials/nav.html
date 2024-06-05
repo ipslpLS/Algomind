@@ -1,29 +1,41 @@
-<header>  
-    <nav>
-        <div class="flex items-center flex-wrap text-2xl bg-[#f4f4f5] shadow-md">
-            <a class="nav-link rounded py-1.5 px-4 my-3 mx-2 bg-[#f4f4f5] text-[#52525b]" href="{{ .Site.BaseURL }}">
+    <div class="navbar z-20">
+        <div class="flex items-center flex-wrap text-2xl bg-[color:var(--nbc)] shadow-md">
+            <a class="nav-link rounded py-1.5 px-4 my-3 mx-2 bg-[color:var(--nbc)] text-[color:var(--ptc)]" href="{{ .Site.BaseURL }}">
                 {{ .Site.Title }}
             </a>
             <div class="nav-links flex">
                 {{ range.Site.Menus.main }}
-                <a class="nav-link rounded py-1.5 px-4 my-3 ml-2 bg-[#f4f4f5] text-[#52525b] hover:bg-[#e4e4e7] hover:text-[#000000]" href="{{ .URL }}">
+                <a class="nav-link rounded py-1.5 px-4 my-3 ml-2 bg-[color:var(--nbc)] text-[color:var(--nhtc)] hover:bg-[color:var(--nhbn)] hover:text-[color:var(--ptc)]" href="{{ .URL }}">
                     {{ .Name }}
                 </a>
                 {{ end }}
             </div>
-            <svg class="svg-icon rounded-lg p-2 flex-shrink-0 toggle-button mr-4 ml-auto bg-[#f4f4f5] text-[#52525b] hover:bg-[#e4e4e7] hover:text-[#000000]" viewBox="0 0 20 20">
-                <path fill="none" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314
+            <div class="theme-toggle ml-auto mr-2.5">
+                <svg width="20px" height="20px" viewBox="-0.14 0 20.03 20.03" fill="#000000">
+                    <g id="moon-alt" transform="translate(-3.6 -2)">
+                    <path id="secondary" fill="#ffe01b" d="M21,12A9,9,0,0,1,3.25,14.13,6.9,6.9,0,0,0,8,16,7,7,0,0,0,11.61,3H12a9,9,0,0,1,9,9Z"></path>
+                    </g>
+                </svg>
+                <div class="ball" ></div>
+                <svg width="20px" height="20px" viewBox="0 0 20 20" fill="#000000">
+                    <g id="sun" transform="translate(-2 -2)">
+                    <circle id="secondary" fill="#ffab1b" cx="4" cy="4" r="4" transform="translate(8 8)" ></circle>
+                    <path id="primary" d="M12,3V4M5.64,5.64l.7.7M3,12H4m1.64,6.36.7-.7M12,21V20m6.36-1.64-.7-.7M21,12H20M18.36,5.64l-.7.7M12,8a4,4,0,1,0,4,4A4,4,0,0,0,12,8Z" fill="none" stroke="#ffab1b" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" ></path>
+                    </g>
+                </svg>
+            </div>
+            <svg class="svg-icon rounded-lg p-2 flex-shrink-0 toggle-button mr-4 bg-[color:var(--nbc)] text-[#52525b] hover:bg-[color:var(--nhbn)] hover:text-[color:var(--ptc)]" viewBox="0 0 20 20" >
+                <path d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314
                     c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743
                     s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314
-                    c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path>
+                    c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z" fill="none"></path>
             </svg>
         </div>
-        <div id="dropdown-menu" class="flex flex-wrap bg-[#f4f4f5] shadow-md">
+        <div id="dropdown-menu" class="flex flex-wrap bg-[color:var(--nbc)] shadow-md">
             {{ range.Site.Menus.main }}
-            <a class="nav-link rounded py-1.5 px-4 my-3 ml-2 bg-[#f4f4f5] text-[#52525b] hover:bg-[#e4e4e7] hover:text-[#000000]" href="{{ .URL }}">
+            <a class="nav-link rounded py-1.5 px-4 my-3 ml-2 bg-[color:var(--nbc)] text-[color:var(--nhtc)] hover:bg-[color:var(--nhbn)] hover:text-[color:var(--ptc)]" href="{{ .URL }}">
                 {{ .Name }}
             </a>
             {{ end }}
         </div>
-    </nav>
-</header>
+    </div>

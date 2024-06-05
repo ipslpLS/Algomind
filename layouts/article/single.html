@@ -1,331 +1,760 @@
 {{ partial "header.html" . }}
 
-<div class="py-8 mx-2 md:mx-8 my-8 bg-[#fafafa] shadow-md">
-    <div class="max-w-3xl mx-auto px-2 md:px-6 lg:px-1">
-        <h1 class="font-bold">{{ .Title }}</h1>
-        <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
-            <h5 class="my-8">
-                {{ .Date.Format "2/1/2006" }}
-            </h5>
-        </time>
-
-        <div class="articlecontainer">
-          {{ if .Params.article_front_image }}
-            {{ range .Params.article_front_image }}
-              <img class="object-cover rounded-t-md" src="{{ . }}" alt="Custom Image">
-            {{ end }}
-          {{ end }}
-            {{ .Content }}
+  <div class="flex items-start py-8 mx-2 md:mx-8 my-8 bg-[color:var(--dbc)] shadow-md block">
+      
+        <div id="ContableOfContents" class="sticky w-1/5 overflow-auto hidden 2xl:block">
+          <div id="ContentofContableOfContents">
+            <h2>Table of contents</h2>
+            <div class="mt-4">
+              {{.TableOfContents}}
+            </div>
+          </div>
         </div>
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-              var contentDiv = document.querySelector(' .articlecontainer ');
-              var headings = contentDiv.querySelectorAll('h1, h2, h3, h4, h5, h6');
-              
-              headings.forEach(function (heading) {
-                    var anchor = document.createElement('a');
-                    anchor.href = '#' + heading.id;
-                    anchor.innerText = '#';
-                    anchor.classList.add('header-link');
-                    heading.appendChild(anchor);
+      <div id="main-article-container" class="w-full max-w-3xl px-2 md:px-6 lg:px-1 sm:px-1">
+          <div class="my-4 block 2xl:hidden">
+            <h2>Table of contents</h2>
+              {{.TableOfContents}}
+          </div>
+          <h1 class="font-bold">{{ .Title }}</h1>
+          <div>
+            {{ with .Params.author }}
+            <div class=""><h3 class="inline">by </h3>{{ range $index, $author := . }}<h3 class="inline autor-tag">{{ $author }}</h3> {{ if ne $index (sub (len .) 1) }}{{ end }}{{ end }}</div>
+            {{ end }}
+          </div>
+          <time class="" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+              <h6>
+                Published at
+                  {{ .Date.Format "2/1/2006" }}
+              </h6>
+          </time>
+          <div class="max-w-3xl mx-auto pb-2 space-x-0.5 space-y-1">
+            {{ partial "tags.html" . }}
+          </div>
+
+          <div class="articlecontainer mt-5">
+            {{ if .Params.article_front_image }}
+              {{ range .Params.article_front_image }}
+                <img class="object-cover rounded-md" src="{{ . }}" alt="Custom Image">
+              {{ end }}
+            {{ end }}
+              {{ .Content }}
+          </div>
+          <script>
+              document.addEventListener('DOMContentLoaded', function () {
+                var contentDiv = document.querySelector(' .articlecontainer ');
+                var headings = contentDiv.querySelectorAll('h1, h2, h3, h4, h5, h6');
+                
+                headings.forEach(function (heading) {
+                      var anchor = document.createElement('a');
+                      anchor.href = '#' + heading.id;
+                      anchor.innerText = '#';
+                      anchor.classList.add('header-link');
+                      heading.appendChild(anchor);
+                });
+
+                const navbarHeight = document.querySelector('.navbar').offsetHeight;
+
+                function scrollToAnchor(targetId) {
+                  const targetElement = document.getElementById(targetId);
+                  
+                  if (targetElement) {
+                    const offsetTop = targetElement.offsetTop - navbarHeight - 10;
+                    window.scrollTo({
+                      top: offsetTop,
+                      behavior: 'smooth'
+                    });
+                  }
+                }
+
+                // Check if the page URL contains an anchor
+                if (window.location.hash) {
+                  const targetId = window.location.hash.substring(1);
+                  scrollToAnchor(targetId);
+                }
               });
-            });
-        </script>
-        <script>
-            /*
-            document.addEventListener("DOMContentLoaded", function () {
-            const highlightButtons = document.querySelectorAll(".highlightButton");
 
-            highlightButtons.forEach(function (button) {
-                button.addEventListener("mouseover", function () {
-                    const targetTextId = button.getAttribute("data-target");
-                    const targetText = document.getElementById(targetTextId);
-            
-                    if (targetText) {
-                        targetText.classList.add("highlighted-text-test");
-                    }
-            });
+              ///////////////////////////////
+              </script>
+              <script>
+              document.addEventListener("DOMContentLoaded", function () {
+                const TooltipSelect = document.querySelectorAll(".tooltipcontenttext");
+                
+                TooltipSelect.forEach(function (tt) {
 
-            button.addEventListener("mouseout", function () {
-                const targetTextId = button.getAttribute("data-target");
-                const targetText = document.getElementById(targetTextId);
-            
-                if (targetText) {
-                    targetText.classList.remove("highlighted-text-test");
-                }
-            });
+                  function updateTooltipTheme(instance, newTheme) {
+                      // Remove the old theme class from the popper element
+                      instance.popper.classList.remove(instance.props.theme);
+                      // Update the instance's theme property
+                      instance.setProps({ theme: newTheme });
+                      // Add the new theme class to the popper element
+                      instance.popper.classList.add(newTheme);
+                  }
 
-        });
-    });
-    */
-        </script>
 
-        <script>
+                  var dataParams = tt.getAttribute('data-params');
+                      var auxmodetwo = localStorage.getItem("mode") || "";
+                      var themetoset = "tlight";
+                      if( auxmodetwo === "dark" )
+                          themetoset = "tdark";
+                      tippyInstanceone = tippy(tt, {
+                          maxWidth: 'none',
+                          animation: 'shift-away',
+                          content: dataParams,
+                          allowHTML: true,
+                          placement: 'top',
+                          theme: themetoset,
+                          onShow(instance) {
+                              // This function is called when the tooltip starts showing
+                              renderMathInElement(instance.popper, {
+                                  delimiters: [
+                                      {left: "$$", right: "$$", display: true},
+                                      {left: "$", right: "$", display: false}
+                                  ],
+                                  strict: false
+                              });
+                          }
+                        });
+                        console.log(tippyInstanceone);
+                        
+                        document.querySelector(".theme-toggle").addEventListener("click", function () {
+                            const newTheme = document.documentElement.classList.contains("dark") ? "tdark" : "tlight";
+                            console.log("LAAAA");
+                            // Update the theme for all tooltips
+                            TooltipSelect.forEach(function (tt) {
+                                updateTooltipTheme(tt._tippy, newTheme);
+                            });
+                        });
+                      });
 
-document.addEventListener("DOMContentLoaded", function () {
-    const highlightButtons = document.querySelectorAll(".highlightButton");
-    let globalLineState = []; // Array to store the state of each line globally
 
-    highlightButtons.forEach(function (button) {
-        button.addEventListener("mouseover", function () {
-            handleMouseOver(button);
-        });
 
-        button.addEventListener("mouseout", function () {
-            handleMouseOut(button);
-        });
-    });
+                  });
 
-    function handleMouseOver(button) {
-        const targetTextId = button.getAttribute("data-target");
-        const targetText = document.getElementById(targetTextId);
-        const paramsValue = button.getAttribute('data-params').trim();
+                  /*const TooltipSelect = document.querySelectorAll(".tooltipcontenttext");
+                  let tippyInstanceone; //Global
+                  let tippyInstanceModifiedone = 0;
+                
+                  ///highlightButtons
+                  TooltipSelect.forEach(function (tt) {
+                      tt.addEventListener("mouseover", function () {
+                          console.log("ceva");
+                          handleMouseOver(tt);
+                      });
+                      tt.addEventListener("mouseout", function () {
+                          console.log("ceva2");
+                          handleMouseOut(tt);
+                      });
+                  });
+                
+                  function handleMouseOver(ttt) {
+                      var dataParams = ttt.getAttribute('data-params');
+                      var auxmodetwo = localStorage.getItem("mode") || "";
+                      var themetoset = "tlight";
+                      if( auxmodetwo === "dark" )
+                          themetoset = "tdark";
+                      tippyInstanceone = tippy(ttt, {
+                          maxWidth: 'none',
+                          animation: 'shift-away',
+                          content: dataParams,
+                          allowHTML: true,
+                          placement: 'top',
+                          theme: themetoset,
+                          trigger: 'manual',
+                          showOnCreate: true,
+                          onShow(instance) {
+                              // This function is called when the tooltip starts showing
+                              renderMathInElement(instance.popper, {
+                                  delimiters: [
+                                      {left: "$$", right: "$$", display: true},
+                                      {left: "$", right: "$", display: false}
+                                  ],
+                                  strict: false
+                              });
+                          }
+                        });
+                        console.log(tippyInstanceone);
+                        tippyInstanceone.show();
+                      
+                      //tippyInstance = tippy( currentElement, {maxWidth: 'none', animation: 'shift-away', allowHTML:true, content:htmlTooltipContent, theme:themetoset, placement: 'top', trigger: 'manual', showOnCreate: true,} );
+                      
+                                  
+                      tippyInstanceModifiedone = 1;
+                      
+                  }
+                
+                  function handleMouseOut(ttt) {
+                      if( tippyInstanceModifiedone === 1 )
+                      {
+                          tippyInstanceone.destroy();
+                          tippyInstanceModifiedone = 0;
+                          //tippyInstanceone.hide();
+                          //tippyInstance.destroy(); ///destroy toopltip
+                      }
+                      //console.log( globalLineState[targetTextId] );
+                  }
+              });
+              */
+             </script>
+          <script>
+              /*
+              document.addEventListener("DOMContentLoaded", function () {
+              const highlightButtons = document.querySelectorAll(".highlightButton");
 
-        const ranges = paramsValue.split(',').map(function (range) {
-            return range.split('-').map(function (value) {
-                return parseInt(value, 10);
-            });
-        });
+              highlightButtons.forEach(function (button) {
+                  button.addEventListener("mouseover", function () {
+                      const targetTextId = button.getAttribute("data-target");
+                      const targetText = document.getElementById(targetTextId);
+              
+                      if (targetText) {
+                          targetText.classList.add("highlighted-text-test");
+                      }
+              });
 
-        const highlightLineElements = targetText.querySelectorAll('.highlight-line');
+              button.addEventListener("mouseout", function () {
+                  const targetTextId = button.getAttribute("data-target");
+                  const targetText = document.getElementById(targetTextId);
+              
+                  if (targetText) {
+                      targetText.classList.remove("highlighted-text-test");
+                  }
+              });
 
-        if (!globalLineState[targetTextId]) {
-            globalLineState[targetTextId] = Array.from({ length: highlightLineElements.length }, () => 0);
-        }
+          });
+      });
+      */
+          </script>
 
-        for (let j = 0; j < highlightLineElements.length; j++ )
-        {
-          const currentElement = highlightLineElements[j];
-          if( currentElement.style.backgroundColor === 'rgba(255, 255, 255, 0.2)' )
-          {
-            globalLineState[targetTextId][j] = 3;
+          <script>
+
+  document.addEventListener("DOMContentLoaded", function () {
+      const highlightButtons = document.querySelectorAll(".highlightButton");
+      let globalLineState = []; // Array to store the state of each line globally
+      let tippyInstance; //Global
+      let tippyInstanceModified = 0; 
+
+      /*
+      KaTeX -> transform in from markup to html
+      */
+      function renderKatex(markdownContent) {
+          return markdownContent.replace(/\$\$([\s\S]*?)\$\$/g, (match, p1) => {
+              try { 
+                  return katex.renderToString(p1, { displayMode: true });
+              } catch (error) {
+                  console.error('Error rendering KaTeX expression:', error);
+                  return match; // Return the original expression if rendering fails
+              }
+          }).replace(/\$([^\$\n]+)\$/g, (match, p1) => {
+              try {
+                  return katex.renderToString(p1, { displayMode: false });
+              } catch (error) {
+                  console.error('Error rendering KaTeX expression:', error);
+                  return match; // Return the original expression if rendering fails
+              }
+          });
+      }
+      /*
+      End of KaTeX parser
+      */
+
+      highlightButtons.forEach(function (button) {
+          button.addEventListener("mouseover", function () {
+              handleMouseOver(button);
+          });
+
+          button.addEventListener("mouseout", function () {
+              handleMouseOut(button);
+          });
+          /*
+          button.addEventListener("click", function () {
+              handleMouseOver(button);
+              button.addEventListener("click", function () {
+                  handleMouseOut(button);
+              });
+          });
+          */
+      });
+
+      function handleMouseOver(button) {
+          const targetTextId = button.getAttribute("data-target");
+          const targetText = document.getElementById(targetTextId);
+          const paramsValue = button.getAttribute('data-params').trim();
+
+          const ranges = paramsValue.split(',').map(function (range) {
+              return range.split('-').map(function (value) {
+                  return parseInt(value, 10);
+              });
+          });
+
+          const highlightLineElements = targetText.querySelectorAll('.highlight-line');
+
+          if (!globalLineState[targetTextId]) {
+              globalLineState[targetTextId] = Array.from({ length: highlightLineElements.length }, () => 0);
           }
-        }
 
-        for (let i = 0; i < ranges.length; i++) {
-            const start = ranges[i][0];
-            const end = ranges[i].length > 1 ? ranges[i][1] : start;
+          for (let j = 0; j < highlightLineElements.length; j++ )
+          {
+            const currentElement = highlightLineElements[j];
+            if( currentElement.style.backgroundColor === 'rgba(255, 255, 255, 0.2)' )
+            {
+              globalLineState[targetTextId][j] = 3;
+            }
+          }
+          
+          let firstToTooltip = 0;
+          for (let i = 0; i < ranges.length; i++) {
+              const start = ranges[i][0];
+              const end = ranges[i].length > 1 ? ranges[i][1] : start;
 
-            for (let j = start - 1; j <= end - 1 && j < highlightLineElements.length; j++) {
-                const currentElement = highlightLineElements[j];
-                if( currentElement.style.backgroundColor !== 'rgba(255, 255, 255, 0.2)' )
-                {
-                  globalLineState[targetTextId][j] = 1;
-                }
-                else if( currentElement.style.backgroundColor === 'rgba(255, 255, 255, 0.2)' )
-                {
-                  globalLineState[targetTextId][j] = 2;
-                  //console.log( "am gasit deja", j+1 );
-                }
-                //console.log('nu');
-                currentElement.style.transition = 'background-color 0.3s ease';
+              for (let j = start - 1; j <= end - 1 && j < highlightLineElements.length; j++) {
+                  const currentElement = highlightLineElements[j];
+                  if( currentElement.style.backgroundColor !== 'rgba(255, 255, 255, 0.2)' )
+                  {
+                    globalLineState[targetTextId][j] = 1;
+                  }
+                  else if( currentElement.style.backgroundColor === 'rgba(255, 255, 255, 0.2)' )
+                  {
+                    globalLineState[targetTextId][j] = 2;
+                    //console.log( "am gasit deja", j+1 );
+                  }
+                  //console.log('nu');
+                  currentElement.style.transition = 'background-color 0.3s ease';
+                  currentElement.style.setProperty('background-color', 'rgba(255, 255, 255, 0.2)');
+                  currentElement.style.setProperty('display', 'block');
+                  if( firstToTooltip === 0 )
+                  {
+                    var dataComment = button.getAttribute('data-comment');
+                    dataComment = renderKatex( dataComment );
+                    //var dataComment = 'This is **Markdown** content';
+                    if( dataComment )
+                    {
+                      const htmlTooltipContent = marked.parse(dataComment);
+                      //console.log("ceva");
+                      //console.log(dataComment);
+                      var auxmode = localStorage.getItem("mode") || "";
+                      var themetosettwo = "light";
+                      if( auxmode === "dark" )
+                        themetosettwo = "dark";
+                      tippyInstance = tippy(currentElement, {
+                          maxWidth: 'none',
+                          animation: 'shift-away',
+                          content: htmlTooltipContent,
+                          allowHTML: true,
+                          theme:themetosettwo,
+                          placement: 'top',
+                          trigger: 'manual',
+                          showOnCreate: true,
+                          onShow(instance) {
+                              // This function is called when the tooltip starts showing
+                              renderMathInElement(instance.popper, {
+                                  delimiters: [
+                                      {left: "$$", right: "$$", display: true},
+                                      {left: "$", right: "$", display: false}
+                                  ],
+                                  strict: false
+                              });
+                          }
+                      });
+                      /*
+                      tippyInstance = tippy( currentElement, {maxWidth: 'none', animation: 'shift-away', allowHTML:true, content:htmlTooltipContent, theme:themetoset, placement: 'top', trigger: 'manual', showOnCreate: true,} );
+                      */
+                      
+                      tippyInstanceModified = 1;
+                    }
+                    firstToTooltip = 1;
+                  }
+              }
+          }
+
+          for (let i = 0; i < globalLineState[targetTextId].length; i++) {
+              if (globalLineState[targetTextId][i] === 0 || globalLineState[targetTextId][i] === 3 ) {
+                  const currentElement = highlightLineElements[i];
+                  currentElement.style.transition = 'opacity 0.3s ease';
+                  currentElement.style.setProperty('opacity', '0.25');
+                  //console.log("da ", i+1);
+              }
+              if( globalLineState[targetTextId][i] === 3 )
+              {
+                const currentElement = highlightLineElements[i];
+                currentElement.style.setProperty('background-color', 'rgb(0, 0, 0, 0)');
+              }
+          }
+          //console.log( globalLineState[targetTextId] );
+      }
+
+      function handleMouseOut(button) {
+          if( tippyInstanceModified === 1 )
+          {
+            //tippyInstance.hide();
+            tippyInstance.destroy();
+            tippyInstanceModified = 0;
+            //tippyInstance.hide();
+            //tippyInstance.destroy(); ///destroy toopltip
+          }
+          const targetTextId = button.getAttribute("data-target");
+          const targetText = document.getElementById(targetTextId);
+          const highlightLineElements = targetText.querySelectorAll('.highlight-line');
+
+          for (let i = 0; i < highlightLineElements.length; i++) {
+              if(globalLineState[targetTextId][i] === 1 || globalLineState[targetTextId][i] === 0  )
+              {
+                const currentElement = highlightLineElements[i];
+                currentElement.style.setProperty('background-color', 'rgb(0, 0, 0, 0)');
+                currentElement.style.setProperty('opacity', '1');
+                globalLineState[targetTextId][i] = 0;
+              }
+              else if( globalLineState[targetTextId][i] === 2  )
+              {
+                const currentElement = highlightLineElements[i];
+                currentElement.style.setProperty('opacity', '1');
+                //currentElement.style.transition = 'background-color 0.3s ease';
                 currentElement.style.setProperty('background-color', 'rgba(255, 255, 255, 0.2)');
                 currentElement.style.setProperty('display', 'block');
-            }
-        }
-
-        for (let i = 0; i < globalLineState[targetTextId].length; i++) {
-            if (globalLineState[targetTextId][i] === 0 || globalLineState[targetTextId][i] === 3 ) {
+              }
+              else if( globalLineState[targetTextId][i] === 3 )
+              {
                 const currentElement = highlightLineElements[i];
-                currentElement.style.transition = 'opacity 0.3s ease';
-                currentElement.style.setProperty('opacity', '0.25');
-                //console.log("da ", i+1);
-            }
-            if( globalLineState[targetTextId][i] === 3 )
-            {
-              const currentElement = highlightLineElements[i];
-              currentElement.style.setProperty('background-color', 'rgb(0, 0, 0, 0)');
-            }
-        }
-        //console.log( globalLineState[targetTextId] );
-    }
-
-    function handleMouseOut(button) {
-        const targetTextId = button.getAttribute("data-target");
-        const targetText = document.getElementById(targetTextId);
-        const highlightLineElements = targetText.querySelectorAll('.highlight-line');
-
-        for (let i = 0; i < highlightLineElements.length; i++) {
-            if(globalLineState[targetTextId][i] === 1 || globalLineState[targetTextId][i] === 0  )
-            {
-              const currentElement = highlightLineElements[i];
-              currentElement.style.setProperty('background-color', 'rgb(0, 0, 0, 0)');
-              currentElement.style.setProperty('opacity', '1');
-              globalLineState[targetTextId][i] = 0;
-            }
-            else if( globalLineState[targetTextId][i] === 2  )
-            {
-              const currentElement = highlightLineElements[i];
-              currentElement.style.setProperty('opacity', '1');
-              //currentElement.style.transition = 'background-color 0.3s ease';
-              currentElement.style.setProperty('background-color', 'rgba(255, 255, 255, 0.2)');
-              currentElement.style.setProperty('display', 'block');
-            }
-            else if( globalLineState[targetTextId][i] === 3 )
-            {
-              const currentElement = highlightLineElements[i];
-              //currentElement.style.transition = 'background-color 0.3s ease';
-              currentElement.style.setProperty('opacity', '1');
-              currentElement.style.setProperty('background-color', 'rgba(255, 255, 255, 0.2)');
-              currentElement.style.setProperty('display', 'block');
-              globalLineState[targetTextId][i] = 2;
-            }
-        }
-        //console.log( globalLineState[targetTextId] );
-    }
-});
-
-    
-    var customDiv = document.querySelector('articlecontainer');
-    var elementsWithClass = document.querySelectorAll('span .base');
-
-    elementsWithClass.forEach(function (element) {
-        console.log(element);
-      if (element !== customDiv && isOverflowing(element, customDiv)) {
-        element.classList.add('scrolled-katex');
+                //currentElement.style.transition = 'background-color 0.3s ease';
+                currentElement.style.setProperty('opacity', '1');
+                currentElement.style.setProperty('background-color', 'rgba(255, 255, 255, 0.2)');
+                currentElement.style.setProperty('display', 'block');
+                globalLineState[targetTextId][i] = 2;
+              }
+          }
+          //console.log( globalLineState[targetTextId] );
       }
-    });
+  });
 
-    function isOverflowing(element) {
-      var elementRect = element.getBoundingClientRect();
-      var parentRect = parent.getBoundingClientRect();
+      
+      var customDiv = document.querySelector('articlecontainer');
+      var elementsWithClass = document.querySelectorAll('span .base');
 
-        let curOverf = element.style.overflow; 
-                 
-        if ( !curOverf || curOverf === "visible" ) 
-        element.style.overflow = "hidden"; 
-    
-        let isOverflowing = element.clientWidth < element.scrollWidth || element.clientHeight < element.scrollHeight; 
-    
-        element.style.overflow = curOverf;
-
-      return (
-        elementRect.left > parentRect.left ||
-        elementRect.right < parentRect.right ||
-        elementRect.top > parentRect.top ||
-        elementRect.bottom < parentRect.bottom
-      );
-    }
-
-    </script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        // Add line numbers with a vertical line
-        var wrappers = document.querySelectorAll('.highlightwithline .hljs-copy-wrapper');
-
-        wrappers.forEach(function(wrapper) {
-          var lines = Array.from(wrapper.querySelectorAll('.highlight-line'));
-
-          // Get custom start index from the parent .highlightwithline div
-          var parentDiv = wrapper.closest('.highlightwithline');
-          var customStartIndex = parseInt(parentDiv.getAttribute('data-params'), 10) || 1;
-
-          lines.forEach(function(line, index) {
-            var lineNumber = document.createElement('span');
-            lineNumber.classList.add('line-number');
-            lineNumber.textContent = customStartIndex + index; // Use custom start index
-
-            line.insertBefore(lineNumber, line.firstChild);
-          });
-        });
+      elementsWithClass.forEach(function (element) {
+          console.log(element);
+        if (element !== customDiv && isOverflowing(element, customDiv)) {
+          element.classList.add('scrolled-katex');
+        }
       });
-    </script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-          // Add a vertical line inside each .hljs-copy-wrapper
-          var wrappers = document.querySelectorAll('.highlightwithline .hljs-copy-wrapper');
+
+      function isOverflowing(element) {
+        var elementRect = element.getBoundingClientRect();
+        var parentRect = parent.getBoundingClientRect();
+
+          let curOverf = element.style.overflow; 
+                    
+          if ( !curOverf || curOverf === "visible" ) 
+          element.style.overflow = "hidden"; 
+      
+          let isOverflowing = element.clientWidth < element.scrollWidth || element.clientHeight < element.scrollHeight; 
+      
+          element.style.overflow = curOverf;
+
+        return (
+          elementRect.left > parentRect.left ||
+          elementRect.right < parentRect.right ||
+          elementRect.top > parentRect.top ||
+          elementRect.bottom < parentRect.bottom
+        );
+      }
+
+      </script>
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          // Add line numbers with a vertical line
+          var wrappers = document.querySelectorAll('.highlightwithline .hljs-scroll-wrapper');
 
           wrappers.forEach(function(wrapper) {
-              var codeBlock = wrapper.querySelector('code');
-              //console.log(codeBlock);
-              
-              var lineNumber = wrapper.querySelector('.line-number');
-              var lineNumberWidth = lineNumber ? lineNumber.offsetWidth : 0;
+            var lines = Array.from(wrapper.querySelectorAll('.highlight-line'));
 
-              var verticalLine = document.createElement('div');
-              verticalLine.classList.add('vertical-line');
-              verticalLine.style.setProperty('height', 'calc(100% - 1rem)');
-              verticalLine.style.setProperty('left', lineNumberWidth+18 + 'px'); // Set left value based on line number width
+            // Get custom start index from the parent .highlightwithline div
+            var parentDiv = wrapper.closest('.highlightwithline');
+            var customStartIndex = parseInt(parentDiv.getAttribute('data-params'), 10) || 1;
 
-              wrapper.insertBefore(verticalLine, wrapper.firstChild);
-          });
-      });
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-          var tooltips = document.querySelectorAll('.tooltip');
-          var activeTooltip = null;
-    
-          document.addEventListener('click', function (event) {
-            // Check if the clicked element has the "active-style" class
-            var clickedElement = event.target;
-    
-            // Reset active tooltip if clicking elsewhere
-            if (!clickedElement.matches('.tooltip')) {
-              if (activeTooltip) {
-                activeTooltip.classList.remove('active-style');
-                activeTooltip = null;
-              }
-              return;
-            }
-    
-            // Toggle the active style for the clicked tooltip
-            clickedElement.classList.toggle('active-style');
-    
-            // Remove the active style from the previous active tooltip
-            if (activeTooltip && activeTooltip !== clickedElement) {
-              activeTooltip.classList.remove('active-style');
-            }
-    
-            // Update the active tooltip
-            activeTooltip = clickedElement;
+            lines.forEach(function(line, index) {
+              var lineNumber = document.createElement('span');
+              lineNumber.classList.add('line-number');
+              lineNumber.textContent = customStartIndex + index; // Use custom start index
+
+              line.insertBefore(lineNumber, line.firstChild);
+            });
           });
         });
       </script>
-    <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var tooltips = document.querySelectorAll('.tooltip');
-        var activeTooltip = null;
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add a vertical line inside each .hljs-copy-wrapper
+            var wrappers = document.querySelectorAll('.highlightwithline .hljs-scroll-wrapper');
 
-        document.addEventListener('touchend', function (event) {
-        // Check if the clicked element has the "active-style" class
-        var clickedElement = event.target;
+            wrappers.forEach(function(wrapper) {
+                var codeBlock = wrapper.querySelector('code');
+                //console.log(codeBlock);
+                
+                var lineNumber = wrapper.querySelector('.line-number');
+                var lineNumberWidth = lineNumber ? lineNumber.offsetWidth : 0;
 
-        // Reset active tooltip if clicking elsewhere
-        if (!clickedElement.matches('.tooltip')) {
-            if (activeTooltip) {
-            activeTooltip.classList.remove('active-style');
-            activeTooltip = null;
-            }
-            return;
-        }
-
-        // Toggle the active style for the clicked tooltip
-        clickedElement.classList.toggle('active-style');
-
-        // Remove the active style from the previous active tooltip
-        if (activeTooltip && activeTooltip !== clickedElement) {
-            activeTooltip.classList.remove('active-style');
-        }
-
-        // Update the active tooltip
-        activeTooltip = clickedElement;
+                /*
+                var verticalLine = document.createElement('div');
+                verticalLine.classList.add('vertical-line');
+                verticalLine.style.setProperty('height', 'calc(100% - 1rem)');
+                verticalLine.style.setProperty('left', lineNumberWidth+18 + 'px'); // Set left value based on line number width
+                
+                wrapper.insertBefore(verticalLine, wrapper.firstChild);
+                */
+            });
         });
+      </script>
+      <script>
+        /*
+          document.addEventListener('DOMContentLoaded', function () {
+            var tooltips = document.querySelectorAll('.tooltip');
+            var activeTooltip = null;
+      
+            document.addEventListener('click', function (event) {
+              // Check if the clicked element has the "active-style" class
+              var clickedElement = event.target;
+      
+              // Reset active tooltip if clicking elsewhere
+              if (!clickedElement.matches('.tooltip')) {
+                if (activeTooltip) {
+                  activeTooltip.classList.remove('active-style');
+                  activeTooltip = null;
+                }
+                return;
+              }
+      
+              // Toggle the active style for the clicked tooltip
+              clickedElement.classList.toggle('active-style');
+      
+              // Remove the active style from the previous active tooltip
+              if (activeTooltip && activeTooltip !== clickedElement) {
+                activeTooltip.classList.remove('active-style');
+              }
+      
+              // Update the active tooltip
+              activeTooltip = clickedElement;
+            });
+          });
+          */
+        </script>
+      <script>
+        /*
+      document.addEventListener('DOMContentLoaded', function () {
+          var tooltips = document.querySelectorAll('.tooltip');
+          var activeTooltip = null;
+
+          document.addEventListener('touchend', function (event) {
+          // Check if the clicked element has the "active-style" class
+          var clickedElement = event.target;
+
+          // Reset active tooltip if clicking elsewhere
+          if (!clickedElement.matches('.tooltip')) {
+              if (activeTooltip) {
+              activeTooltip.classList.remove('active-style');
+              activeTooltip = null;
+              }
+              return;
+          }
+
+          // Toggle the active style for the clicked tooltip
+          clickedElement.classList.toggle('active-style');
+
+          // Remove the active style from the previous active tooltip
+          if (activeTooltip && activeTooltip !== clickedElement) {
+              activeTooltip.classList.remove('active-style');
+          }
+
+          // Update the active tooltip
+          activeTooltip = clickedElement;
+          });
+      });
+      */
+      </script>
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          const navbarHeight = document.querySelector('.navbar').offsetHeight;
+
+          document.querySelectorAll('.articlecontainer .header-link, #TableOfContents a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+              const targetId = this.getAttribute('href').substring(1);
+              const targetElement = document.getElementById(targetId);
+
+              if (targetElement) {
+                e.preventDefault();
+                const offsetTop = targetElement.offsetTop - navbarHeight - 10;
+                
+                window.history.pushState({}, '', '#' + targetId); // Update URL
+                window.scrollTo({
+                  top: offsetTop,
+                  behavior: 'smooth'
+                });
+              }
+            });
+          });
+        });
+      </script>
+      <script>
+      /*DEAD FUNCTION
+      // Function to check if the bottom of an element is passed
+      
+      const tableOfContents = document.getElementById('ContentofContableOfContents');
+
+      function isBottomPassed(element) {
+        const elementRect = element.getBoundingClientRect();
+        return elementRect.bottom <= window.innerHeight;
+      }
+
+      // Function to handle scroll event
+      function handleScroll() {
+        const targetElement = document.getElementById('main-article-container');
+        //const tableOfContentsHight = document.getElementById('ContentofContableOfContents');
+        //console.log(tableOfContentsHight.offsetHeight);
+        if (isBottomPassed(targetElement)) {
+          console.log("Bottom part passed", targetElement.offsetHeight, tableOfContentsHight.offsetHeight, targetElement.offsetHeight - 6 * tableOfContentsHight.offsetHeight - 64 );
+          //tableOfContents.style.position = 'relative';
+          //tableOfContents.style.bottom = "0px";
+          //tableOfContents.style.top = (targetElement.offsetHeight - tableOfContentsHight.offsetHeight - 64) + "px";
+          
+          //Previous
+          //tableOfContents.style.position = 'sticky';
+          //tableOfContents.style.top = "100%";
+          //tableOfContents.style.bottom = targetElement.offsetHeight + "px";
+          
+          //tableOfContents.style.bottom = "10px";
+          //tableOfContents.style.top = (targetElement.offsetHeight) + "px"
+          // You can do other actions here as well
+        }
+        else
+        {
+          //Previous
+          //tableOfContents.style.position = 'fixed';
+          //tableOfContents.style.top = 132 + 'px';
+          //tableOfContents.style.bottom = 0;
+        }
+      }
+
+      // Add scroll event listener
+      window.addEventListener('scroll', handleScroll);
+
+      // Initial check in case the element is already visible on page load
+      handleScroll();
+      */
+      
+      </script>
+      <script>
+        /*
+    document.addEventListener("DOMContentLoaded", function() {
+      var tocItems = document.querySelectorAll("#TableOfContents ul li a");
+      var lastHighlightedItem = null;
+
+      window.addEventListener("scroll", function(event) {
+        var fromTop = window.scrollY;
+
+        tocItems.forEach(function(item) {
+          var section = document.querySelector(item.getAttribute("href"));
+          if (
+            section.offsetTop <= fromTop + 100 && 
+            section.offsetTop + section.offsetHeight > fromTop
+          ) {
+            if (lastHighlightedItem) {
+              lastHighlightedItem.classList.remove("toc-element-highlighted");
+            }
+            item.classList.add("toc-element-highlighted");
+            lastHighlightedItem = item;
+          }
+        });
+      });
     });
-    </script>
-        <!--
-            document.addEventListener('DOMContentLoaded', (event) => {
-			document.querySelectorAll('pre code').forEach((block) => {
-				hljs.highlightElement(block);
-			});
-		});
-        -->
-    </div>
-</div>
-<div class="px-0 py-8 mx-2 md:mx-8 my-8 bg-[#fafafa] shadow-md">
-  <div class="max-w-3xl mx-auto px-0 space-x-0.5 space-y-1">
-    {{ partial "tags.html" . }}
+    
+    document.addEventListener("DOMContentLoaded", function() {
+      var tocItems = document.querySelectorAll("#TableOfContents ul li a");
+      var lastHighlightedItem = null;
+
+      window.addEventListener("scroll", function(event) {
+        var fromTop = window.scrollY;
+
+        tocItems.forEach(function(item) {
+          var section = document.querySelector(item.getAttribute("href"));
+          if (
+            section.offsetTop <= fromTop + 100 &&
+            section.offsetTop + section.offsetHeight >= fromTop
+          ) {
+            if (lastHighlightedItem) {
+              lastHighlightedItem.classList.remove("toc-element-highlighted");
+            }
+            item.classList.add("toc-element-highlighted");
+            lastHighlightedItem = item;
+          }
+        });
+      });
+    });
+    
+      document.addEventListener("DOMContentLoaded", function() {
+      var tocItems = document.querySelectorAll("#TableOfContents ul li a");
+      var headings = document.querySelectorAll("h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]");
+
+      window.addEventListener("scroll", function(event) {
+        var fromTop = window.scrollY;
+
+        headings.forEach(function(heading) {
+          if (heading.offsetTop <= fromTop && heading.offsetTop + heading.offsetHeight >= fromTop) {
+            var currentHeadingId = heading.getAttribute("id");
+            tocItems.forEach(function(item) {
+              item.classList.remove("toc-element-highlighted");
+              if (item.getAttribute("href").slice(1) === currentHeadingId) {
+                item.classList.add("toc-element-highlighted");
+              }
+            });
+          }
+        });
+      });
+    });
+    */
+    document.addEventListener("DOMContentLoaded", function() {
+      var tocItems = document.querySelectorAll("#TableOfContents ul li a");
+      var headings = document.querySelectorAll("h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]");
+
+      window.addEventListener("scroll", function(event) {
+        var fromTop = window.scrollY;
+
+        var closestHeading = null;
+        var closestDistance = Number.MAX_VALUE;
+
+        headings.forEach(function(heading) {
+          var sectionTop = heading.offsetTop;
+          var distance = Math.abs(fromTop - sectionTop);
+
+          if (distance < closestDistance) {
+            closestHeading = heading;
+            closestDistance = distance;
+          }
+        });
+
+        if (closestHeading) {
+          var closestHeadingId = closestHeading.getAttribute("id");
+          tocItems.forEach(function(item) {
+            item.classList.remove("toc-element-highlighted");
+            if (item.getAttribute("href").slice(1) === closestHeadingId) {
+              item.classList.add("toc-element-highlighted");
+            }
+          });
+        }
+      });
+    });
+      </script>
+          <!--
+              document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((block) => {
+          hljs.highlightElement(block);
+        });
+      });
+          -->
+      </div>
   </div>
-</div>
+<!--
+  <div class="px-0 py-8 mx-2 md:mx-8 my-8 bg-[#fafafa] shadow-md">
+    <div class="max-w-3xl mx-auto px-4 space-x-0.5 space-y-1">
+      {{ partial "tags.html" . }}
+    </div>
+  </div>
+-->
 
 {{ partial "footer.html" . }}

@@ -1,3 +1,17 @@
+- 0.1.7:
+    - Content cleaning for first showcase 
+- 0.1.6:
+    - Added:
+        - Code lines tooltip
+        - Demo articles and tags
+    - Changed:
+        - Added black and white thems
+        - Minor changes in UI
+- 0.1.5:
+    - Added:
+        - Table of content
+    - Changed:
+        - Anchor behavior when pressed
 - 0.1.4:
     - Changed:
         - Tweaked tags diacritics rendering

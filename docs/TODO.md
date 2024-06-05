@@ -2,7 +2,7 @@
 
 - [ ] Problem container with apropriate logos
 - [x] Search bar
-- [ ] Light and Dark theme
+- [x] Light and Dark theme
 - [ ] More componenet and web funtionality
 - [ ] Impovement over article reading and information perception overall
 - [x] Tooltip-container for math

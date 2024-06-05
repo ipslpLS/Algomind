@@ -1,4 +1,5 @@
 {{ $nametag := .Get "nametag" }}
 {{ $lines := .Get "lines" }}
-{{ $text := .Get "text" }}
-<a class='highlightButton' data-target='{{ $nametag }}' data-params='{{ $lines }}'>{{ $text }}</a>
+{{ $text := .Get "text" | markdownify }}
+{{ $mycomment := .Inner }}
+<a class='highlightButton' data-target='{{ $nametag }}' data-params='{{ $lines }}' data-comment='{{ $mycomment }}'>{{ $text }}</a>
