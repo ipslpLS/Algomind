@@ -41,7 +41,7 @@ altfel dacă n > 1
 
 Pentru $n = 5$, funția va fi rulată în felul următor:
 
-![Figură nr.1](/images/graf-fibonnaci-1.jpg)
+![Figură nr.1](/Algomind/images/graf-fibonnaci-1.jpg)
 
 Observăm că mai multe apeluri făcute pentru calcularea lui `F(3)`, se repetă în calcularea lui `F(4)`. Asemănător la `F(3)`, unde se repetă calcularea lui `F(2)`.
 
